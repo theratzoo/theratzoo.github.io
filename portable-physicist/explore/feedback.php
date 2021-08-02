@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>Feedback</title>
+        <link rel="stylesheet" type="text/css" href="/portable-physicist/style.css">
+        <link rel="icon" href="/portable-physicist/applogo.jpg">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+    </head>
+    <body id="bg">
+        <?php
+            include("../scripts/navbar.php");
+        ?>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Feedback</h1>
+            </div>      
+            <br>
+            <br>
+            <div class="info">
+                <p>Feedback is a very itegral part of Portable Physicist. The app was founded on suggestions from physics students and teachers after all. Below are ways to share your feedback</p>
+            </div>
+            <br>
+            <div class="featsubhead">
+                <h3>Write a Review</h3>
+                <p>Writing a quick review on the App Store is a great way to voice your thoughts on Portable Physicist. It is a great way to tell us what we are doing right so we can focus on that section. An App Store review on suggestions also helps our development.</p>
+            </div>
+            <br>
+            <div class="featsubhead">
+                <h3>Submit Feedback by Email</h3>
+                <p>Is an App Store review too small to write out your suggestion? Do you need visuals to supplement the idea you have? If so, feel free to send an email detailing your suggestion. When writing a suggestion as an email or a review, it is best to be as detailed as possible.</p>
+                <br>
+                <p>Tip: If you want to increase the chances that your suggestion is implemented, get others on board to write reviews or send emails!</p>
+            </div>
+            <br>
+            <div class="featsubhead">
+                <h3>Report a Bug</h3>
+                <p>There are multiple ways to report a bug for Portable Physicist. The best way is submitting a bug report on this website. <a href="../bugreport">Clicking this link will bring you to the official bug report page.</a> Otherwise, it is fine to send an email with the bug. When reporting a bug, it is best to include screenshots of it and a guide on how to reproduce it. Please do not report bugs through an App Store review, as it can confuse future users after the app has been updated.</p>
+            </div>
+        </div>
+        
+        <?php
+            include("../scripts/footer.php");
+        ?>
+    </body>
+</html>

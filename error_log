@@ -1,0 +1,4 @@
+[20-Mar-2020 17:59:53 UTC] PHP Warning:  include(../ldnavbar.php): failed to open stream: No such file or directory in /home/y5ri7hl905kl/public_html/lukederatzou.com/about-me.php on line 62
+[20-Mar-2020 17:59:53 UTC] PHP Warning:  include(): Failed opening '../ldnavbar.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/y5ri7hl905kl/public_html/lukederatzou.com/about-me.php on line 62
+[20-Mar-2020 18:04:24 UTC] PHP Warning:  include(../ldnavbar.php): failed to open stream: No such file or directory in /home/y5ri7hl905kl/public_html/lukederatzou.com/about-me.php on line 62
+[20-Mar-2020 18:04:24 UTC] PHP Warning:  include(): Failed opening '../ldnavbar.php' for inclusion (include_path='.:/opt/alt/php71/usr/share/pear') in /home/y5ri7hl905kl/public_html/lukederatzou.com/about-me.php on line 62
