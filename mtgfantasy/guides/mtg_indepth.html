@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+            <title>MTG In-Depth Guide</title>
+            
+            <!--CSS-->
+            <link href="../css/styles.css" rel="stylesheet" type="text/css">
+            <link href="../css/styles_sm.css" rel="stylesheet" type="text/css" media="screen and (max-width:500px)">
+            <link href="../css/styles_med.css" rel="stylesheet" type="text/css" media="screen and (min-width:501px) and (max-width:800px)">
+            <link href="../css/styles_lg.css" rel="stylesheet" type="text/css" media="screen and (min-width:801px)">
+        
+            <link rel="icon" href="../img/icon.png"> <!--For website favicon-->
+
+            <!--for Google custom fonts-->
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+        </head>
+    </head>
+    <body>
+        <!--The Navbar-->
+        <nav>
+            <ul>
+                <li class="navbar-link" id="icon-link"><a href="../index.html"><img src="../img/icon.png" alt="website icon"></a></li>
+                <li class="navbar-link nav-text-link"><a href="../about.html">About</a></li>
+                <li class="navbar-link nav-text-link"><a href="../draft/createdraft.html">Create Draft</a></li>
+                <li class="navbar-link nav-text-link"><a href="index.html">Guides</a></li>
+                <li class="navbar-link nav-text-link"><a href="../articles/index.html">Articles</a></li>
+                <li class="navbar-link nav-text-link"><a href="../articles/pro_schedule.html">Pro Schedule</a></li>
+                <li class="navbar-link nav-text-link"><a href="../about_project.html">About Project</a></li>
+            </ul>
+        </nav>
+        <main>
+            <header id="main-header">
+                <h1>MTG In-Depth Guide</h1>
+                <p>Here is a much deeper dive into Magic: the Gathering. This guide is not intended to be too informative, but it is a longer read than the quickstart guide. Below will focus on all the knowledge one needs to understand MTG to watch professional play. Specifically, topics such as general rules, formats, and archetypes will be studied.
+                </p>
+                <p><em>Notice: this guide is not intended for learning how to play the game. For that, we recommend the following resource: How to play Magic: the Gathering</em></p>
+            </header>
+            <article>
+                <section id="rules">
+                    <h2>Rules Overview</h2>
+                    <p><em>For the full MTG rules, you can view the official comprehensive rules on <a href="https://magic.wizards.com/en/game-info/gameplay/rules-and-formats/rules" target="_blank">Wizard of the Coast's official page</a>.</em></p>
+                    <section id="card-types">
+                        <h3>Card Types</h3>
+                        <p>In MTG, there are various card types. Each one has a unique effect and rules for when they are allowed to be played. Below is information on each card type.</p>
+                        <section id="creatures">
+                            <h4>Creatures</h4>
+                            <section class="indepth-container">
+                                <figure class="indepth-image">
+                                    <img src="https://media.wizards.com/2018/mtg_portal/readingcard.png" alt="A creature in MTG, with the main parts pointed out">
+                                    <p class="citation"><a href="https://magic.wizards.com/en/magic-gameplay" target="_blank">source: wizards of the coast</a></p>
+                                </figure>
+                                <figcaption class="indepth-text content">
+                                    <p>Creatures are cards that stay in play (referred to as "on the battlefield") until otherwise stated. Creatures are used to deal damage to either other creatures or the opponent. Each creature has its damage (referred to as power) and its health (referred to as toughness). Creatures can also include keywords on them that add extra abilities to them. When attacking with creatures, the creature must have been played in an earlier turn (unless it has haste), and then it taps to attack. "Tapped" creatures cannot block, which is something you can do if the opponent then attacks you. Creatures only die if they lose all of their health; all health is restored to creatures at the end of the turn. Creatures can only be played during your "main phase" (more on turn mechanics below).</p>
+                                </figcaption>
+                            </section>
+                        </section>
+                        <section id="instants-and-sorceries">
+                            <h4>Instants and Sorceries</h4>
+                            <section class="indepth-container">
+                                <figure class="indepth-image">
+                                    <img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=485369&type=card" alt="An instant in MTG, that counters a spell">
+                                    <p class="citation"><a href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=485369" target="_blank">source: wizards of the coast</a></p>
+                                </figure>
+                                <figcaption class="indepth-text content">
+                                    <p>Instants and sorceries, unlike creatures, do not persist on the board. Instead, they are used up and enter the graveyard (your discard pile) after usage, unless otherwise stated. Instants can be played whenever, whereas sorceries can only be played during your "main phase". Instants and sorceries can have many effects, including (but not limited to) drawing cards, removing creatures, dealing damage, giving stats/effects to creatures, countering spells, and gaining life.</p>
+                                </figcaption>
+                            </section>
+                        </section>
+                        <section id="artifacts-and-enchantments">
+                            <h4>Artifacts and Enchantments</h4>
+                            <section class="indepth-container">
+                                <figure class="indepth-image">
+                                    <img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=443102&type=card" alt="An artifact that is an equipment">
+                                    <p class="citation"><a href="https://gatherer.wizards.com/pages/card/Details.aspx?multiverseid=443102" target="_blank">source: wizards of the coast</a></p>
+                                    <img src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Dub" alt="An enchantment that attaches to a creature">
+                                    <p class="citation"><a href="https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=485339" target="_blank">source: wizards of the coast</a></p>
+                                </figure>
+                                <figcaption class="indepth-text content">
+                                    <p>Artifacts and enchantments are both known as "noncreature, nonland permanents". Essentially, they are like creatures in the sense that they stay on the battlefield, but they do not have power or toughness. Artifacts and enchantments rather are used to provide various persistent effects, based on what abilities the card has.                                </p>
+                                    <p>One common example of artifacts is equipment. Equipment is used on creatures to grant them more power/toughness along with other abilities. An equipt cost must be paid to put the equipment on a single creature. Equipment can be moved from creatures by paying the equipt cost again. When the creature who is equipped dies, the equipment is unattached but remains on the battlefield.</p>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <p>There also exist enchantments that attach to creatures and give them more stats/additional effects. These enchantments are known as "auras". Sometimes, auras can be used on enemy creatures to give them negative effects, like less power/toughness or preventing them from attacking. Unlike equipment, if the creature who is enchanted dies, the enchantment is also put into the graveyard (dies).</p>
+                                </figcaption>
+                            </section>
+                        </section>
+                        <section id="planeswalkers">
+                            <h4>Planeswalkers</h4>
+                            <section class="indepth-container">
+                                <figure class="indepth-image">
+                                    <img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=479645&type=card" alt="An example of a Planeswalker">
+                                    <p class="citation"><a href="https://gatherer.wizards.com/Pages/Card/Details.aspx?name=Lukka%2C+Coppercoat+Outcast" target="_blank">source: wizards of the coast</a></p>
+                                </figure>
+                                <figcaption class="indepth-text content">
+                                    <p>Planeswalkers are another noncreature, nonland permanent. Planeswalkers differ from artifacts/enchantments in two main ways. First, they have multiple abilities that can be activated by spending or gaining "loyalty counters". A planeswalker starts with a certain number of loyalty counters. A planeswalker can only activate one ability total per turn, during one of your main phases. The second unique attribute of planeswalkers is that their loyalty counters function as health. Not only can planeswalkers take damage from certain spells and abilities, but they can also be attacked by creatures. For every one damage, the planeswalker loses one loyalty counter; once at zero, the planeswalker is destroyed (enters the graveyard). When attacking a planeswalker, treat it as another player; you cannot attack multiple players with one creature, but you can send some creatures at each player. Also, the defender can block like normal if their planeswalker is being attacked.</p>
+                                </figcaption>
+                            </section>
+                            <p>Aside: there are 5 colors in MTG: white, blue, black, red, and green.</p>
+                            <img src="https://miro.medium.com/max/1240/1*IaenwvISaarpjgijYvePFw.png" alt="The 5 MTG colors" class="wideImage"> <!--maybe move the color explanation earlier!-->
+                            <p class="citation"><a href="https://magic.wizards.com/en/articles/archive/latest-developments/looking-limited-pointing-2010-02-12" target="_blank">source: wizards of the coast</a></p>
+                        </section>
+                        <section id="lands">
+                            <h4>Lands</h4>
+                            <section class="indepth-container">
+                                <figure class="indepth-image">
+                                    <img src="https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/252_regisland1_zg521f73s4.jpg" alt="A land in MTG">
+                                    <p class="citation"><a href="https://magic.wizards.com/en/articles/archive/arcana/zendikar-islands-2009-08-11-0" target="_blank">source: wizards of the coast</a></p>
+                                </figure>
+                                <figcaption class="indepth-text content">
+                                    <p>Lands are used to play any of the above cards. Every nonland card (referred to as spells) has a mana cost. Lands thus pay for that mana cost. Most spells have both a generic cost and a color-specific cost. The lands that are the same color as the spell's colored mana cost are needed to pay for that, while any land can pay the generic cost. Unless specified, only one land can be played during your turn, during one of your "main phases". Also, a land can only be used to produce one mana once a turn (it is "tapped" when it is used).</p>
+                                </figcaption>
+                            </section>
+                        </section>
+                    </section>
+                    <section id="starting-a-game">
+                        <h3>Starting a Game</h3>
+                        <p>A game of MTG occurs with 2 people, each with their deck of cards. Each player starts at 20 life points. The player who goes below 1 life point loses the game. To start a game, a player is chosen to go first, and each player draws the top 7 cards of their deck. They may choose to mulligan, where they draw a new hand but have to put 1 card on the bottom of their deck for each mulligan. Once both players have decided to keep their hands, the game begins.</p>
+                        <img src="https://media.magic.wizards.com/image_legacy_migration/images/magic/daily/mm/mm104_handOfCards.jpg" alt="A hand in MTG starts with 7 cards but will be reduced by one for each mulligan" class="wideImage">
+                        <p class="citation"><a href="https://magic.wizards.com/en/articles/archive/making-magic/gimme-hand-2010-08-13" target="_blank">source: wizards of the coast</a></p>
+                        
+                    </section>
+                    <section id="turn">
+                        <h3>Turn Dynamics</h3>
+                        <section class="indepth-container">
+                            <figure class="indepth-image">
+                                <img src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/1/1e/Turn_structure.png/revision/latest?cb=20180814011624" alt="A basic rundown of the turn order, which will be further explored below">
+                                <p class="citation"><a href="https://mtg.fandom.com/wiki/Turn_structure" target="_blank">source: mtg fandom</a></p>
+                            </figure>
+                            <figcaption class="indepth-text content">
+                                <p>Each turn has a player who is "taking the turn". That player goes through all of the phases and is the first one who can play cards. If the opponent has any instants, the opponent can play anytime either the active turn player plays a card or switches phases. Below is a little blurb on each of the phases, in the order that they appear.</p>
+                            </figcaption>
+                        </section>
+                        <section id="upkeep">
+                            <!--clean this up: make combat a section and other parts of combat a subsection!-->
+                            <h4>Upkeep</h4>
+                            <summary class="content">
+                                <p>The first phase of a turn, where only instants can be played. This is mainly used for permanents that mention the phase. Some abilities on creatures, artifacts, or enchantments will have an ability stating "at the beginning of your upkeep,...". Those are the cards that will have their effects occur on the upkeep.</p>
+                                <p>As an aside, whenever an effect on a card happens like that (known as a "triggered ability"), it acts like playing a card. In other words, the ability does not happen right away; the opponent has a chance to respond to it before the ability resolves.</p>
+                            </summary>
+                        </section>
+                        <section id="draw">
+                            <h4>Draw</h4>
+                            <summary class="content">
+                                <p>After the upkeep, the draw phase happens, where the active turn player draws one card from the top of their deck. They may still play instants after they have drawn their card without changing phases.</p>
+                                <p><em>Notice: the active player only draws a card if it is not the first turn of the game.</em></p>
+                            </summary>
+                        </section>
+                        <section id="main-phase-1">
+                            <h4>Main Phase 1</h4>
+                            <summary class="content">
+                                <p>The first main phase is also known as the "pre-combat main phase". The active player may play their one land for turn and any spells they wish (so long as they have the appropriate amount of mana).</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="before-combat">
+                            <h4>Before Combat</h4>
+                            <summary class="content">
+                                <p>The before combat phase happens right before combat, whether or not the active turn player decides to attack or not. The phase is generally used for effects on permanents.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="declare-attackers">
+                            <h4>Declare Attackers</h4>
+                            <summary class="content">
+                                <p>This is not a phase, but if the active turn player decides to attack, they will get to decide without the opposing player being able to respond. Also, spells are not allowed to be cast during this period; the only action that can happen is the player picking which creatures will attack which player/planeswalker.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="attacking-phase">
+                            <h4>Attacking Phase</h4>
+                            <summary class="content">
+                                <p>This phase happens after attacks are declared, only if attacks are declared. It is generally used for cards that affect the stats of attacking creatures.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="declare-blockers">
+                            <h4>Declare Blockers</h4>
+                            <summary class="content">
+                                <p>This is not a phase, just like for "declare attackers". The defending player gets to decide blocks (or no blocks). Once again, no spells were cast.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="before-damage">
+                            <h4>Before Damage (but after Blocks)</h4>
+                            <summary class="content">
+                                <p>This phase is, just like for the attacking Phase, used for permanents with effects. Also, the defending or attacking player may use instants to add stats to their creatures or remove opposing creatures.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="after-combat">
+                            <h4>After Combat</h4>
+                            <summary class="content">
+                                <p>After the "before damage" phase, the damage is dealt with. Then, there is an after combat phase, where once again only instants can be played.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="main-phase-2">
+                            <h4>Main Phase 2</h4>
+                            <summary class="content">
+                                <p>The second main phase is the same as the first main phase, but it is post-combat. Thus, it is generally used to play cards that would have not aided in combat.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="end-of-turn">
+                            <h4>End of Turn</h4>
+                            <summary class="content">
+                                <p>This phase indicates the end of the turn, where some permanent cards may have effects. Also, any temporary changes to the battlefield caused by spells or abilities will wear off if they say "until the end of turn" <em>after</em> this phase ends. Instants can still be played here.</p>
+                            </summary>
+                            
+                        </section>
+                        <section id="cleanup">
+                            <h4>Cleanup</h4>
+                            <summary class="content">
+                                <p>This is not a phase but is worth noting here. If the active turn player leaves the End of Turn phase with more than seven cards in hand, they enter the "cleanup" phase (otherwise this phase is skipped), where they discard down to 7. No spells or abilities can occur during this atypical phase.</p>
+                            </summary>
+                            
+                        </section>
+                    </section>
+                </section>
+            </article>
+        </main>
+        
+        <footer>    
+            <br>
+            <a href="../termsofservice.html" class="footerA">Terms of Service</a>
+            <br><br>
+            <!--no twitter account (yet)!-->
+            <a href="https://twitter.com/" target="_blank"><img class="footerIcon" src="https://image.flaticon.com/icons/png/512/124/124021.png" alt="twitter icon"></a>
+        </footer>
+    </body>
+</html>

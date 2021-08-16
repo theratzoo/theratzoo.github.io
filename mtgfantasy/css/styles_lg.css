@@ -1,0 +1,78 @@
+/* navbar styles */
+
+#icon-link a img {
+    width:80px;
+}
+
+nav ul {
+    padding-top:20px;
+    padding-bottom:0px;
+}
+
+nav ul {
+    display:flex;
+}
+
+.nav-text-link {
+    padding-top:15px;
+}
+
+/* general styles */
+
+img {
+    width: 100%;
+    height: auto;
+}
+  
+.card-container {
+    display: flex;
+}
+
+.card-child {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+figure {
+    margin:10px;
+}
+
+h1 {
+    font-size:54px;
+}
+
+h2 {
+    font-size:36px;
+    padding-top:10px;
+}
+
+h3 {
+    font-size:24px;
+}
+
+h4 {
+    font-size:21px;
+}
+
+ul li {
+    width: 20%;
+}
+
+.wideImage {
+    max-height: 400px;
+    width:auto;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main-header {
+    padding-left:30px;
+}
+
+td {
+    padding:5px 20 5px 20px;
+}

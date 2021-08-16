@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>MTG Fantasy</title>
+
+        <!--CSS-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="css/styles_sm.css" rel="stylesheet" type="text/css" media="screen and (max-width:500px)">
+        <link href="css/styles_med.css" rel="stylesheet" type="text/css" media="screen and (min-width:501px) and (max-width:800px)">
+        <link href="css/styles_lg.css" rel="stylesheet" type="text/css" media="screen and (min-width:801px)">
+
+        <link rel="icon" href="img/icon.png"> <!--For website favicon-->
+        <!--for Google custom fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    </head>
+    <body>	
+        <!--The Navbar-->
+        <nav>
+            <ul>
+                <li class="navbar-link" id="icon-link"><a href="index.html"><img src="img/icon.png" alt="website icon"></a></li>
+                <li class="navbar-link nav-text-link"><a href="about.html">About</a></li>
+                <li class="navbar-link nav-text-link"><a href="draft/createdraft.html">Create Draft</a></li>
+                <li class="navbar-link nav-text-link"><a href="guides/index.html">Guides</a></li>
+                <li class="navbar-link nav-text-link"><a href="articles/index.html">Articles</a></li>
+                <li class="navbar-link nav-text-link"><a href="articles/pro_schedule.html">Pro Schedule</a></li>
+                <li class="navbar-link nav-text-link"><a href="about_project.html">About Project</a></li>
+            </ul>
+        </nav>
+        <main id="homePage">
+            <!--Section 1: Title and Create Draft button-->
+            <header id="home1" class="homeDiv">
+                <h1 id="title">MTG Fantasy</h1>
+                <a class="fantasybtn" href="draft/createdraft.html">Create Draft</a>
+            </header>
+            <!--Section 2: Guides-->
+            <section id="home2" class="homeDiv">  
+                <h2>New to MTG or the Pro Scene?</h2>
+                <p>Feel free to check out any of the below guides before jumping into your first MTG Fantasy League!</p>
+
+                <section id="guides" class="card-container">
+                    <figure class="card-child card">
+                        <img src="img/mtg-arena-1.jpeg" alt="Image of Magic: the Gathering Arena">
+                        <figcaption>
+                            <p class="citation"><a href="https://www.alienwarearena.com/ucf/show/1938824/boards/in-game-media-2/Image/magic-the-gathering-arena-1" target="_blank">source: alienwarearena</a></p>
+                            <h3>MTG Quickstart</h3>
+                            <p>A crashcourse on the trading card game Magic: the Gathering. A recommended read for those unfamiliar with the game.</p>
+                            <a href="guides/mtg_quickstart.html" class="fantasybtn">Read More</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="card-child card">
+                        <img src="img/Trophy-Shot_6.jpeg" alt="Image of a professional MTG player holding a trophy">
+                        <figcaption>
+                            <p class="citation"><a href="https://magic.wizards.com/en/events/coverage/top-players" target="_blank">source: wizards of the coast</a></p>
+                            <h3>Pro Scene Guide</h3>
+                            <p>The MTG pro scene can be a bit confusing to understand at first so it's recommended to read this quick guide if new to it.</p>
+                            <a href="guides/proscene.html" class="fantasybtn">Read More</a>
+                        </figcaption>
+                    </figure>
+                </section>
+
+            </section>
+            <!--Section 3: Articles-->
+            <section id="home3" class="homeDiv">
+                <h2>Articles</h2>
+                <p>Looking to level up your drafting skills? Interesting in keeping up with the pro scene? These articles will give you a leg up in your next MTG Fantasy League!</p>
+                <h2>Latest Articles</h2>
+                <section id="articles" class="card-container">
+                    <figure class="card card-child">
+                        <img class="card-img-top card-img-first-row" src="img/strixhaven.jpeg" alt="Picture of Strixhaven MTG booster set">
+                        <figcaption class="card-body">
+                            <p class="citation"><a href="https://techraptor.net/tabletop/news/some-magic-gathering-strixhaven-products-suffering-delay" target="_blank">source: techraptor</a></p>
+                            <h3 class="card-title">Upcoming Tournament: Strixhaven Championship</h3>
+                            <p class="card-text">An analysist of the upcoming tournament, looking at the top decks and what players may be bringing to the event.</p>
+                            <a href="articles/strixhaven_championship.html" class="fantasybtn">Read More</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="card card-child">
+                        
+                        <img class="card-img-top card-img-first-row" src="img/paulo.png" alt="Picture of PVDDR">
+                        <figcaption class="card-body">
+                            <p class="citation"><a href="https://www.magic.gg/league/paulo-vitor-damo-da-rosa" target="_blank">source: wizards of the coast</a></p>
+                            <h3 class="card-title">Player Analysis: Paulo Vitor Damo Da Rosa</h3>
+                            <p class="card-text">Paulo has had a great couple of years, but will he hold up in the latest MTG set? Find out more in our analysis here!</p>
+                            <a href="articles/analysis_pvddr.html" class="fantasybtn">Read More</a>
+                        </figcaption>
+                    </figure>
+                </section>
+            </section>
+        </main>
+        <footer>    
+            <br>
+            <a href="termsofservice.html" class="footerA">Terms of Service</a>
+            <br><br>
+            <!--no twitter account (yet)!-->
+            <a href="https://twitter.com/" target="_blank"><img class="footerIcon" src="https://image.flaticon.com/icons/png/512/124/124021.png" alt="twitter icon"></a>
+        </footer>
+    </body>
+</html>
