@@ -1,0 +1,227 @@
+<?php
+    include("../scripts/searchscript.php"); //actually works
+    
+?>
+<?php
+    include("../scripts/cardlistdb.php"); //does work
+?>
+<?php
+    $filename = 'home.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Videos</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+                checkMulliganGame();
+                
+            }
+            function dismissAlert() {
+            //document.getElementById("alertMG").style.visibility = "hidden";
+            document.getElementById("alertMG").style.display = "none";
+          }
+          function stopShowingAlert() {
+            localStorage.setItem('hide10', true);
+            dismissAlert();
+          }
+          function checkMulliganGame() {
+                var completed = localStorage.getItem('completed10');
+                var isDisabled = localStorage.getItem('hide10');
+                if (completed) {
+                    
+                } else if (isDisabled) {
+                    
+                } else {
+                    //document.getElementById("alertMG").style.visibility = "visible";
+                    document.getElementById("alertMG").style.display = "block";
+                }
+            }
+        </script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+                <?php
+                    include("../scripts/navbar.php"); 
+                ?>
+                
+                <?php
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+            <div class="container-fluid body-div" id="content">
+                <br>
+                    <div class="alert alert-danger" id="alertMG">
+                        <a href="/modern/mulligans#mg"><strong>April's Mulligan Game is available now!</strong></a>
+                        <input id="dismissAlert" onclick="dismissAlert()">
+                        <br>
+                        <a href="/" onclick="stopShowingAlert()" id="stopShowingAlert">Don't show this again.</a>
+                    </div>
+                    <br>
+                <!--Video page format:
+                    latest video-
+                    discuss what it is about and such
+                    have embedded video
+                    at bottom have description of video (hidden cause of spoilers), plus link to decklist
+                    also have subscribe btn of course
+                    and can have btn to see prior vid (and next when applicable)
+
+                    -->
+                <div class="jumbo-tron">
+                    <h1>Videos</h1>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <h2>Latest Video</h2>
+                <br>
+                <h3>Video #4: Modern Blue-White Death and Taxes- League + Decktech</h3>
+                <br>
+                <p>The fourth Death and Taxes Central video, where we take a Blue-White Death and Taxes list through a competitive Modern league (and a half).</p>
+                <br>
+                <!--EMBEDDED VIDEO HERE-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HERKzYqJN38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br>
+                <hr>
+                <br>
+                <h3>Text Description</h3>
+                <br>
+                <!--- here, wil ldescribe video contents. so if it is a league, describe each game briefly so user who did not watch can understand. but not too deep but can be like a good 5-10 paragraphs-->
+                <!--one or two paragraphs per match. few sentences for each game, describing how it played out and what cards performed well for both sides. talk about sideboarding and hands and other factors that contributed to the outcome of the game-->
+                <p>Match one we play against Mono-White Eldrazi and Taxes on the draw. We keep a seven-card hand with three lands (two Ghost Quarters and one Hallowed Fountain), along with two Meddling Mages, one Blade Splicer, and one Path to Exile. The opponent leads off with an Aether Vial into Thalia, Guardian of Thraben and Dryad Militant. We play a turn two Meddling Mage, mistakenly naming Path to Exile. By turn four, the opponent has a Flickerwisp and an Eldrazi Displacer on the board in addition to their 2/1s against our Meddling Mage and 1/1 Blade Splicer. With no good threats in our hand facing down two major ones, we opted to concede game one.</p>
+                <br>
+                <p>In the sideboard, we bring in a Settle the Wreckage, Brimaz, King of Oreskos, Oblivion Ring, Mirran Crusader, and two Dismembers. We take out our weakest hatebears- three Thalia, Guardian of Thrabens and three Lavinia, Azorious Renegades. For this game, we keep a seven-card hand with two Aether Vials, one Ghost Quarter, one Path to Exile, 1 Remorseful Cleric, one Spell Queller, and one Brimaz, King of Oreskos, while the opponent mulligans to six. We play our Aether Vials and miss on lands. The opponent plays a turn one Dryad Militant into two Blade Splicers. The first three drop that we bring in is Mirran Crusader. We then proceed to draw a Deputy of Detention, getting rid of their two Golems. The opponent tries to Settle the Wreckage us, but Spell Queller counters it. We end up winning game two, thanks to Deputy of Detention and our post-board threats.</p>
+                <br>
+                <p>We do not change anything in the main deck for game three. The opponent mulligans to six, while we keep a seven-card hand with three lands (two Hallowed Fountains and a Plains), along with Deputy of Detention, Dismember, and two Flickerwisps. The opponent leads off with two Aether Vials on only one land, mimicking our start from last game. We draw the classic turn three Aether Vial but decide to cast our Deputy of Detention on their Aether Vials instead. The opponent casts Declaration in Stone on the Deputy of Detention, getting their Aether Vials back. For several turns, we both play lands and pass the turn. Eventually, we play one of our Flickerwisps, and the opponent follows up with a Blade Splicer. We then cast our second Flickerwisp, targeting their Golem. On our next upkeep, the opponent Flickerwisps our Aether Vial. To play around Eldrazi Displacer, we decide to Ghost Quarter their Eldrazi Temple to leave them with only a Shefet Dunes for colorless mana. The opponent activates their Aether Vial before their two floating mana went away. Before the Aether Vial resolves, we cast two of our three removal spells in hand on their creatures. After the Eldrazi Displacer hits the battlefield (we were correct!), we Ghost Quarter their last colorless source, leaving them with a 3/3 against two Flickerwisp. In the end, the opponent fails to find an answer to our Flickerwisps, concluding match one.</p>
+                <br>
+                <p>Match two we are on the draw against 4 Color Prison. We keep a seven-card hand with two lands (Hallowed Fountain and Plains), two Leonin Arbiters, one Thalia, Guardian of Thraben, one Path to Exile, and one Deputy of Detention, while the opponent mulligans to six. The opponent leads off with a Grafdigger's Cage and a Mishra's Bauble, while we opt for a Thalia, Guardian of Thraben into a Leonin Arbiter. Engineered Explosives destroys both of our hate bears. The opponent casts a Whir of Invention for Pyrite Spellbomb. Despite having a Spell Queller in hand, we cast Blade Splicer, as Deputy of Detention could answer Ensnaring Bridge. The opponent does in fact cast an Ensnaring Bridge, prompting a Deputy of Detention hitting the battlefield. In the end, a Spell Queller on their second Ensnaring Bridge wraps gives up game one.</p>
+                <br>
+                <p>In the sideboard, we bring in two Stony Silences, one Rest in Peace, one Oblivion Ring, one Brimaz, King of Oreskos, and one Mirran Crusader. We take out two Aether Vials, one Blade Splicer, two Reflector Mages, and one Remorseful Cleric. For game two, we keep a six-card hand with a Hallowed Fountain, Path to Exile, Meddling Mage, Spell Queller, and Deputy of Detention, while the opponent mulligans to five. We put a Meddling Mage to the bottom of our library. We draw two lands and play Stony Silence into Meddling Mage on Ensnaring Bridge. The opponent plays a Sai, Master Thopterist along with two zero mana artifacts. We then Path to Exile their Sai, Master Thopterist. The opponent finds a Karn, the Great Creator off of Ancient Stirrings and casts a Whir of Invention for Ensnaring Bridge. We then Spell Queller their Karn, the Great Creator and get rid of their Thopters with Deputy of Detention, prompting them to concede the match.</p>
+                <br>
+                <p>Match three we are on the draw against Dredge. We keep a six-card hand with a Seachrome Coast, Aether Vial, Thalia, Guardian of Thraben, Remorseful Cleric, Path to Exile, and Flickerwisp, while the opponent mulligans down to three cards. We keep a Hallowed Fountain on top of our library. The opponent casts a turn three Stinkweed Imp, perhaps the slowest start I've seen from Dredge. The following turn, the opponent plays a Shriekhorn and a Darkblast on our Thalia, Guardian of Thraben. While they now have a dredge spell in the graveyard and a way to mill themselves, Remorseful Cleric is still available for us. What we do is bring in Remorseful Cleric, threatening its activation. The opponent does not activate their Shriekhorn, but they do dredge their Darkblast. They only hit a Bloodghast and a Creeping Chill. They try to Darkblast our Remorseful Cleric, but we bring in a Flickerwisp to save it. We also cast a Deputy of Detention to get rid of their Shriekhorn. When the Remorseful Cleric returns, we get rid of their graveyard, leaving them empty-handed and lacking a graveyard. The opponent finds a Faithless Looting and Conflagrate, but the opponent is dead by then.</p>
+                <br>
+                <p>In the sideboard, we bring in three Rest in Peaces, two Relic of Progenituses, and two Burrenton Forge-Tenders. We take out a Path to Exile, three Lavinia, Azorius Renegades, and three Flickerwisps. In game two, we keep a seven-card hand with two lands (Ghost Quarter and Tectonic Edge), along with a Path to Exile, Thalia, Guardian of Thraben, Thalia, Heretic Cathar, and, most importantly, two Rest in Peaces. The opponent keeps a seven-card hand, and leads off with a Faithless Looting, discarding two Stinkweed Imps. However, the opponent does not play anything on their second turn, allowing Rest in Peace to enter the battlefield before any creatures return. The opponent does have Nature's Claim for our first Rest in Peace, but we have the second one available. After that, we use our land destruction and Thalias to tax the opponent down, winning us the match.</p>
+                <br>
+                <p>Match four we are on the draw against Mono-Blue Tron. We keep a seven-card hand with Tectonic Edge, Aether Vial, Remorseful Cleric, Meddling Mage, Lavinia, Azorious Renegade, and two Spell Quellers. We lead off with an Aether Vial but fail to find any lands to cast the creatures in our hand. The opponent plays a Chalice of the Void on one, along with a Thirst for Knowledge and Karn, the Great Creator. The planeswalker conveniently turns off our Aether Vial, making our one-land hand losing us the game.</p>
+                <br>
+                <p>In the sideboard, we bring in two Stony Silences and an Oblivion Ring and take out two Reflector Mages and a Remorseful Cleric. For game two, we keep a seven-card hand with three useful lands (two Tectonic Edges and a Ghost Quarter), along with an Aether Vial, Leonin Arbiter, and two Meddling Mages. The opponent mulligans to six. We play an Aether Vial, Leonin Arbiter, and Blade Splicer for our first three turns. The opponent plays a Spacial Contortion on our Leonin Arbiter. Our first Meddling Mage names Sorcerous Spyglass to prevent them from turning off our Tectonic Edges. The opponent plays a Karn, the Great Creator, which we let resolve. They grab a Walking Ballista with the planeswalker. We use both our Tectonic Edges to get rid of the opponent's Tron lands and cast our second Meddling Mage, naming Walking Ballista. The opponent concedes the game.</p>
+                <br>
+                <p>We make no changes in the sideboard. For game three, we keep a seven-card hand with two lands (Ghost Quarter and Hallowed Fountain), along with a Leonin Arbiter, Thalia, Guardian of Thraben, Lavinia, Azorius Renegade, Oblivion Ring, and Spell Queller. The opponent leads off with an Expedition Map and counters our Thalia, Guardian of Thraben. We play a Leonin Arbiter and Aether Vial (which gets Remanded), hoping that we can keep the opponent off of Tron mana for a turn, as their current lands were an Island and two different Tron lands. However, they have a Dismember for Leonin Arbiter, but they do not activate Expedition Map, as they just have the Tron land in hand. After casting Lavinia, Azorius Renegade, the opponent plays a Karn, the Great Creator, fetching a Sorcerous Spyglass. We cast Oblivion Ring, exiling their Karn, the Great Creator. However, the opponent had Cyclonic Rift to bounce it. They fetch out a Mycosynth Lattice with Karn, the Great Creator, and cast it, locking us out of the game.</p>
+                <br>
+                <p>Match five we are on the draw against Mono-Green Tron. We keep a six-card hand with four lands (two Hallowed Fountains, one Ghost Quarter, and one Tectonic Edge) along with a Leonin Arbiter and Blade Splicer. We scry a Lavinia, Azorius Renegade to the bottom. The opponent begins with an Expedition Map and fetch their final Tron land. We opt to Ghost Quarter the opponent's Urza's Tower, despite lacking a Leonin Arbiter in play. Unfortunately for us, the opponent has a Sylvan Scrying, grabbing their Urza's Tower. We play a Meddling Mage, naming Karn Liberated. The opponent then plays an Ugin, the Spirit Dragon on turn four, prompting our concession.</p>
+                <br>
+                <p>In the sideboard, we bring in two Stony Silences and an Oblivion Ring. We take out two Aether Vials and a Remorseful Cleric. For game two, we keep a seven-card hand with two lands (Ghost Quarter and Plains), along with Stony Silence, Blade Splicer. Spell Queller, and two Leonin Arbiters. After the opponent cast Chromatic Sphere, we play a turn two Stony Silence. The opponent misses their land drop. We then play Leonin Arbiter, with Ghost Quarter up. The opponent concedes the game.</p>
+                <br>
+                <p>We do not make any changes in the sideboard. For game three, we keep a seven-card hand with two lands (Tectonic Edge and Plains), along with a Leonin Arbiter, Thalia, Heretic Cathar, Lavinia, Azorious Renegade, and two Path to Exiles. The opponent plays a turn two Sylvan Scrying, grabbing a Forest. Our turn two Leonin Arbiter gets removed, so we cast one of our three Path to Exiles to get our blue source. Our Tectonic Edge gets rid of their Urza's Mine, keeping them off of Tron. We cast a few hatebears and remove their problematic creatures and end up killing the opponent before they can assemble enough tools.</p>
+                <h3>Summary</h3>
+                <p>Overall, we went 4-1 in matches. The matches were not all in the same competitive Modern league because two of the matches ended up lacking gameplay- one opponent conceded on turn one both games, while a second opponent disconnected halfway through game one. We won a match against Mono-White Eldrazi and Taxes, 4 Color Prison, Dredge, and Mono-Green Tron. Our loss was to Mono-Blue Tron. The deck in general performed better than I expected, but it still did not feel very powerful. The blue two drops, Meddling Mage and Lavinia, Azorious Renegade, were not very impactful. That being said, the three drops performed well. Deputy of Detention, when found, was quite impressive, as was Spell Queller. U/W Taxes does have potential, but it is a very meta-dependent deck. With the London mulligan rule, the deck actually gets better, as more combo decks are present. That being said, even without the London mulligan rule, the deck performed fine. Overall, I would recommend the deck if you want to try a more aggressive, anti-combo deck. However, before building it, I would make some changes to the list in the video. For starters, the two Reflector Mages can be swapped for the final two Deputy of Detentions. Also, I would recommend putting someone drops in the deck (Thraben Inspector, Judge's Familiar, or Mausoleum Wanderer) over the weaker two drops. Finally, the sideboard can be a bit more tuned. Below is what I would recommend playing (and what I will play in future videos):</p>
+                <h5><a href="/decklists/uw-dnt/1_1">Recommended decklist</a></h5>
+
+
+                <br>
+                <!--here, say record, what we beat, what we lost to, thoughts on deck and sideboard and games, highlights, 1-2 paragraphs. Overall/altogether, sort of like a TL DR-->
+                <h3>More Videos</h3>
+                <ul>
+                    <li><a href="v03">Black-White Eldrazi and Taxes Bonus Match vs. Jund</a></li>
+                    <li><a href="v02">Black-White Eldrazi and Taxes- League + Decktech</a></li>
+                    <li><a href="v01">Mono-White Eldrazi and Taxes- League + Decktech</a></li>
+                </ul>
+                <!--have previous, next (only for non-homepage) video buttons, plus subscribe button in middle-->
+                <br>
+                <p>If you wish to check out videos and get updated right when a new one comes out, feel free to subscribe down below. I'd appreciate the support!</p>
+                <br>
+                
+
+                <script src="https://apis.google.com/js/platform.js"></script>
+
+                <div class="g-ytsubscribe" data-channelid="UCNH5lLa844qfAeiTFA53jPQ" data-layout="default" data-count="default"></div>
+
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+            <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script src="/loadpublishinfo.js" type="text/javascript"></script>
+    </body>
+</html>
+
+

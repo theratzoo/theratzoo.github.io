@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>BR Vengevine Bridge</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                var x = document.getElementsByClassName("popupImg");
+                var y = document.getElementsByClassName("discussionA");
+                for(var i = 0; i<x.length; i++) {
+                    var name = y[i].textContent;
+                    y[i].href = `http://gatherer.wizards.com/Pages/Card/Details.aspx?name=${name}`
+                    x[i].src = `http://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+                }
+            }
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="./">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="splashes">Splashes</a></li>
+                            <li><a href="mulligans">Mulligan Guide</a></li>
+                            <li><a href="budget">Budget Options</a></li>
+                            <li><a href="matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>BR Vengevine Bridge</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-1">
+
+                </div>
+
+                <div class="col-sm-9">
+                    
+                    <h2>Matchup Overview</h2>
+                    <div class="muimage">
+                        <img src="https://spellsnare.files.wordpress.com/2017/08/screen-shot-2017-08-16-at-1-07-48-am.png?w=816" class="muimage" alt="Vengevine">
+                    </div>
+                    <br>
+                    <br>
+                    <p>BR Vengevine Bridge is viewed by many as Modern's flavor-of-the-month deck, as it is very fragile to hate cards like <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="" class="popupImg"></span></a></span>. However, after putting up results, the explosive graveyard deck appears to be here to stay. In terms of the matchup in D&T's perspective, the opposing deck, while very explosive, is also very fragile and easy to disrupt. Establishing a strong board and dragging the game out helps us take down this deck. Postboard, our graveyard hate gives us an auto win most of the time, as the current iterations of BR Vengevine Bridge lack answers to a <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="" class="popupImg"></span></a></span> (yet another reason I favor the enchantment over <span class="hover_img"><a href="" class="discussionA">Relic of Progenitus<span><img src="" class="popupImg"></span></a></span>, a card that they can answer). Therefore, I'd wager to say the matchup is very favorable for D&T, so long as the current versions of the deck lack answers to our hate.</p>
+                    <hr>
+                    <h2>Our best cards</h2>
+                    <div class="muimage">
+                        <img src="https://spellsnare.files.wordpress.com/2016/07/boab85_iugh576f8ghadsd.jpg?w=620" class="muimage" alt="Wall of Omens">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Preboard, getting our hatebears in play early on is vital to our success. While their deck lacks a high volume of non-creature spells, a <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> tax can go a long way in keeping the opponent off of an explosive turn. <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>'s first strike is also very relevant in killing their creatures. <span class="hover_img"><a href="" class="discussionA">Leonin Arbiter<span><img src="" class="popupImg"></span></a></span> is also good here, as their deck runs many fetchlands and keeping them off of mana early on is very important. Of note, current lists run 1-2 basic lands, so <span class="hover_img"><a href="" class="discussionA">Ghost Quarter<span><img src="" class="popupImg"></span></a></span>s can become <span class="hover_img"><a href="" class="discussionA">Strip Mine<span><img src="" class="popupImg"></span></a></span>s without a <span class="hover_img"><a href="" class="discussionA">Leonin Arbiter<span><img src="" class="popupImg"></span></a></span> very quickly. Defensive creatures are also important here, like <span class="hover_img"><a href="" class="discussionA">Wall of Omens<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="" class="popupImg"></span></a></span>, as they can help keep our lifetotal high enough to stabilize in the later stages of the game. In addition, <span class="hover_img"><a href="" class="discussionA">Phyrexian Revoker<span><img src="" class="popupImg"></span></a></span> turns off their sacrifice engines like <span class="hover_img"><a href="" class="discussionA">Viscera Seer<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Greater Gargadon<span><img src="" class="popupImg"></span></a></span></p>
+                    <hr>
+                    <h2>Our worst cards</h2>
+                    <div class="muimage">
+                        <img src="http://pm1.narvii.com/6121/477679ca5a4561413ce8b60026d1a13e4bcdbc2b_00.jpg" class="muimage" alt="Flickerwisp">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> is not at its best in this matchup, as it is often clunky and low-impactful. That being said, it can often outshine our 4 drops. While <span class="hover_img"><a href="" class="discussionA">Restoration Angel<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Thought-Knot Seer<span><img src="" class="popupImg"></span></a></span> are undoubtedly amazing cards, we are often either winning already or are nearly dead by the time turn 4 is reached. <span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="" class="popupImg"></span></a></span> is tricky- while a fine chump blocker, it often doesn't do much more than save a few life points. In Eldrazi builds, <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="" class="popupImg"></span></a></span> is simply too slow.</p>
+                    <hr>
+                    <h2>Their best cards</h2>
+                    <div class="muimage">
+                        <img src="https://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/wallpapers/WP_GoblinBushwhacker_1280x960.jpg" class="muimage" alt="Goblin Bushwhacker">
+                    </div>
+                    <br>
+                    <br>
+                    <p>The cards we are most worried about depends heavily if we are on the play or the draw. Often, on the draw, we are worried of dying to a fast draw involving bringing back <span class="hover_img"><a href="" class="discussionA">Vengevine<span><img src="" class="popupImg"></span></a></span>s on turn two. <span class="hover_img"><a href="" class="discussionA">Bridge from Below<span><img src="" class="popupImg"></span></a></span> is a card that, without graveyard hate, can take over the game by the sheer value of sacrificing <span class="hover_img"><a href="" class="discussionA">Gravecrawler<span><img src="" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="" class="discussionA">Vengevine<span><img src="" class="popupImg"></span></a></span>s. However, setting that up, especially postboard, is tricky for the opponent, making it a low concern for us. The single card, from experience, that ends up beating us is <span class="hover_img"><a href="" class="discussionA">Goblin Bushwhacker<span><img src="" class="popupImg"></span></a></span>. Giving several zombie tokens haste and one extra power in the early turns can often kill us or leave us with too few lifepoints to work with. While usually used for getting in an early <span class="hover_img"><a href="" class="discussionA">Vengevine<span><img src="" class="popupImg"></span></a></span>, <span class="hover_img"><a href="" class="discussionA">Walking Ballista<span><img src="" class="popupImg"></span></a></span> is still a problem for us.</p>
+                    <hr>
+                    <h2>Sideboarding</h2>
+                    <div class="muimage">
+                        <img src="https://i.pinimg.com/originals/3e/30/6e/3e306e7bbf42595b0e339cc1925331a3.jpg" class="muimage" alt="Rest in Peace">
+                    </div>
+                    <br>
+                    <br>
+                    <p>As mentioned above, high mana cards can get trimmed to lower our curve versus the super-aggro deck. In terms of <span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="" class="popupImg"></span></a></span>, he is best on the draw where a <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="" class="popupImg"></span></a></span> is too slow, but can be replaced or at least trimmed on the play. Speaking of <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="" class="popupImg"></span></a></span>, all graveyard hate comes in (and will often be mulliganed for). <span class="hover_img"><a href="" class="discussionA">Burrenton Forge-Tender<span><img src="" class="popupImg"></span></a></span> is weird- some builds run red removal like <span class="hover_img"><a href="" class="discussionA">Lightning Axe<span><img src="" class="popupImg"></span></a></span>, while others run red threats like <span class="hover_img"><a href="" class="discussionA">Greater Gargadon<span><img src="" class="popupImg"></span></a></span>, and some run no relevant red cards. For now, I've been bringing in 1-2 <span class="hover_img"><a href="" class="discussionA">Burrenton Forge-Tender<span><img src="" class="popupImg"></span></a></span>, as the early blocker can be nice. Anti-aggro cards like <span class="hover_img"><a href="" class="discussionA">Auriok Champion<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Kitchen Finks<span><img src="" class="popupImg"></span></a></span> are solid options here.</p>
+                    <hr>
+                    <h2>Important Interactions</h2>
+                    <div class="muimage">
+                        <img src="https://dfep0xlbws1ys.cloudfront.net/thumbs80/87/8087f27611d6ad8f77fff67d4759de5a.jpg?response-cache-control=max-age=2628000" class="muimage" alt="Bridge from Below">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="" class="discussionA">Bridge From Below<span><img src="" class="popupImg"></span></a></span>, while a scary card, can be dealt with quite easily. In fact, an upside to bringing in <span class="hover_img"><a href="" class="discussionA">Burrenton Forge-Tender<span><img src="" class="popupImg"></span></a></span>s is that they can immediately exile a <span class="hover_img"><a href="" class="discussionA">Bridge from Below<span><img src="" class="popupImg"></span></a></span> by sacrificing themselves, even if they are not technically preventing a red source. <span class="hover_img"><a href="" class="discussionA">Bridge From Below<span><img src="" class="popupImg"></span></a></span> also makes blocking interesting, as chumping/trading becomes very good versus the enchantment. </p>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+
+
+

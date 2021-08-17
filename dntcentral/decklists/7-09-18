@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>7-09-18 MTGO Decklist</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+    </head>
+    <body class="homePage">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="../modern/">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../modern/ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="../modern/splashes">Splashes</a></li>
+                            <li><a href="../modern/mulligans">Mulligan Guide</a></li>
+                            <li><a href="../modern/budget">Budget Options</a></li>
+                            <li><a href="../modern/matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>MTGO Decklist Version 1.6</h1>
+            </div>
+            <h2>List:</h2>
+            <br>
+           <div class="row decklist">
+
+                <div class="col-sm-6">
+                    <table class="table decklist table-condensed table-responsive">
+                        <tbody>
+                            <tr>
+                                <th>Creatures:</th>
+                            </tr>
+                            <tr><!-- Thraben Inspector -->
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="cellA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr><!--Arbiter-->
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=209287" class="cellA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=209287&type=card" alt="Leonin Arbiter" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<span class="hover_img"><a href="" class="cellA">Remorseful Cleric<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Remorseful+Cleric&type=card" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+                            <tr><!-- thalia -->
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=270445" class="cellA">Thalia, Guardian of Thraben<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=270445&type=card" alt="Thalia, Guardian of Thraben" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="cellA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2"> <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=407523" class="cellA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=407523&type=card" alt="Eldrazi Displacer" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2"> <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr><!-- flickerwisp -->
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="cellA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr> 
+                            <tr><!--Resto-->
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=240096" class="cellA">Restoration Angel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240096&type=card" alt="Restoration Angel" class="popupImg"></span></a></span></td>
+                                 <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8c/3.svg?version=2be20346c2303f7f6ce0bd9fb8accc10" alt="3">
+
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Spells:</th>
+                            </tr>
+                           <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=179235" class="cellA">Path to Exile<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=179235&type=card" alt="Path to Exile" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr>
+                                <th>Artifacts:</th>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="cellA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1"></td>
+                            </tr>
+                            <tr>
+                                <th>Lands:</th>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=eiganjo+castle" class="cellA">Eiganjo Castle<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=79205&type=card" alt="Eiganjo Castle" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=198312" class="cellA">Eldrazi Temple<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198312&type=card" alt="Eldrazi Temple" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=field%20of%20ruin" class="cellA">Field of Ruin<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=435415&type=card" alt="Field of Ruin" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=220371" class="cellA">Ghost Quarter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220371&type=card" alt="Ghost Quarter" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=130574" class="cellA">Horizon Canopy<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130574&type=card" alt="Horizon Canopy" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>7&emsp;<span class="hover_img"><a href="" class="cellA">Plains<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Plains&type=card" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=shefet%20dunes" class="cellA">Shefet Dunes<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=430872&type=card" alt="Shefet Dunes" class="popupImg"></span></a></span></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=197855" class="cellA">Tectonic Edge<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=197855&type=card" alt="Tectonic Edge" class="popupImg"></span></a></span></td>
+                            </tr>
+                            
+                        </tbody>
+            </table>
+            </div>
+            <!-- sideboard -->
+            <div  class="col-sm-6">
+            <table class="table table-condensed decklist table-responsive">
+                <tbody>
+                    
+                        <tr>
+                                <th>Sideboard:</th>
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382179" class="cellA">Burrenton Forge-Tender<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382179&type=card" alt="Burrenton Forge-Tender" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="" class="cellA">Auriok Champion<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Auriok+Champion&type=card" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=220589" class="cellA">Phyrexian Revoker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220589&type=card" alt="Phyrexian Revoker" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2"></td>
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=247425" class="cellA">Stony Silence<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=247425&type=card" alt="Stony Silence" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=rest%20in%20peace" class="cellA">Rest in Peace<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=277995&type=card" alt="Rest in Peace" class="popupImg"></span></a></span></td>
+                                <td>
+                                <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                        
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=136204" class="cellA">Aven Mindcensor<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=136204&type=card" alt="Aven Mindcensor" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2"> <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=230082" class="cellA">Dismember<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=230082&type=card" alt="Dismember" class="popupImg"></span></a></span></td>
+                                <td>
+                                     <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4f/BP.svg?version=4bcd19625e7bf0b6a4117ce409b30ce9" alt="phyrexian black">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4f/BP.svg?version=4bcd19625e7bf0b6a4117ce409b30ce9" alt="phyrexian black">
+
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=141976" class="cellA">Kitchen Finks<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=141976&type=card" alt="Kitchen Finks" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/2/2e/GW.svg?version=c5f88ce9b35e76197bcb6613673733a0" alt="gw">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/2/2e/GW.svg?version=c5f88ce9b35e76197bcb6613673733a0" alt="gw">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                                </td>                               
+                            </tr>
+                            <tr><!-- Gideon -->
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=401897" class="cellA">Gideon, Ally of Zendikar<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=401897&type=card" alt="Gideon, Ally of Zendikar" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=442923" class="cellA">Shalai, Voice of Plenty<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=442923&type=card" alt="Shalai, Voice of Plenty" class="popupImg"></span></a></span></td>
+                                <td>
+                                    <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8c/3.svg?version=2be20346c2303f7f6ce0bd9fb8accc10" alt="3"><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td>1&emsp;<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=83338" class="cellA">Worship<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=83338&type=card" alt="Worship" class="popupImg"></span></a></span></td>
+                                <td><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8c/3.svg?version=2be20346c2303f7f6ce0bd9fb8accc10" alt="3"><img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w"></td>
+                            </tr>
+                    
+                </tbody>
+            </table>
+            <br>
+            <h3>Changes:</h3>
+                <h5>Main Deck:</h5>
+                <p>
+                    Out:
+                    <ul>
+                        <li>2 <span class="hover_img"><a href="" class="discussionA">Phyrexian Revoker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Phyrexian+Revoker&type=card" class="popupImg"></span></a></span></li>
+                    </ul>
+                    In:
+                    <ul>
+                        <li>2 <span class="hover_img"><a href="" class="discussionA">Remorseful Cleric<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Remorseful+Cleric&type=card" class="popupImg"></span></a></span></li>
+                    </ul>
+                </p>
+                <br>
+                <h5>Sideboard:</h5>
+                <p>
+                    Out:
+                    <ul>
+                        <li>1 <span class="hover_img"><a href="" class="discussionA">Relic of Progenitus<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Relic+Of+Progenitus&type=card" class="popupImg"></span></a></span></li>
+                    </ul>
+                    In:
+                    <ul>
+                        <li>1 <span class="hover_img"><a href="" class="discussionA">Phyrexian Revoker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Phyrexian+Revoker&type=card" class="popupImg"></span></a></span></li>
+                    </ul>
+                </p>
+            </div>
+                
+            </div>
+
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+
+
+

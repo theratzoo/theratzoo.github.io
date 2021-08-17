@@ -1,0 +1,980 @@
+/* basic styles for each page*/
+
+body {
+	background-color:#222629;
+	color:white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#86C232;
+}
+
+p {
+	color:white;
+}
+
+.jumbotron {
+	background-color:#3D4347;
+    color:#86C232;
+}
+
+/* homepage quote*/
+.quote {
+	color:#6B6E70;
+	font-style:italic;
+}
+
+/*homepage mulligan game preview*/
+
+img.mgPreview {
+	/*height:160px;*/
+	height:13.3vw;
+}
+
+@media screen and (min-width:2000px) {
+	img.mgPreview {
+		height:180px;
+	}
+}
+
+h3.mgPreview {
+	padding-bottom:40px;
+	text-align:center;
+
+
+}
+
+#alertMG {
+	/*visibility:hidden;*/
+    display:none;
+
+	/*position:fixed;
+	opacity:0.5;*/
+}
+
+#dismissAlert {
+	/*fix styles*/
+	
+    font-size:16px;
+   	
+    float:right;
+    /*background:#2E9E3F;*/
+    cursor:pointer;
+    outline:none;
+    border:none;
+    width:15%;
+    max-width:50px;
+    background: url('https://i.imgur.com/6mbGE4D.png');
+    background-size:60%;
+    background-repeat:no-repeat;
+}
+
+#stopShowingAlert {
+    font-size:8px;
+}
+
+/*div.mgPreview {
+	border:1px solid white;
+	padding:50px;
+}*/
+
+.mgPA {
+	transform:rotate(315deg);
+}
+.mgPB {
+	transform:rotate(330deg);
+}
+.mgPC {
+	transform:rotate(345deg);
+}
+.mgPD {
+	transform:rotate(0deg);
+}
+.mgPE {
+	transform:rotate(15deg);
+}
+.mgPF {
+	transform:rotate(30deg);
+}
+.mgPG {
+	transform:rotate(45deg);
+}
+
+#homeBoxA p {
+	margin:0;
+	padding:0;
+}
+
+
+/*
+#homeBoxC {
+	position:absolute;
+}
+#homeBoxD {
+	position:absolute;
+}*/
+
+/* footer */
+.footH {
+	color:#6B6E70;
+	font-size:11px;
+}
+
+#footer {
+	background-color:black;
+		padding-left:20px;
+
+}
+
+#emailBar {
+    border:1px solid #000000;
+    border-right:none;
+    font-size:16px;
+    padding:10px;
+    outline: none;
+    width:40%;
+    color: black;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#emailBtn {
+    border:1px solid #000000;
+    font-size:16px;
+    padding:10px;
+    background:#f1d829;
+    cursor:pointer;
+    outline:none;
+    color:black;
+    width:12%;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    #emailBtn {
+    	font-size:calc(8px + 1.0vw);
+    	width:18%;
+
+    }
+    #emailBar {
+    	font-size:calc(8px + 1.0vw);
+    	width:50%;
+    }
+}
+
+/* navbar */
+ul.nav a {
+	color:white !important;
+}
+ul.nav a:hover {
+	color:#6B6E70 !important;
+}
+
+.navbar {
+	background-color:#474B4F !important;
+	border:none;
+}
+
+.dropdown-menu {
+    background-color:#474B4F;
+}
+
+ .dropdown-menu li > a {
+     color:white;
+}
+.dropdown-menu li > a:hover {
+    background-color:#474B4F !important;
+    color:#6B6E70 !important;
+}
+
+#active {
+    font-style:bold;
+}
+
+.dropdown-toggle:active, .open .dropdown-toggle {
+        background:#474B4F !important; 
+        color:white !important;
+ }
+
+/* card hover */
+
+.hover_img a { 
+    position:relative; 
+}
+
+.hover_img a span { 
+    position:absolute; display:none; z-index:99; 
+}
+
+.hover_img a:hover span { 
+    display:block;
+    left:50%;
+}
+
+.popupImg {
+	height:300px;
+}
+@media screen and (max-width:500px) {
+	.popupImg {
+		height:200px;
+	}
+}
+/*colors for card img links are WIP*/
+.discussionA { 
+    color:#6BE6FF;
+}
+
+.discussionA:hover {
+    color:#42a1f4;
+}
+
+/* decklists */
+
+
+
+table.decklist { /* wip! test, change colors, make unique to fit well */
+    border: none !important;
+    color:white !important;
+    font-weight:bold;
+    table-layout:fixed;
+    font-size:14px;
+}
+
+div.decklist {
+	background-color:#303438;
+	border-radius:5px;
+}
+
+td {
+	padding-left:10px !important;
+}
+
+.manaCost {
+    height:15px;
+    width:15px;
+}
+
+td, th {
+ border-style : hidden!important;
+}
+
+.previewDiv {
+	/*outline:8px black solid;*/
+	border:5px silver solid;
+	border-radius:8px;
+	width:234px;
+	height:330px;
+	background-color:black;
+	/*position:fixed; /*not a solution ... find JS way to move element down until reaches certain position*/
+	/*padding-top:50px;
+	padding can help distance image from decklist... 
+	but background/border encompases padding, so find out how to prevent it!
+	*/
+	position:sticky;
+	top:0;
+	position: -webkit-sticky;
+}
+
+#deckPreviewImg {
+	width:223px;
+	height:310px;
+}
+
+.deckImgDimensions {
+    width:223px;
+    height:310px;
+}
+
+@media screen and (max-width: 400px) {
+	.previewDiv {
+		width:117px;
+		height:165px;
+	}
+	#deckPreviewImg {
+		width:111.5px;
+		height:155px;
+	}
+
+}
+
+.previewSpace {
+	height:60px;
+	/*solution to padding problem hopefully...*/
+}
+
+/* death and choices*/
+
+.deathandchoices {
+    max-width:100%;
+}
+
+
+/* panel */
+
+.panel-format {
+    color:white;
+    background-color:#454545;
+}
+
+.panel {
+    border:1px #222629 solid;
+}
+.panel-title {
+    padding-left:50px;
+    font-size:24px;
+}
+
+.panel-body {
+    background-color:#474B4F;
+    color:white;
+    padding:10px;
+}
+
+/* format */
+
+.fImg {
+    max-width:100%
+    /*ofDIV*/
+}
+
+/* splashes */
+
+.r {
+    color:#ff0000;
+}
+
+.u {
+    color:#0099ff;
+}
+
+.b {
+    color:black;
+}
+
+.g {
+    color:#00ff00;
+}
+
+div.splashR {
+    background-color:#660000;
+    width:80% !important;
+}
+
+div.splashSectU {
+    background-color:#000066;
+    width:80% !important;
+}
+
+div.splashSectG {
+    background-color:#006600;
+    width:80% !important;
+}
+
+div.splashSectB {
+    background-color:black;
+    width:80% !important;
+}
+
+.splashCardSect {
+    font-size:18px;
+}
+/* search bar*/
+/*might want to change search bar styles... make it smaller, fit in w/ website, etc*/
+.mua:hover {
+    color:#B6E07B;
+}
+
+.mua {
+	color:#86C232;
+}
+
+.searchResult {
+    margin-left: 200px;
+}
+
+@media screen and (max-width: 500px) {
+	.searchResult {
+		margin-left:40px !important;
+	}
+}
+
+
+#searchBar {
+    border:1px solid #000000;
+    border-right:none;
+    font-size:16px;
+    padding:10px;
+    outline: none;
+    width:90%;
+    color: black;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#searchBtn {
+    border:1px solid #000000;
+    font-size:16px;
+    padding:10px;
+    background:#f1d829;
+    cursor:pointer;
+    outline:none;
+    color:black;
+    width:10%;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#searchBar:hover {
+    /*background: #f6e049;*/
+    background: #F9FF8C;
+}
+
+h3.search {
+    margin: 20px 0px 0px 0px;
+    padding: 0;
+}
+
+p.search {
+    margin:0;
+    padding:0;
+}
+
+#listTitle {
+    margin: 80px 0px 0px 0px;
+    font-size:32px;
+}
+
+
+.ssa1_img {
+    width:80%;
+    max-width:100%;
+}
+
+div.decklist h2 {
+	padding-left: 10px;
+}
+
+h2.sslist {
+	padding-left:10px;
+}
+
+/*matchup guides*/
+
+div.muimage {
+    min-width:200px;
+    max-width:900px;
+    z-index: 1;
+    position:relative;
+    margin: 0 auto;
+}
+
+img.muimage {
+
+    height:300px;
+    width:100%;
+    border:0.5px solid #000000;
+}
+
+@media screen and (max-width: 400px) {
+    img.muimage {
+        width:100%;
+        overflow:hidden;
+    }
+}
+
+/* new Matchup Guide styles (for Dredge and newer) */
+
+.headImg {
+    max-width:95%;
+}
+
+.cardImgMUG {
+    height:150px;
+}
+
+.mug-img {
+    width:100%;
+    height:100%;
+    object-fit: contain;
+
+}
+
+/* mu guide homepage*/
+
+.mu-disabled {
+    pointer-events:none;
+    color:grey !important;
+}
+
+.mu-enabled {
+    pointer-events:auto;
+    color:default;
+}
+
+/* budget (FIX!!*/
+.budgetImg {
+    height:calc(60px + 6.0vw);
+    width:calc(32px + 6.0vw);
+}
+
+/* ent */
+
+.entCards {
+    font-size:16px
+}
+
+.entImg {
+    height:calc(150px + 5.0vw);
+    width:80%;
+}
+
+.entCardImg {
+    height:300px;
+    width:225px;
+}
+
+.entPanel {
+	width:80% !important;
+}
+
+/*modern html page */
+
+.colorPanel {
+    padding-left:5px;
+}
+
+/* mull game */
+
+.hand1 {
+    height:150px;
+    width:100px;
+}
+
+.hand3 {
+    height:150px;
+    width:300px;
+}
+/* below are the W.I.P. mull game styles:*/
+
+.mullEx {
+    color:#FF2A00;
+    font-weight:bolder;
+}
+
+div.mullEx h2 {
+    color:#FF2A00;
+}
+
+div.mullEx h2 small {
+    font-style:italic;
+}
+
+.keepEx {
+    color:#00FF04;
+    font-weight:bolder;
+}
+
+div.keepEx h2 {
+    color:#00FF04;
+}
+
+
+div.keepEx h2 small {
+    font-style:italic;
+}
+
+div.ex {
+    background-color:#606060;
+    padding:15px;
+    border-radius:10px;
+}
+
+.handEx {
+    font-weight:bold;
+}
+
+.mullImg {
+    width:90%;
+    height:10%;
+    min-height:40px;
+    min-width:200px;
+    border:1px solid black;
+}
+
+.keepLabel {
+    font-size:24px;
+    font-weight:bold;
+}
+
+.mullLabel {
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nextLabel {
+    color:white;
+    /*background-color: black;*/
+    font-weight:bold;
+}
+
+.prevLabel {
+    color:white;
+    /*background-color: black;*/
+    font-weight:bold;
+}
+
+/* mg stuff releating to progress bar and such */
+
+.pb {
+    height:40px;
+    width:20px;
+    display:inline-block;
+}
+.pbDiv {
+    height:50px;
+    
+}
+#resultsDiv {
+    /*visibility:hidden;*/
+}
+.resultsh3 {
+    text-align:center;
+}
+
+/* comments in MG */
+
+.text {
+    max-height:150px;
+    width:90%;
+}
+
+
+
+
+/* BELOW: Test code for Mulligan page */
+/* Style the form */
+#regForm {
+  background-color: #606060;
+  margin: 75px auto;
+  padding: 25px;
+  width: 80%;
+  min-width: 500px;
+  /*visibility: hidden;*/
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none; 
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+#prevBtn {
+    float:left;
+    background-color: #4A4A4A;
+    border-color:#4A4A4A;
+    border-spacing: 2px;
+    height:100px;
+    font-size:35px;
+    width: 200px;
+}
+
+#nextBtn {
+    float:right;
+    background-color: #4A4A4A;
+    border-color:#4A4A4A;
+    border-spacing: 2px;
+    height:100px;
+    font-size:35px;
+    width: 200px;
+    color:white;
+}
+
+div.muimage {
+    min-width:200px;
+    max-width:900px;
+    z-index: 1;
+    position:relative;
+    margin: 0 auto;
+}
+
+img.muimage {
+
+    height:300px;
+    width:100%;
+    border:0.5px solid #000000;
+}
+
+@media screen and (max-width: 400px) {
+    img.muimage {
+        width:100%;
+        overflow:hidden;
+    }
+}
+
+img.muhome {
+	width:100%;
+	max-height:240px;
+}
+
+/* mulligan game results, WIP STYLING */
+
+h2.mmg, h3.mmg {
+	text-align:center;
+}
+
+h4.mmg {
+	padding-left: 20px;
+}
+
+img.mmg {
+	max-width:100%;
+	height: auto;
+    width: auto\9; /* ie8 */
+	/*min-width:400px;
+	min-height:40px;
+	max-height:180px;*/
+}
+
+/* mg results bar WIP*/
+
+.pb {
+    height:12px;
+    width:5px;
+    /*original H: 40; original w:20; */
+    display:inline-block;
+    border-top:0.5px solid silver;
+    border-bottom:0.5px solid silver;
+}
+.pbDiv {
+    height:50px;
+    
+}
+.pbleft {
+    border-left:0.5px solid silver;
+}
+.pbright {
+    border-right:0.5px solid silver;
+}
+
+/* Nav search bar WIP */
+ 
+#navSearchBar {
+    border:1px solid #000000;
+    border-right:none;
+    font-size:16px;
+    padding:10px;
+    outline: none;
+    width:80%;
+    color: white;
+    background-color:#303E42;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+    
+}
+
+.container-fluid {
+	padding:2%;
+}
+
+#navSearchBtn {
+    border:1px solid #000000;
+    font-size:16px;
+   	padding:10px;
+    /*background:#2E9E3F;*/
+    cursor:pointer;
+    outline:none;
+    color:white;
+    width:20%;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color:#303E42;
+    color: rgba(0, 0, 0, 0);
+
+    max-width:50px;
+
+    
+
+    background: #303E42 url('https://i.imgur.com/XsKhvlr.png');
+    background-size:100%;
+    background-repeat:no-repeat;
+    /*background-color:#303E42;
+    background-image:url("http://www.vladirom.eu/sites/all/themes/construction/images/search-icon.png");*/
+
+}
+
+.navSearchForm {
+	
+}
+
+
+#searchBar:hover {
+    /*background: #f6e049;*/
+    /*background: #F9FF8C; */
+}
+
+/* WIP nav styles */
+
+hr {
+	border-color:white;
+	background-color: white;
+}
+
+.nav-item {
+	padding:5px;
+
+}
+
+.nav-item a {
+	color:white !important;
+	font-size:14px !important;
+}
+
+.nav-item a:hover {
+	color:#6B6E70 !important;
+}
+
+.dropdown-menu li {
+	padding:5px;
+	font-size:14px !important;
+}
+
+/* misc */
+
+.vialimg {
+	max-height:200px;
+	width:80%;
+}
+
+.arbiterImg {
+	max-height:200px;
+	max-width:75%;
+}
+
+.decktech_card {
+	max-width:223px;
+	max-height:310px;
+	height:75%;
+}
+
+.manaSymbols {
+    height:35px;
+    width:35px;
+}
+
+.small {
+	color:white !important;
+}
+
+.articleImg {
+	max-width:75%;
+	padding-top:20px;
+	padding-bottom:20px;
+	/*insert better styles...*/
+}
+
+.leftCard {
+	transform:rotate(315deg);
+	max-height:200px;
+}
+
+.rightCard {
+	transform:rotate(45deg);
+	max-height:200px;
+}
+
+/*testing on spice space 2. first is for extra space between bottom and footer. 
+second is for padding formating to make card hover more readable*/
+
+.extra-space {
+	height:250px;
+}
+
+.body-div {
+	padding-left:25px;
+	padding-right:100px;
+}
+
+@media screen and (min-width: 1000px) {
+    .body-div {
+        padding-left: 40px;
+        padding-right: 160px;
+    }
+}
+
+@media screen and (max-width:500px) {
+	.body-div {
+		padding-left:20px;
+		padding-right:40px;
+	}
+}
+
+/* MTGO decklists*/
+
+.changes-padding {
+	padding-left: 25px;
+}
+
+
+/* come back to font sizes/ image sizes, panel styling, link hovering*/
+

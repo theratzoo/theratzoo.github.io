@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <title>MtG Vintage</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function loadScript() {
+
+                var x = document.getElementsByClassName("popupImg");
+                var y = document.getElementsByClassName("cardA");
+                for(var i = 0; i<x.length; i++) {
+                    var name = y[i].textContent;
+                    x[i].src = `http://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+                }
+            }
+            function previewD(name) {
+                //var x = document.getElementById(name);
+                var img = document.getElementById('deckPreviewImg');
+                switch(name) {
+                    case "Jeskai-Mentor":
+                        img.src = 'https://i.imgur.com/0H2cVOK.png';
+                        img.alt = "Jeskai-Mentor"
+                        break;
+                    case "Paradoxical-Storm":
+                        img.src = 'https://i.imgur.com/qm8kWWN.png';
+                        img.alt = "Paradoxical-Storm"
+                        break;
+                    case "Ravager-Shops":
+                        img.src = 'https://i.imgur.com/HxQsnrh.png';
+                        img.alt = "Ravager-Shops"
+                        break;
+                    case "Dredge":
+                        img.src = 'https://i.imgur.com/M1MKZpB.png';
+                        img.alt = "Dredge"
+                        break;
+                    case "Inferno-Oath":
+                        img.src = 'https://i.imgur.com/QDinEal.png';
+                        img.alt = "Inferno-Oath"
+                        break;
+                    case "Survival":
+                        img.src = 'https://i.imgur.com/kfjGjeU.png';
+                        img.alt = "Survival"
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>
+        <style>
+            #vintageHeader {
+                font-weight:bold;
+                text-shadow:2px 2px 8px #0D913E;
+            }
+            img.v {
+                max-width:90%;
+                max-height:300px;
+            }
+            div.v {
+                border:1px dotted white;
+            }
+            body {
+                background-color:#222629;
+                color:white;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                color:#86C232;
+            }
+
+            p {
+                color:white;
+            }
+
+            .jumbotron {
+                background-color:#3D4347;
+                color:#86C232;
+            }
+            
+            th {
+                border:1px solid white !important;
+            }
+            td {
+                border:1px solid white !important;
+                padding-left:10px !important;
+            }
+
+            .manaCost {
+                height:15px;
+                width:15px;
+            }
+
+            .hover_img a { 
+                position:relative; 
+            }
+
+            .hover_img a span { 
+                position:absolute; display:none; z-index:99; 
+            }
+
+            .hover_img a:hover span { 
+                display:block;
+                left:50%;
+            }
+
+            .popupImg {
+                height:300px;
+            }
+            /*colors for card img links are WIP*/
+            .discussionA { 
+                color:#6BE6FF;
+            }
+
+            .discussionA:hover {
+                color:#42a1f4;
+            }
+
+        </style>
+    </head>
+    <body onload="loadScript()">
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1 id="vintageHeader">Vintage: Magic the Gathering's Greatest Format</h1>
+            </div>
+            <br>
+            <br>
+            <img src="https://i.kinja-img.com/gawker-media/image/upload/s--zvTxKuFI--/c_scale,f_auto,fl_progressive,q_80,w_800/znbktl4i8b8929slp8cu.png" class="v" alt="Black Lotus">
+            <br>
+            <h2>About</h2>
+            <br>
+            <h3>What is "Magic the Gathering"?</h3>
+            <p>For those who don't know, <i>Magic the Gathering</i> is a collectable card game that focuses on strategy, critical thinking, and other vital skills. The game is played with two people and decks, in a best of three format. Magic the Gathering has been around for 25 years, and has a variety of different ways to play the game, the best of course is Vintage...</p>
+            <br>
+            <h3>About Vintage</h3>
+            <p>Have a passion for winning on turn one? How about playing with the game's oldest cards? Want to play with a deck that costs more than an average car? If so, Vintage is the format for you! With every card available in the game, including all the over-powered ones, the possibilities are endless! From decks that use the best cards in Magic the Gathering to decks that souly beat those decks, there are decks that akin to anyone's playstyle. Below is a list of the format's many decks:</p>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-jeskai-mentor-43580#paper" class="discussionA" onmouseover="previewD(`Jeskai-Mentor`)">Jeskai Mentor</a></li>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-paradoxical-storm-39407#paper" class="discussionA" onmouseover="previewD(`Paradoxical-Storm`)">Paradoxical Storm</a></li>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-ravager-shops-33092#paper" class="discussionA" onmouseover="previewD(`Ravager-Shops`)">Ravager Shops</a></li>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-dredge-45491#paper" class="discussionA" onmouseover="previewD(`Dredge`)">Dredge</a></li>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-inferno-oath#paper" class="discussionA" onmouseover="previewD(`Inferno-Oath`)">Inferno Oath</a></li>
+                        <li><a href="https://www.mtggoldfish.com/archetype/vintage-survival-50696#paper" class="discussionA" onmouseover="previewD(`Survival`)">Survival</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6" id="previewDeck">
+                    <img src="" id="deckPreviewImg" class="v">
+                </div>
+            </div>
+            
+            <br>
+            <p>If you think that Vintage is too intimidating for you (the cards are older than most people in this room), than try a newer format like Modern! <a href="http://www.dntcentral.com/modern">More can be found about Modern from this amazing website.</a></p>
+            <br>
+            <hr>
+            <h2>Analysis on the Decks</h2>
+            <br>
+            <h3>Paradoxical Storm</h3>
+            <br>
+            <img src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2016/12/paradoxical-outcome-500x280.png" class="v" alt="Paradoxial Outcome">
+            <br>
+            <h4>Shortened Decklist</h4>
+            <table class="table table-condensed table-responsive">
+                <tr>
+                    <th>Card Name</th>
+                    <th>Mana Cost</th>
+                    <th>Type</th>
+                    <th>Num. in Deck</th>
+                    <th>Price (USD)</th>
+                </tr>
+                <tr>
+                    <td>Ancestral Recall</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Instant</td>
+                    <td>1</td>
+                    <td>$2,800</td>
+                </tr>
+                <tr>
+                    <td>Brainstorm</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Instant</td>
+                    <td>1</td>
+                    <td>$1</td>
+                </tr>
+                <tr>
+                    <td>Ponder</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Sorcery</td>
+                    <td>1</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>Preordain</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Sorcery</td>
+                    <td>1</td>
+                    <td>$3</td>
+                </tr>
+                <tr>
+                    <td>Gitaxian Probe</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Sorcery</td>
+                    <td>1</td>
+                    <td>$1</td>
+                </tr>
+                <tr>
+                    <td>Flusterstorm</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Instant</td>
+                    <td>1</td>
+                    <td>$15</td>
+                </tr>
+                <tr>
+                    <td>Time Walk</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Sorcery</td>
+                    <td>1</td>
+                    <td>$2500</td>
+                </tr>
+                <tr>
+                    <td>Merchant Scroll</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Sorcery</td>
+                    <td>1</td>
+                    <td>$3</td>
+                </tr>
+                <tr>
+                    <td>Snapcaster Mage</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/96/1.svg?version=d7915ee1443f11de3ad34e93ec7a6646" alt="1">
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/9/9f/U.svg?version=582bb8849eadf39e7ddadef3e84dfdaf" alt="u">
+                    </td>
+                    <td>Creature</td>
+                    <td>2</td>
+                    <td>$71</td>
+                </tr>
+                <tr>
+                    <td>Monastery Mentor</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/4/4d/2.svg?version=f1b6466668fd87239a5bff3ae4231800" alt="2">
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/8e/W.svg?version=d66764f1fa820519226acde69d6c1052" alt="w">
+                    </td>
+                    <td>Creature</td>
+                    <td>1</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Blightsteel Colossus</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/8/86/11.svg?version=7bb3a8ce69745b6eb16e32c7bf2e8970" alt="11">
+                    </td>
+                    <td>Creature</td>
+                    <td>1</td>
+                    <td>$40</td>
+                </tr>
+                <tr>
+                    <td>Black Lotus</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$8,000</td>
+                </tr>
+                <tr>
+                    <td>Mox Emerald</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td>Mox Jet</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td>Mox Opal</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>4</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Mox Pearl</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td>Mox Ruby</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td>Mox Saphire</td>
+                    <td>
+                        <img class="manaCost" src="https://d1u5p3l4wpay3k.cloudfront.net/mtgsalvation_gamepedia/5/53/0.svg?version=5789a521e9a6e56efb49ec7f6a0fe51c" alt="0">
+                    </td>
+                    <td>Artifact</td>
+                    <td>1</td>
+                    <td>$2,000</td>
+                </tr>
+
+            </table>
+            <br>
+            <hr>
+            <h4>Playing the Deck</h4>
+            <!--Span tags: create hover image.-->
+            <p>The deck has many different lines of attack. For starters, the deck uses its namesake card, <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Paradoxical Outcome<span><img class="popupImg"></span></a></span>, to draw a lot of cards. Playing a plethora of zero mana artifacts that produce mana allow <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Paradoxical Outcome<span><img class="popupImg"></span></a></span> to not only draw several cards, but also <i>net</i> mana rather than cost mana. Returning the moxen and other cheap artifacts works well with the deck's primary win condition, <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Monastery Mentor<span><img class="popupImg"></span></a></span>. If the <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Paradoxical Outcome<span><img class="popupImg"></span></a></span> plan were to fail, the deck has two other combos to win. One of said combos is <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Voltaic Key<span><img class="popupImg"></span></a></span> plus <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Time Vault<span><img class="popupImg"></span></a></span>, which lets the deck take an arbitrarily large number of turns. The other combo, <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Tinker<span><img class="popupImg"></span></a></span> for <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Blightsteel Colossus<span><img class="popupImg"></span></a></span>, lets the deck win through artifact hate such as <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Null Rod<span><img class="popupImg"></span></a></span> or <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Stony Silence<span><img class="popupImg"></span></a></span> or outrace hate from Ravager Shops.</p>
+            <br>
+            <hr>
+            <h4>Notable Cards</h4>
+            <br>
+            <div class="row">
+                <div class="col-sm-4 v">
+                    <h4>Library of Alexandria</h4>
+                    <p><span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Library of Alexandria<span><img class="popupImg"></span></a></span> is the number one best card to play turn one in Vintage, assuming you did not mulligan. The land's ability <b>will</b> win the game against any fair blue deck (Jeskai Mentor, Landstill, Delver, BUG Leovold, etc.) assuming they lack a <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Wasteland<span><img class="popupImg"></span></a></span> or <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Strip Mine<span><img class="popupImg"></span></a></span>. <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Library of Alexandria<span><img class="popupImg"></span></a></span> can also help dig for answers like <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Force of Will<span><img class="popupImg"></span></a></span> against Ravager Shops or other decks with taxing effects. One note of the card: <i>do not cast a card in hand before using the land's ability if you have 7 cards in hand</i>.</p>
+                    <img src="http://img.hareruyamtg.com/img/goods/L/playmat/P0791.jpg" alt="Library of Alexandria" class="v">
+                </div>
+                <div class="col-sm-4 v">
+                    <h4>Ancestral Recall</h4>
+                    <p><span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Ancestral Recall<span><img class="popupImg"></span></a></span> is perhaps the best card in Magic the Gathering. Approaching $3,000 USD, this one mana spell is well worth its monetary value- drawing three cards for one mana is <i><b>value!</b></i> While jamming the spell is tempting, it is often best to play cantrips like <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Preordain<span><img class="popupImg"></span></a></span> before casting the <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Ancestral Recall<span><img class="popupImg"></span></a></span>, as Mental Misstep is a common card in Vintage. Also, to avoid discarding, casting <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Ancestral Recall<span><img class="popupImg"></span></a></span> on the opponent's upkeep is the correct play.</p>
+                    <img src="http://markpoole.net/files/2017/09/618043_orig-1.jpg" alt="Ancestral Recall" class="v">
+                </div>
+                <div class="col-sm-4 v">
+                    <h4>Sensei's Divining Top</h4>
+                    <p>It remains a mystery why this card is not restricted in Vintage. Have you ever played against <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Sensei's Divining Top<span><img class="popupImg"></span></a></span> in Legacy? The game takes an eternity, as 90% of players have no idea what the heck they are doing when activating the ability. Sadly, I fall in that 90% category. The only advice I can give is to tap top to draw a card, then in response either <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Paradoxical Outcome<span><img class="popupImg"></span></a></span> or <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Voltaic Key<span><img class="popupImg"></span></a></span> the <span class="hover_img"><a href="/" class="discussionA cardA" onclick="return false;">Sensei's Divining Top<span><img class="popupImg"></span></a></span>, and then tap said artifact again to draw that sweet new card. In terms of the other ability, good luck with that one. Maybe you'll learn how to use it properly after a slow play warning or two is issued...</p>
+                    <img src="https://images1.mtggoldfish.com/featured_images/2281/top_lead.JPG" alt="Sensei's Divining Top" class="v">
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h4>Gameplay</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/uFBu6K9F_UI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <br>
+            <hr>
+            <h4>Conclusion</h4>
+            <p>While there are many different decks and formats in Magic the Gathering, if you are not playing Paradoxical Storm in Vintage, you are doing something wrong. While $30,000 USD may sound like a lot to build the deck, trust me, it's worth the money. Can you win on turn one with a Subaru? No? That's what I thought...</p>
+        </div>
+    </body>
+</html>

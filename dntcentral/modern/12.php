@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Ad Nauseam</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                var x = document.getElementsByClassName("popupImg");
+                var y = document.getElementsByClassName("discussionA");
+                for(var i = 0; i<x.length; i++) {
+                    var name = y[i].textContent;
+                    y[i].href = `http://gatherer.wizards.com/Pages/Card/Details.aspx?name=${name}`
+                    x[i].src = `http://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+                }
+            }
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="./">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="splashes">Splashes</a></li>
+                            <li><a href="mulligans">Mulligan Guide</a></li>
+                            <li><a href="budget">Budget Options</a></li>
+                            <li><a href="matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>Ad Nauseam</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-1">
+
+                </div>
+
+                <div class="col-sm-9">
+                    
+                    <h2>Matchup Overview</h2>
+                    <div class="muimage">
+                        <img src="http://www.artofmtg.com/wp-content/uploads/2015/04/Ad-Nauseam-MtG-Art.jpg" class="muimage" alt="Ad Nauseam">
+                    </div>
+                    <br>
+                    <br>
+                    <p>As a combo deck, the Ad Nauseam matchup is heavily dependent on whether we draw our hate cards or not. Having a clock as well helps, especially since it takes Ad Nauseam more time than other combo decks to set up. All of that being said, the one significant edge we have in the matchup is the opponent’s deck runs almost no interaction preboard (and few in the sideboard), so once a <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> sticks, she often will stay throughout the game. Their lack of interaction coupled with the ease of disrupting them both pre and post board makes this a matchup that leans in our favor.</p>
+                    <hr>
+                    <h2>Our best cards</h2>
+                    <div class="muimage">
+                        <img src="https://i.imgur.com/xqQ7GSj.jpg" class="muimage" alt="Thalia, Guardian of Thraben">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Unsurprisingly, <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> is our number 1 pre-board card. Play her on turn 2 and your opponent is in for a world of pain. While the Ad Nauseam opponent <i>can</i> win through a <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>, they often need to play mana spells/ cantrips/ other setup spells before their combo turn, so taxing those can go a long way. In addition, <span class="hover_img"><a href="" class="discussionA">Leonin Arbiter<span><img src="" class="popupImg"></span></a></span> is pretty good here. Despite their lack of fetches, being able to strip mine them is so important, as Ad Nauseam is a combo deck that needs all the mana they can get from their lands. Otherwise, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> is nice due to its ability to disrupt our opponent in conjunction with a <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="" class="popupImg"></span></a></span>, <span class="hover_img"><a href="" class="discussionA">Restoration Angel<span><img src="" class="popupImg"></span></a></span>, or another <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span>. While not in all lists, <span class="hover_img"><a href="" class="discussionA">Phyrexian Revoker<span><img src="" class="popupImg"></span></a></span> is a hell of a card here. Early on it can turn off a <span class="hover_img"><a href="" class="discussionA">Pentad Prism<span><img src="" class="popupImg"></span></a></span> or a <span class="hover_img"><a href="" class="discussionA">Lotus Bloom<span><img src="" class="popupImg"></span></a></span>, as well as hit their <span class="hover_img"><a href="" class="discussionA">Lightning Storm<span><img src="" class="popupImg"></span></a></span> or <span class="hover_img"><a href="" class="discussionA">Simian Spirit Guide<span><img src="" class="popupImg"></span></a></span> in the later stages of the game. In Eldrazi builds, <span class="hover_img"><a href="" class="discussionA">Thought-Knot Seer<span><img src="" class="popupImg"></span></a></span> is unsurprisingly great, as taking their <span class="hover_img"><a href="" class="discussionA">Ad Nauseam<span><img src="" class="popupImg"></span></a></span> is so good.</p>
+                    <hr>
+                    <h2>Our worst cards</h2>
+                    <div class="muimage">
+                        <img src="https://static1.squarespace.com/static/592dff77e6f2e11e077a7dd4/593ec3119f7456a41ec834bd/593ec372f5e231c05246badb/1497285506956/path_exile_det01.jpg" class="muimage" alt="Path to Exile">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="" class="popupImg"></span></a></span>, as usual, is not exciting here. The main downside to the small dude is the nonbo with stony silence that comes in postboard, otherwise he is not too bad preboard. Our three drops tend to be mediocre here, especially <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="" class="popupImg"></span></a></span> and, to a lesser extent, <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="" class="popupImg"></span></a></span>. <span class="hover_img"><a href="" class="discussionA"><span>Restoration Angel<img src="" class="popupImg"></span></a></span> is tricky- while it is good with <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span>, 4 mana is a large amount against a combo deck, making her viability questionable, especially in builds with additional 4 drops like <span class="hover_img"><a href="" class="discussionA">Thought-Knot Seer<span><img src="" class="popupImg"></span></a></span>. <span class="hover_img"><a href="" class="discussionA">Path to Exile<span><img src="" class="popupImg"></span></a></span> is an interesting one- while their primary win condition is <span class="hover_img"><a href="" class="discussionA">Lightning Storm<span><img src="" class="popupImg"></span></a></span>, they can alternatively win with a <span class="hover_img"><a href="" class="discussionA">Laboratory Maniac<span><img src="" class="popupImg"></span></a></span>. D&T tends to do a fair job postboard in stopping them from going off with a <span class="hover_img"><a href="" class="discussionA">Lightning Storm<span><img src="" class="popupImg"></span></a></span> (depending on your exact 75 of course), so a <span class="hover_img"><a href="" class="discussionA">Laboratory Maniac<span><img src="" class="popupImg"></span></a></span> win is always a possibility. That being said, at the time of comboing off, they often have multiple <span class="hover_img"><a href="" class="discussionA">Pact of Negation<span><img src="" class="popupImg"></span></a></span>s in hand off of their <span class="hover_img"><a href="" class="discussionA">Ad Nauseam<span><img src="" class="popupImg"></span></a></span>, so the odds of being able to cast a removal spell before they win with <span class="hover_img"><a href="" class="discussionA">Laboratory Maniac<span><img src="" class="popupImg"></span></a></span> is very little. Therefore, as of now, I am against <span class="hover_img"><a href="" class="discussionA">Path to Exile<span><img src="" class="popupImg"></span></a></span> and other removal spells in this matchup.</p>
+                    <hr>
+                    <h2>Their best cards</h2>
+                    <div class="muimage">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/006/792/577/large/felipe-bonfim-phyrexian-unlife-final2.jpg?1501267757" class="muimage" alt="Phyrexian Unlife">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Besides the obvious (their namesake card, <span class="hover_img"><a href="" class="discussionA">Ad Nauseam<span><img src="" class="popupImg"></span></a></span>), their best cards vs us preboard are their “fogs”. <span class="hover_img"><a href="" class="discussionA">Angel's Grace<span><img src="" class="popupImg"></span></a></span> can give them that needed extra turn to assemble their resources to combo off. <span class="hover_img"><a href="" class="discussionA">Phyrexian Unlife<span><img src="" class="popupImg"></span></a></span> is usually better against us than <span class="hover_img"><a href="" class="discussionA">Angel's Grace<span><img src="" class="popupImg"></span></a></span>, as the card can on occasion buy them more than one extra turn in addition to staying in play to help them combo with <span class="hover_img"><a href="" class="discussionA">Ad Nauseam<span><img src="" class="popupImg"></span></a></span>. Postboard, their disruption is important to note, especially their board wipes, so don’t overextend too much!</p>
+                    <hr>
+                    <h2>Sideboarding</h2>
+                    <div class="muimage">
+                        <img src="https://i0.wp.com/wethenerdy.com/wp-content/uploads/2017/04/Stony-Silence-banner.jpg?fit=730%2C443" class="muimage" alt="Stony Silence">
+                    </div>
+                    <br>
+                    <br>
+                    <p>As mentioned in a prior section, <span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="" class="popupImg"></span></a></span>s, <span class="hover_img"><a href="" class="discussionA">Wall of Omen<span><img src="" class="popupImg"></span></a></span>s, and <span class="hover_img"><a href="" class="discussionA">Path to Exile<span><img src="" class="popupImg"></span></a></span>s can get cut, along with a number of low-impact three drops can get trimmed. On the draw, a <span class="hover_img"><a href="" class="discussionA">Restoration Angel<span><img src="" class="popupImg"></span></a></span> can get cut as well. In terms of cards to bring in, <span class="hover_img"><a href="" class="discussionA">Stony Silence<span><img src="" class="popupImg"></span></a></span> is great here- it shuts down their <span class="hover_img"><a href="" class="discussionA">Pentad Prism<span><img src="" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="" class="discussionA">Lotus Bloom<span><img src="" class="popupImg"></span></a></span>s. In conjunction with <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>, the opponent will often unable to amass enough mana to combo off. <span class="hover_img"><a href="" class="discussionA">Burrenton Forge-Tender<span><img src="" class="popupImg"></span></a></span> is another key card in the matchup, as it can shut off their <span class="hover_img"><a href="" class="discussionA">Lightning Storm<span><img src="" class="popupImg"></span></a></span> win (assuming they lack interaction). <span class="hover_img"><a href="" class="discussionA">Shalai, Voice of Plenty<span><img src="" class="popupImg"></span></a></span> plays the same role as <span class="hover_img"><a href="" class="discussionA">Burrenton Forge-Tender<span><img src="" class="popupImg"></span></a></span>, except as a 3/4 flier for 4 that can’t be blinked by resto. If applicable, storm hate cards like <span class="hover_img"><a href="" class="discussionA">Eidolon of Rhetoric<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Ethersworn Canonist<span><img src="" class="popupImg"></span></a></span> are good, as they need to cast at least 2 spells (both non artifact) to win without lab man. <span class="hover_img"><a href="" class="discussionA">Damping Sphere<span><img src="" class="popupImg"></span></a></span>, however, is less ideal, as its tax is rarely relevant. <span class="hover_img"><a href="" class="discussionA">Worship<span><img src="" class="popupImg"></span></a></span> is another card that can come in, as they cannot typically deal with it easily without a board wipe.</p>
+                    <hr>
+                    <h2>Important Interactions:</h2>
+                    <div class="muimage">
+                        <img src="https://cdn.pucatrade.com/cards/crops/sm/6484.jpg" class="muimage" alt="Pentad Prism">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> is king here in terms of sweet interactions- the most obvious of which is removing counters from a <span class="hover_img"><a href="" class="discussionA">Pentad Prism<span><img src="" class="popupImg"></span></a></span>. In addition, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> can kill an opponent by removing a <span class="hover_img"><a href="" class="discussionA">Phyrexian Unlife<span><img src="" class="popupImg"></span></a></span> either while they are comboing or after we bring their life total below 1. In addition, in a very rare case, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> can “counter” their <span class="hover_img"><a href="" class="discussionA">Lotus Bloom<span><img src="" class="popupImg"></span></a></span> by bringing in a <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> end of turn (or blinking a <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span>) to keep them off of their only land so when their <span class="hover_img"><a href="" class="discussionA">Lotus Bloom<span><img src="" class="popupImg"></span></a></span> comes off of suspend, they cannot cast it since it costs 1 colorless mana under <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>’s tax and wisp temporarily exiled their land(s). A less than ideal combo worth noting is <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>’s tax with <span class="hover_img"><a href="" class="discussionA">Pentad Prism<span><img src="" class="popupImg"></span></a></span>. Since sunburst only cares about the colors spent and not the CMC of the card, their <span class="hover_img"><a href="" class="discussionA">Pentad Prism<span><img src="" class="popupImg"></span></a></span> can get 3 counters if they cast it with 3 different colors under <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span>.</p>
+                    <hr>
+                </div>
+
+                <div class="col-sm-2">
+
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+
+

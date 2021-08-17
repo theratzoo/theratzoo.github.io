@@ -1,0 +1,439 @@
+<?php
+    include("../../scripts/searchscript.php");
+    include("../../scripts/cardlistdb.php");
+?>
+<?php
+    $filename = '1.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+<?php 
+    $servername = "localhost";
+    $username = "theratzoo";
+    $password = "Talia$1024";
+    $dbname = "mulliganresults";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    $sql = "SELECT choice, keepormull FROM july2018results";
+    $result = $conn->query($sql);
+    $choice1K = 0;
+    $choice2K = 0;
+    $choice3K = 0;
+    $choice4K = 0;
+    $choice5K = 0;
+    $choice6K = 0;
+    $choice7K = 0;
+    $choice8K = 0;
+    $choice9K = 0;
+    $choice10K = 0;
+    $numberOfVoters = 0;
+    while($row = $result->fetch_assoc()) {
+        if($row["keepormull"] == "Keep") {
+            switch ($row["choice"]) {
+                case "1":
+                    $choice1K++;
+                    break;
+                case "2":
+                    $choice2K++;
+                    break;
+                case "3":
+                    $choice3K++;
+                    break;
+                case "4":
+                    $choice4K++;
+                    break;
+                case "5":
+                    $choice5K++;
+                    break;
+                case "6":
+                    $choice6K++;
+                    break;
+                case "7":
+                    $choice7K++;
+                    break;
+                case "8":
+                    $choice8K++;
+                    break;
+                case "9":
+                    $choice9K++;
+                    break;
+                case "10":
+                    $choice10K++;
+                    break;
+            }
+            
+        }
+        $numberOfVoters++;
+        //echo "id: " . $row["choice"]. " - Name: " . $row["keepormull"];
+    }
+    //echo "TEST: " . $choice1K;
+    $numberOfVoters = $numberOfVoters / 10;
+    $conn->close();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern Mulligan Game- July 2018 Results</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+                setUpDate();
+                setUpNumbers();
+            }
+            function setUpDate() {
+                var d = new Date();
+                var month = new Array();
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+                var n = month[d.getMonth()];
+                document.getElementById('mgrec').innerHTML = `${n}'s Mulligan Game (Live now)`;
+            }
+            function setUpNumbers() {
+                var totalCount = <?=json_encode($numberOfVoters)?>;
+                for(var i=1; i<11; i++) {
+                    var keepCount = getKeepCount(i);
+                    var mullCount = totalCount - keepCount;
+                    var keepPercentage = 100 * (keepCount / totalCount);
+                    var mullPercentage = 100 * (mullCount / totalCount);
+                    keepPercentage = Math.round(keepPercentage);
+                    mullPercentage = Math.round(mullPercentage);
+                    document.getElementById(`mmg${i}k`).innerHTML = `${keepCount} voted Keep (${keepPercentage}%)`;
+                    document.getElementById(`mmg${i}m`).innerHTML = `${mullCount} voted Mull (${mullPercentage}%)`;
+                }
+            }
+            function getKeepCount(num) {
+                switch (num) {
+                    case 1:
+                        return <?=json_encode($choice1K)?>;
+                    case 2:
+                        return <?=json_encode($choice2K)?>;
+                    case 3:
+                        return <?=json_encode($choice3K)?>;
+                    case 4:
+                        return <?=json_encode($choice4K)?>;
+                    case 5:
+                        return <?=json_encode($choice5K)?>;
+                    case 6:
+                        return <?=json_encode($choice6K)?>;
+                    case 7:
+                        return <?=json_encode($choice7K)?>;
+                    case 8:
+                        return <?=json_encode($choice8K)?>;
+                    case 9:
+                        return <?=json_encode($choice9K)?>;
+                    case 10:
+                        return <?=json_encode($choice10K)?>;
+                }
+            }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+                <?php
+                    include(".../.../scripts/navbar.php"); 
+                ?>
+                
+                <?php
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+        <div class="container-fluid body-div" id="content">
+            <div class="jumbotron">
+                <h1>Modern Mulligan Game: July 2018 Results</h1>
+            </div>
+
+            <br>
+            <h5><a href="/decklists/1_1">Decklist</a></h5>
+            <br>
+
+            <h2 class="mmg">Hand #1:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+
+            <img src="https://i.imgur.com/pFOaQtm.png" class="mmg" alt="hand 1">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The biggest visible issue with this hand is the second Aether Vial, essentially making this hand a mulligan to 6 in most matchups. That being said, there are matchups like blue-based control where the second Aether Vial will be vital to the success of the game. It is also worth noting that, while a slow play, playing an Aether Vial on both turn 1 and two allows the hand to then get Leonin Arbiter into play with Ghost Quarter up right away. Since the hand is on the draw, there will be a few draw steps that can help fix it up as well. Overall, I'd hedge on keeping the hand; while it is on the slower side for D&T, two Aether Vials can actually be beneficial and the odds of getting a much better hand at 6 are not high enough to risk it without information on the deck you're up against. If, however, this was for certain against a faster deck, like Gifts Storm or BR Hollow One, I'd snap mulligan this hand. But alas, I'd wager for keeping the hand, albeit I can see both sides very well.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg1k"></h4>
+                    <h4 class="mmg" id="mmg1m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #2:</h2>
+            <h3 class="mmg">On the play vs. Burn</h3>
+            <img src="https://i.imgur.com/E7Rq6aU.png" class="mmg" alt="hand 2">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>This hand has cards that are both very good and very bad in the matchup. Thalia, Guardian of Thraben and Kitchen Finks are some of D&T's best cards against Burn. Inversely, Horizon Canopy is very poor here, as the lifeloss from tapping it is very relevant versus a deck full of Lava Spikes. In addition, the hand lacks a third land for the Kitchen Finks and other 3 drops in hand, so having only 2 draw steps to hit a third land is definitely dicey. Not having a turn 1 play, like an Aether Vial or Thraben Inspector is also unideal versus the fast aggressive deck. However, the upside of getting a Kitchen Finks into play, or at least a Thalia, Guardian of Thraben, outweighs the risk of never getting to a third land. All in all, I'd keep this hand.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg2k"></h4>
+                    <h4 class="mmg" id="mmg2m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #3:</h2>
+            <h3 class="mmg">On the draw vs. BR Hollow One</h3>
+            <img src="https://i.imgur.com/QFg8cve.png" class="mmg" alt="hand 3">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>What I hope for most on the draw vs. BR Hollow One, in addition to powerful spells like Rest in Peace, is removal for their early Hollow One and Gurmag Angler. Not only does this hand lack one of 5 removal spells in the deck postboard, but it also lacks a 1 drop entirely. The only reason this hand is not a snap mulligan is the Rest in Peace in hand, a card that is essential to winning the match. However, the BR Hollow One opponent can just cast Faithless Lootings into Hollow Ones through a Rest in Peace anyway, so removal spells are often necessary to backup the white enchantment. While this hand lacks said removal spells as of now, it does have powerful threats that can eventually deal with a 4/4 or a 5/5. Multiple Blade Splicer golem tokens can brickwall a Hollow One and buy enough time to find removal. All in all, I'd keep the hand, as the sheer power of Rest in Peace in the matchup outweighs the lack of explosiveness of the hand.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg3k"></h4>
+                    <h4 class="mmg" id="mmg3m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #4:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/BxXTCct.png" class="mmg" alt="hand 4">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>While the hand lacks Aether Vial or a hate bear, it does have an adequate curve of Thraben Inspector, crack the clue turn two, and then deploy a three drop with a Path to Exile as interaction. Therefore, it is a solid keep.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg4k"></h4>
+                    <h4 class="mmg" id="mmg4m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #5:</h2>
+            <h3 class="mmg">On the play vs. Dredge</h3>
+            <img src="https://i.imgur.com/bZdLK7k.png" class="mmg" alt="hand 5">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>A turn 1 and two play, plus 2 lands is generally a solid keep for D&T. However, in this matchup, this hand is very sub optimal. Assuming this is a post-board game, keeping a hand without a graveyard hate spell is not the way to win this matchup. Unless it is the D&T nuts (an Aether Vial, a mix of lands and hatebears, etc.), a 7 without graveyard hate almost always gets shipped. Dredge is a deck that, unlike other graveyard-based decks like Mardu Pyromancer or BR Hollow One, simply cannot beat an unanswered Rest in Peace or Grafdigger's Cage. In addition, as this is a 7 card hand, there is room to dig for said graveyard hate spell without too much of a cost, as the matchup is not dependent on card advantage. Overall, a 7 land hand without a graveyard hate spell or even a Thalia, Guardian of Thraben to tax their draw spells is an easy mulligan in my opinion. Even in game 1 against dredge, I'd still mulligan this hand, as it lacks our most important spells in the matchup (Thalia, Guardian of Thraben and Blade Splicer).</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg5k"></h4>
+                    <h4 class="mmg" id="mmg5m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #6:</h2>
+            <h3 class="mmg">On the draw vs. Jeskai Control</h3>
+            <img src="https://i.imgur.com/YG9qZc6.png" class="mmg" alt="hand 6">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>In my opinion, this hand may be the most difficult hand to evaluate here. The hand itself is a fine 7- not too many lands (assuming no more are drawn), two very solid creatures, especially against a 3 color spell deck, and a removal spell in case of a post-board threat. However, the problem of this hand is it is simply too slow for what it does. The first issue is the hand is all 1-for-1 cards against a deck with Snapcaster Mage and Electrolyze. Second, the hand is very susceptible to even 1-for-1 removal spells like Lightning Bolt and Path to Exile, which the Jeskai Control opponent most certainly has a surplus of. Finally, the hand can also simply lose to itself if it floods out- the 3 spells in hand are cheap to deploy, and, without Horizon Canopy, any future non-Horizon Canopy lands are essentially dead draws. D&T often does not need more than 4 mana to cast its spells well, especially for a hand with a Path to Exile and two hatebears. While drawing more land destruction lands is never a total loss against control, drawing them without creatures to pressure the opponent often lowers their impact drastically.</p>
+                    <br>
+                    <p>The upside to keeping this hand, that the opponent will be unable to answer a Thalia, Guardian of Thraben and/or a Leonin Arbiter quick enough is high, but very rare to happen. How this hand would likely play out (assuming future draws do not influence gameplay) is playing out the Thalia, Guardian of Thraben turn two, then having her killed on the endstep, then having Leonin Arbiter trade with another removal spell (or worse, a snapcaster mage) before he can strip the opponent's lands. In fact, this hand would work significantly better on the play, as a turn two Thalia, Guardian of Thraben on the play cannot be answered by an opponent until their next turn (unless they run a surprise Spell Snare). If they answer her before the next turn, Leonin Arbiter plus the Ghost Quarter can keep the opponent low on lands, and hopefully a good 2/3 drop was drawn to deploy the following turn. However, as this hand is on the draw, it cannot guarantee a smooth early game like that unless the opponent kept a hand without early interaction. One more point worth noting is that a reason not to mulligan is that, especially on the draw, card advantage is vital in this matchup. Putting everything said together, I would hedge slightly to the mulligan side, but only by a hair. </p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg6k"></h4>
+                    <h4 class="mmg" id="mmg6m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #7:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+            <img src="https://i.imgur.com/Qw2EEZ0.png" class="mmg" alt="hand 7">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>This hand does contain an Aether Vial, but it is otherwise lacking in early plays. The good news is the hand can cast its three drops, however, not doing much of anything until turn three is often too slow versus the majority of modern decks. Two drawsteps to hit a hatebear or a similar costed creature is not unreasonable, but missing on a turn two play can be devastating versus a combo or aggressive deck. All in all, I'd side with mulliganing the hand, as it is very slow and lacking in a format where turn three wins are not unreasonable.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg7k"></h4>
+                    <h4 class="mmg" id="mmg7m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #8:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/oBrbNHd.png" class="mmg" alt="hand 8">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>One land Aether Vial hands are typically tricky- some are a trap, especially when on the draw. That being said, even on the draw this hand would be acceptable, as it has multiple Aether Vials and Spell Pierce isn't a concern in the current Modern meta. I personally like this hand more than other 1 land Aether Vial hands due to it having a guaranteed turn 1 and two play (assuming no discard on the second Aether Vial). The last thing you want when keeping a 1 land Aether Vial hand is it being too slow, and this one seems to be fast enough, especially with two hatebears and two reasonable three drops. Another aspect worth noting in this hand is, if a second land is found, Eldrazi Displacer will be able to activate its ability, which further tempts this hand. Therefore, I'd feel pretty comfortable keeping this hand, especially as cheap artifact hate is not common in the first game of a match.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg8k"></h4>
+                    <h4 class="mmg" id="mmg8m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #9:</h2>
+            <h3 class="mmg">On the play vs. 5 Color Humans</h3>
+            <img src="https://i.imgur.com/DA5zSZ6.png" class="mmg" alt="hand 9">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The thing I look for the most in hands versus Humans is removal. While a painful spell, Dismember is exactly what's needed to come out ahead in this matchup, as removing an early Champion of the Parish can save tons of life. Kitchen Finks can help regain the lifepoints lost from the Dismember, while Blade Splicer can produce blockers for their ground creatures. The downside of future lands being poor draws is outweighed by the sheer power of the three spells in the matchup. In fact, keeping a hand with no two drops is perfectly fine versus Humans, as D&T's two drops are often cut or kept in as fodder. I'd keep this hand, as it really does not get much better than a removal spell plus two good blockers.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg9k"></h4>
+                    <h4 class="mmg" id="mmg9m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #10:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/NwFgaaZ.png" class="mmg" alt="hand 10">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>This hand is not much different than the first hand; two Aether Vials and a mix of creatures and lands. While it is slow, on the play it is probably fine enough versus enough matchups, especially since casting a Kitchen Finks or Blade Splicer turn 3 against aggressive decks can make up for lost tempo. I would rather keep this hand than gamble at 6, as this hand is fine enough versus enough decks (Aggro, Blue-Based Control, etc.) that it is worth keeping.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg10k"></h4>
+                    <h4 class="mmg" id="mmg10m"></h4>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <p>While the game is officially over, an archive of July's Mulligan Game is available below:</p>
+            <h2><a href="archive01">July's Mulligan Game (OLD)</a></h2>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    
+                </div>
+                <div class="col-sm-6">
+                    <h2><a href="../mulligans#mg" id="mgrec">Current Mulligan Game (Live now)</a></h2>
+                </div>
+            </div>
+            <!-- graph of submitted data- show it for each hand, percentages. Then I give my 2 cents with in-depth explanations. doesn't need to be too long-->
+            
+            <br>
+            
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+                <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script type="text/javascript" src="/loadpublishinfo.js"></script>
+    </body>
+</html>

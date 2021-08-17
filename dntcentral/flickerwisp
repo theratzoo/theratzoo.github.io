@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Flickerwisp 101</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+
+    </head>
+    <body class="homePage">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="format">Format Page</a></li>
+                                <li><a href="legacy/">Legacy</a></li>
+                                <li><a href="modern/">Modern</a></li>
+                                <li><a href="vintage">Vintage</a></li>
+                                <li><a href="commander">Commander</a></li>                           
+                                <li><a href="standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="drodown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="modern/ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="modern/splashes">Splashes</a></li>
+                            <li><a href="modern/mulligans">Mulligan Guide</a></li>
+                            <li><a href="modern/budget">Budget Options</a></li>
+                            <li><a href="modern/matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="legacy/individualcards">Legacy- Individual Cards</a></li>
+                            <li><a href="legacy/othervariants">Legacy- Other Variants</a></li>
+                            <li><a href="legacy/sideboard">Legacy- Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="spicespace/">Spice Space</a></li>
+                        <li><a href="flickerwisp" id="active">Flickerwisp</a></li>
+                        <!--<li><a href="onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>Flickerwisp</h1>
+            </div>
+
+            <!--Make a blueprint layout of the page, try and make it look nicer, than redo it -->
+            <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span>, in essence, is a  three mana 3/1 flier that dies to almost every constructed-playable removal spell. Despite the fact that it is played in formats where dying on turn three is a possibility, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> remains one of the most iconic and powerful cards in Death and Taxes. But why? The answer: versatility</p>
+
+            <img src="http://pm1.narvii.com/6121/477679ca5a4561413ce8b60026d1a13e4bcdbc2b_00.jpg" class="">
+            <h2>Interactions with our deck:</h2>
+            <br>
+            <h3 id="vial">Aether Vial:</h3>
+            <p><span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span> is very powerful in our deck: giving creatures flash can lead to numerous positive situations for us. That being said, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> benefits the most out of all the creatures in the deck for having flash. Since <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can blink <i>anything</i> (except itself), it serves a valuable role in pretty much every matchup, from saving a creature from a removal spell to stopping an attack to getting rid of a combo piece for a turn. The most important thing to note of this card is that it exile the card at the beginning of the next end step, so if you wish to blink your own <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blade+Splicer&type=card" class="popupImg"></span></a></span>/<span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thraben+Inspector&type=card" class="popupImg"></span></a></span>/<span class="hover_img"><a href="" class="discussionA">Recruiter of the Guard<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Recruiter+Of+The+Guard&type=card" class="popupImg"></span></a></span>/<span class="hover_img"><a href="" class="discussionA">Stoneforge Mystic<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Stoneforge+Mystic&type=card" class="popupImg"></span></a></span> for value, than do it on your opponent's second main phase in order for your creature to return before you untap. While that is typically a downside, the benefit of being able to blink one of your opponent's permanents on your endstep to get rid of it for the bulk of their turn outweighs said downside.</p>
+            <h3>Resetting Lands:</h3>
+            <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can also be used to blink a land in order to use the land's ability or mana later before your next turn. Blinking a plains can be used as simply as bluffing a <span class="hover_img"><a href="" class="discussionA">Swords to Plowshares<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Swords+To+Plowshares&type=card" class="popupImg"></span></a></span> or <span class="hover_img"><a href="" class="discussionA">Path to Exile<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Path+To+Exile&type=card" class="popupImg"></span></a></span>, or can help activate an ability of one of your permanents (crack a clue, active stoneforge mystic, blink a creature with e-drisplacer, etc.). Blinking a land can also be valuable in terms of using the land's ability end-step while getting a threat into play. <span class="hover_img"><a href="" class="discussionA">Wasteland<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Wasteland&type=card" class="popupImg"></span></a></span>/<span class="hover_img"><a href="" class="discussionA">Ghost Quarter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ghost+Quarter&type=card" class="popupImg"></span></a></span> end step is not too much of a loss compared to your main phase. <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can also threaten an activation of one of your nonbasics as well (Karakas being the most famous).</p>
+            <h2>Specific Cards:</h2>
+            <h3>ETB Creatures (Thraben, SFM, Splicer, Recruiter, etc.)</h3>
+            <p>Since these cards have valuable enter the battlefield (ETB)  triggers for us, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span>ing either one is a common play for the deck. For modern, thraben is better to be blinked whenever you are needing to dig for cards or value the slow cantrip over the 3/3 first striker, but blinking splicer is better in the majority of scenarios. In black-white builds with <span class="hover_img"><a href="" class="discussionA">Tidehollow Sculler<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tidehollow+Sculler&type=card" class="popupImg"></span></a></span> and TKS, both are useful to blink, especially against combo/control decks. In red splashes, it is most useful to blink a <span class="hover_img"><a href="" class="discussionA">Pia and Kiran Nalaar<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Pia+And+Kiran+Nalaar&type=card" class="popupImg"></span></a></span> rather than a <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blade+Splicer&type=card" class="popupImg"> or <span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thraben+Inspector&type=card" class="popupImg">, as the 2 1/1 fliers are much more valuable (plus more fodder to sac to pia and kiran). In legacy, recruiter is your go to blinker; in fact, many times you end up grabbing <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span>s with the recruiter to get a nice loop going. SFM can also be blinked, but is less preferred unless equipment is more valuable in the game or you lack a recruiter.</p>
+            <h3>Leonin Arbiter/Thalia, Guardian of Thraben</h3>
+            <p>These creatures are more interesting. While there is not much value in blinking either sorcery-speed, sometimes you need to do so in order to play around the tax. While it is rare that you will need to search your library in games, there are times where you need to remove <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thalia,+Guardian+Of+Thraben&type=card" class="popupImg"></span></a></span> temporarily in order to resolve that <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span> or <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Rest+In+Peace&type=card" class="popupImg"></span></a></span> while still putting your opponent under pressure with your new flier.</p>
+            <h3>Sanctum Prelate</h3>
+            <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can be used to reset <span class="hover_img"><a href="" class="discussionA">Sanctum Prelate<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Sanctum+Prelate&type=card" class="popupImg"></span></a></span>'s number. This is most useful when you acquire noncreature spells with cmc equal to the number chosen with <span class="hover_img"><a href="" class="discussionA">Sanctum Prelate<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Sanctum+Prelate&type=card" class="popupImg"></span></a></span> that are imperative to cast. However, flickering <span class="hover_img"><a href="" class="discussionA">Sanctum Prelate<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Sanctum+Prelate&type=card" class="popupImg"></span></a></span> can lead to issues due to giving your opponent an opportunity to cast those previously locked spells.</p>
+            <h3>Another Flickerwisp!</h3>
+            <p>When lacking <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> targets, <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can target another <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> in play, giving you more time to decide upon a <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> target. This also plays around the opponent untapping and casting a sorcery-speed wrath like <span class="hover_img"><a href="" class="discussionA">Supreme Verdict<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Supreme+Verdict&type=card" class="popupImg"></span></a></span> or <span class="hover_img"><a href="" class="discussionA">Toxic Deluge<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Toxic+Deluge&type=card" class="popupImg"></span></a></span>.</p>
+            <h3>Old-text exile creatures (fiend hunter, tidehollow, etc.)</h3>
+            <p>In response to their trigger, blinking them with a <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> or other blink creature makes one of the opponent's creatures/cards from hand permanently exiled. In order to do it with <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span>, you would need to flash it in with an <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span> or blink the <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> itself, as it would be in response to the creature's trigger.</p>
+            <h3>In general Interactions:</h3>
+            <p><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can also simply give one of our creatures vigilance. It can also, in rare situations, be used to reset an <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span>'s counters: mostly useful when the <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span> is at 4 counters and is needed at 3.</p>
+            <hr>
+            <h2>Interactions with opponents:</h2>
+            <p>Below is a list of simple interactions with the opponent:</p>
+            <ul>
+                <li>Kill a token</li>
+                <li>Take them off a land for their main phases (requires <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" class="popupImg"></span></a></span>)</li>
+                <li>Take them off of a blocker</li>
+                <li>Get back a stolen permanent</li>
+                <li>Remove enchantments from non-hexproof creature</li>
+                <li>Temporarily get rid of a troublesome creature that was impeding spell casting (i.e. a <span class="hover_img"><a href="" class="discussionA">Shalai, Voice of Plenty<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Shalai,+Voice+of+Plenty&type=card" class="popupImg"></span></a></span> that was giving their <span class="hover_img"><a href="" class="discussionA">Devoted Druid<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Devoted Druid&type=card" class="popupImg"></span></a></span> hexproof)</li>
+            </ul>
+            <h3>Specific card interactions with the wisp:</h3>
+            <ul>
+                <li><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can be used to kill off a <span class="hover_img"><a href="" class="discussionA">Phantasmal Image<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Phantasmal+Image&type=card" class="popupImg"></span></a></span></li>
+                <li><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can be used to stop blood moon for the bulk of the turn to allow us to activate land abilities</li>
+                <li><span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" class="popupImg"></span></a></span> can be used to attack through an <span class="hover_img"><a href="" class="discussionA">Ensnaring Bridge<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ensnaring+Bridge&type=card" class="popupImg"></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+
+

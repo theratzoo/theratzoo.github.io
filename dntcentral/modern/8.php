@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Ponza</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+    </head>
+    <body class="homePage">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="./">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="splashes">Splashes</a></li>
+                            <li><a href="mulligans">Mulligan Guide</a></li>
+                            <li><a href="budget">Budget Options</a></li>
+                            <li><a href="matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>Ponza</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-9">
+                    <h2>Overall Notes:</h2>
+                    <p>This is one of the more interesting matchups I've encountered. We can play as both the aggro and control deck in the matchup, all dependent on the speed/explosiveness of both decks' draws. Our disruption is very strong vs. the Ponza opponent, especially when we are on the play, which can favor an aggressive game. Conversely, we tend to be more on the defensive on the draw, especially when the opponent is deploying early blood braid elves and <span class="hover_img"><a href="" class="discussionA">Tireless Tracker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tireless+Tracker&type=card" class="popupImg"></span></a></span>s. That being said, sometimes the roles can reverse, as they have very powerful lategame threats, such as <span class="hover_img"><a href="" class="discussionA">Inferno Titan<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Inferno+Titan&type=card" class="popupImg"></span></a></span> and Chandra. Likewise, our deck can easily pivot from an aggressive gameplan into a more grindy, controlling mode. Overall, I've found the matchup to slightly favor us, as our <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span>s and low mana curve tends to make their land hate cards poor against us, and our taxing creatures can often prevent them from casting their more expensive hosers until too late.</p>
+                    <hr>
+                    <h2>Our best cards:</h2>
+                    <div class="muimage">
+                        <img src="https://i.imgur.com/2ms6C_d.jpg?maxwidth=640&shape=thumb&fidelity=medium" class="muimage" alt="Flickerwisp">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Our most valuable cards are often dependent on our role in the game. If we wish to play the aggressive, taxing role, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=270445" class="discussionA">Thalia, Guardian of Thraben<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=270445&type=card" alt="Thalia, Guardian of Thraben" class="popupImg"></span></a></span> and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=209287" class="discussionA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=209287&type=card" alt="Leonin Arbiter" class="popupImg"></span></a></span> are our best cards. In the controlling role, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span> serves as a powerful blocker, keeping blood braid elves at bay. In both cases, our fliers are also very powerful; <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=240096" class="discussionA">Restoration Angel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240096&type=card" alt="discussionA Angel" class="popupImg"></span></a></span> dodges <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=397722" class="discussionA">Lightning Bolt<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card" alt="Lightning Bolt" class="popupImg"></span></a></span>, while <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> can, in addition to its other roles, remove their utopia sprawl. Also, in both cases, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=179235" class="discussionA">Path to Exile<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=179235&type=card" alt="Path to Exile" class="popupImg"></span></a></span> is very important, as it serves as a removal spell for their <span class="hover_img"><a href="" class="discussionA">Tireless Tracker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tireless+Tracker&type=card" class="popupImg"></span></a></span>s, a card that will grind us out.</p>
+                    <hr>
+                    <h2>Our worst cards:</h2>
+                    <div class="muimage">
+                        <img src="http://modernnexus.com/wp-content/uploads/2016/02/Eldrazi-Displacer-art.jpg" class="muimage" alt="Eldrazi Displacer">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span> inspector does not do much in this matchup and is often either too slow or too unimpactful. <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span> is not great here either; while it is great at grinding, it also dies to <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=397722" class="discussionA">Lightning Bolt<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card" alt="Lightning Bolt" class="popupImg"></span></a></span>, so it really depends on the amount of protection available for the creature.</p>
+                    <hr>
+                    <h2>Their best cards:</h2>
+                    <div class="muimage">
+                        <img src="http://articles.mtgcardmarket.com/wp-content/uploads/2016/03/tireless-tracker-e1459451316359.jpg" class="muimage" alt="Tireless Tracker">
+                    </div>
+                    <br>
+                    <br>
+                    <p>We are most afraid of their threats, like <span class="hover_img"><a href="" class="discussionA">Tireless Tracker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tireless+Tracker&type=card" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="" class="discussionA">Inferno Titan<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Inferno+Titan&type=card" class="popupImg"></span></a></span>s. Their planeswalkers are also very good vs. us, especially when we lack the boardstate to pressure them. <span class="hover_img"><a href="" class="discussionA">Blood Moon<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blood+Moon&type=card" class="popupImg"></span></a></span> is an interesting card: while it is not great at color screwing us (so long as we are not splashing a color), it can turn off our utility lands, such as <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=130574" class="discussionA">Horizon Canopy<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130574&type=card" alt="Horizon Canopy" class="popupImg"></span></a></span> and tectonic edge, making it a powerful card nonetheless. Also, it makes <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span> and other eldrazi much worse due to our lack of colorless mana with moon in play.</p>
+                    <hr>
+                    <h2>Sideboarding Notes:</h2>
+                    <div class="muimage">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNpO0mNpzC2Aj6jbrTGj_J_Epa9w3VimApc_nO_LBzyCOnwUZF" class="muimage" alt="Gideon, Ally of Zendikar">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span> can come out, along with a small number of 3 drops, such as eldrazi displacer or <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span>. <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382179" class="discussionA">Burrenton Forge-Tender<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382179&type=card" alt="Burrenton Forge-Tender" class="popupImg"></span></a></span>s come in, as they protect our key creatures from <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=397722" class="discussionA">Lightning Bolt<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card" alt="Lightning Bolt" class="popupImg"></span></a></span>, block <span class="hover_img"><a href="" class="discussionA">Inferno Titan<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Inferno+Titan&type=card" class="popupImg"></span></a></span>s and bbes well, and can also save the team from anger of the gods. <span class="hover_img"><a href="" class="discussionA">Shalai, Voice of Plenty<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Shalai,+Voice+of+Plenty&type=card" class="popupImg"></span></a></span> giving our team hexproof makes the opponent's <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=397722" class="discussionA">Lightning Bolt<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card" alt="Lightning Bolt" class="popupImg"></span></a></span> significantly worse, as they cannot easily remove <span class="hover_img"><a href="" class="discussionA">Shalai, Voice of Plenty<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Shalai,+Voice+of+Plenty&type=card" class="popupImg"></span></a></span>. I've also enjoyed bringing in planeswalkers on the draw, as they can help grind out a game after stabilizing, but Gideon, Ally of Zendikar is often too slow and clunky on the play. Keep in mind, they are a deck with land destruction and <span class="hover_img"><a href="" class="discussionA">Blood Moon<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blood+Moon&type=card" class="popupImg"></span></a></span>, so hard casting a Gideon is difficult, especially when we have our Thalia, Guardian of Thraben in play. Otherwise, more removal for their threats can come in as well.</p>
+                    <hr>
+                    <h2>Important Interactions:</h2>
+                    <div class="muimage">
+                        <img src="http://www.numotgaming.com/wp-content/uploads/bloodmoon-690x350.jpg" class="muimage" alt="Blood Moon">
+                    </div>
+                    <br>
+                    <br>
+                    <p>As mentioned in a prior section, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> can be used to remove their <span class="hover_img"><a href="" class="discussionA">Utopia Sprawl<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Utopia+Sprawl&type=card" class="popupImg"></span></a></span>. <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> can also temporarily turn on our nonbasic lands by blinking <span class="hover_img"><a href="" class="discussionA">Blood Moon<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blood+Moon&type=card" class="popupImg"></span></a></span>, which is valuable when <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span> activations or cycling through <span class="hover_img"><a href="" class="discussionA">Horizon Canopies<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Horizon+Canopy&type=card" class="popupImg"></span></a></span> is vital to our gameplan.</p>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+

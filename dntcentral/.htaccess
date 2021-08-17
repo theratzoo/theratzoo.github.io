@@ -1,0 +1,45 @@
+DirectoryIndex home.php
+
+Options +MultiViews
+
+RewriteEngine On 
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+<IfModule mod_headers.c>
+	Header set X-XSS-Protection "1; mode=block"
+	Header always append X-Frame-Options SAMEORIGIN
+	Header set X-Content-Type-Options nosniff
+</IfModule>
+
+RewriteCond %{QUERY_STRING} PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC]
+RewriteRule .* - [F]
+
+RewriteCond %{HTTP_REFERER} !^http://dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://lukederatzou.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://lukederatzou.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://lukederatzou.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://lukederatzou.dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.lukederatzou.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.lukederatzou.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.lukederatzou.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.lukederatzou.dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://lukederatzou.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://lukederatzou.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://lukederatzou.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://lukederatzou.dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.dntcentral.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.lukederatzou.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.lukederatzou.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.lukederatzou.dntcentral.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.lukederatzou.dntcentral.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|js|css)$ - [F,NC]
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>KCI</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                var x = document.getElementsByClassName("popupImg");
+                var y = document.getElementsByClassName("discussionA");
+                for(var i = 0; i<x.length; i++) {
+                    var name = y[i].textContent;
+                    y[i].href = `http://gatherer.wizards.com/Pages/Card/Details.aspx?name=${name}`
+                    x[i].src = `http://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+                }
+            }
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="./">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="splashes">Splashes</a></li>
+                            <li><a href="mulligans">Mulligan Guide</a></li>
+                            <li><a href="budget">Budget Options</a></li>
+                            <li><a href="matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>Krark-Clan Ironworks Combo</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-9">
+                    <h2>Matchup Overview:</h2>
+                    <div class="muimage">
+                        <img src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2014/06/krark-clan-ironworks-620x280.jpg" class="muimage" alt="Krark-Clan Ironworks">
+                    </div>
+                    <br>
+                    <br>
+                    <p>KCI is both a fast combo deck and one that packs a fair amount of answers to our disruptive creatures and post board hate. On the bright side, our deck‘s disruption is very relevant vs. them, as they can often not win under a <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> and our land destruction can keep them at bay for combing. Even our removal serves a vital purpose, as they require a <span class="hover_img"><a href="" class="discussionA">Scrap Trawler<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Scrap+Trawler&type=card" class="popupImg"></span></a></span> to win the majority of games. While the matchup is still not great for us, our aggressive creatures and taxing capabilities give us a fair shot at beating the combo deck, especially post board.</p>
+                    <hr>
+                    <h2>Our best cards:</h2>
+                    <div class="muimage">
+                        <img src="https://78.media.tumblr.com/c9eca8622022b937ac22f98ce327e431/tumblr_naynqoqHuH1thxsmlo3_1280.jpg" class="muimage" alt="Phyrexian Revoker">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Since KCI is a deck with a combo finish that involves the casting of numerous non-creature spells, it comes to no surprise that <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> is at the top of our premium spells. That being said, KCI opponents pack removal for said hatebear, like pyrite spellbomb and engineered explosives, so a <span class="hover_img"><a href="" class="discussionA">Thalia, Guardian of Thraben<span><img src="" class="popupImg"></span></a></span> on her own is often not enough to stop them. Backing her up with beaters like <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blade+Splicer&type=card" class="popupImg"></span></a></span> and fliers can help get the job done. While the opponent’s deck lacks fetches, <span class="hover_img"><a href="" class="discussionA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Leonin+Arbiter&type=card" class="popupImg"></span></a></span> is still good here, as land destruction is still fine disruption. <span class="hover_img"><a href="" class="discussionA">Flickerwisp<span><img src="" class="popupImg"></span></a></span> is also good here, as pair with <span class="hover_img"><a href="" class="discussionA">Aether Vial<span><img src="" class="popupImg"></span></a></span> or another wisp it can take them off of a combo piece. <span class="hover_img"><a href="" class="discussionA">Phyrexian Revoker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Phyrexian+Revoker&type=card" class="popupImg"></span></a></span>, while not played in every build, is amazing here, as it can either keep them off of a hate artifact, tax them mana-wise, or turn off their win condition: KCI.</p>
+                    <hr>
+                    <h2>Our worst cards:</h2>
+                    <div class="muimage">
+                        <img src="https://spellsnare.files.wordpress.com/2016/07/boab85_iugh576f8ghadsd.jpg?w=620" class="muimage" alt="Wall of Omens">
+                    </div>
+                    <br>
+                    <br>
+                    <p>The cards that we want least are the ones that fail at both providing a fast clock and interacting with our opponent. <span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thraben+Inspector&type=card" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Wall of Omens<span><img src="" class="popupImg"></span></a></span> come to mind; while the card draw is nice, it is often too slow. Slower 3/4 drops are also poor, as the opponent is on a fast combo deck, like <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="" class="popupImg"></span></a></span>.</p>
+                    <hr>
+                    <h2>Their best cards:</h2>
+                    <div class="muimage">
+                        <img src="https://www.quietspeculation.com/wp-content/uploads/2016/08/arc1260_engineered-600x439.jpg" class="muimage" alt="Engineered Explosives">
+                    </div>
+                    <br>
+                    <br>
+                    <p>While their combo cards are obviously problematic for us, we are mainly concerned with their hate pieces for our hate pieces. Cards like <span class="hover_img"><a href="" class="discussionA">Pyrite Spellbomb<span><img src="" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Engineered Explosives<span><img src="" class="popupImg"></span></a></span> cleanly answer not only our hate bears, but also our pressure, buying them valuable time. <span class="hover_img"><a href="" class="discussionA">Nature's Claim<span><img src="" class="popupImg"></span></a></span> becomes especially problematic for us postboard, as they cannot combo off under a <span class="hover_img"><a href="" class="discussionA">Stony Silence<span><img src="" class="popupImg"></span></a></span>.</p>
+                    <hr>
+                    <h2>Sideboarding:</h2>
+                    <div class="muimage">
+                        <img src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/stony-silence-730x280.png" class="muimage" alt="Stony Silence">
+                    </div>
+                    <br>
+                    <br>
+                    <p><span class="hover_img"><a href="" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thraben+Inspector&type=card" class="popupImg"></span></a></span>s can be cut, along with a number of our more clunky 3 drops and sometimes a 4 drop as well. <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span> is the most cuttable 3 drop, with <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blade+Splicer&type=card" class="popupImg"></span></a></span> being next in line. <span class="hover_img"><a href="" class="discussionA">Stony Silence<span><img src="" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="" class="discussionA">Damping Sphere<span><img src="" class="popupImg"></span></a></span>s come in, as the opponent cannot win under them. Graveyard hate also prevents the opponent from winning, so <span class="hover_img"><a href="" class="discussionA">Rest in Peace<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Rest+In+Peace&type=card" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Relic of Progenitus<span><img src="" class="popupImg"></span></a></span> can come in (but not cage!). Burrentons are an interesting case: while they seem bad initially, they can act as protection for our hate bears, as the opponent often brings in a number of <span class="hover_img"><a href="" class="discussionA">Lightning Bolt<span><img src="" class="popupImg"></span></a></span>s/<span class="hover_img"><a href="" class="discussionA">Galvanic Blast<span><img src="" class="popupImg"></span></a></span>s. As of now, I would stay away from bringing them in unless you have the space, as overboarding can make our deck too clunky and slow. Otherwise, any other unmentioned hate piece is good (i.e. <span class="hover_img"><a href="" class="discussionA">Eidolon of Rhetoric<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eidolon+of+Rhetoric&type=card" class="popupImg"></span></a></span>).</p>
+                    <hr>
+                    <h2>Important Interactions:</h2>
+                    <div class="muimage">
+                        <img src="https://cdn.pucatrade.com/cards/crops/sm/14953.jpg" class="muimage" alt="Pithing Needle">
+                    </div>
+                    <br>
+                    <br>
+                    <p>Keep in mind that <span class="hover_img"><a href="" class="discussionA">Pithing Needle<span><img src="" class="popupImg"></span></a></span>, while good enough to bring in, does not turn off KCI or their mana rocks, as they are all mana abilities. <span class="hover_img"><a href="" class="discussionA">Pithing Needle<span><img src="" class="popupImg"></span></a></span>'s hits in the matchup are usually their removal spells like <span class="hover_img"><a href="" class="discussionA">Engineered Explosives<span><img src="" class="popupImg"></span></a></span>, <span class="hover_img"><a href="" class="discussionA">Pyrite Spellbomb<span><img src="" class="popupImg"></span></a></span>, and <span class="hover_img"><a href="" class="discussionA">Ghirapur Aether-Grid<span><img src="" class="popupImg"></span></a></span>. <span class="hover_img"><a href="" class="discussionA">Ethersworn Canonist<span><img src="" class="popupImg"></span></a></span> is another card that, while a great storm hater, is useless against the artifact combo deck.</p>
+                </div>
+                <div class="col-sm-2">
+                </div>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+

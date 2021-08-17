@@ -1,0 +1,386 @@
+<?php
+    include("../../scripts/searchscript.php"); //actually works
+    
+?>
+<?php
+    include("../../scripts/cardlistdb.php"); //does work
+?>
+<?php
+    $filename = 'green.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern Splashes- Green</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+            
+          function previewDeck(name) {
+            var img = document.getElementById('deckPreviewImg');
+            img.src = `https://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+            img.alt = name;
+          }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+               <?php
+                    include("../../scripts/navbar.php");
+                ?>
+                <?php
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbo-tron">
+                    <h1>Modern Splashes: Green</h1>
+                </div>
+                <p>Green-White Taxes focuses on smaller creatures that excel at killing the opponent quickly. In addition, the green splash offers a surplus of utility bears that can deal with artifacts, enchantments, and the graveyard at a low cost. Cards like Qasali Pridemage, Knight of Autumn, and Scavenging Ooze let the deck beat down quickly while stifling the opponent’s strategy. Noble Hierarch also lets the deck get away with more four drops, such as Shalai, Voice of Plenty or Linvala, Keeper of Silence. Overall, Green-White Taxes is similar to Red-White Taxes due to being more aggressive and therefore better against Control. However, it is also better against certain combo decks, like artifact-based combo decks, compared to Red-White Taxes. Green-White Taxes is weakest versus creature-heavy decks like Humans, and combo decks that do not require artifacts or enchantments, such as Gifts Storm.</p>
+            <h3>Sample Decklist</h3>
+            <div class="row">
+                <div class="col-sm-6">
+                    <table class="table decklist table-condensed table-responsive">
+                        <tbody>
+                            <tr>
+                                <th>Creatures:</th>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Noble Hierarch</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Leonin Arbiter</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Scavenging Ooze</a></td>
+                                
+                            </tr>
+             <!-- thalia --><tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Thalia, Guardian of Thraben</a></td>
+                               
+                            </tr> 
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Voice of Resurgence</a></td>
+                                
+                            </tr>
+        <!-- flickerwisp --><tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Flickerwisp</a></td>
+                                
+                            </tr> 
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Knight of Autumn</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Restoration Angel</a></td>
+                                 
+                            </tr>
+                            
+                            <tr>
+                                <th>Spells:</th>
+                            </tr>
+                                
+                           <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Path to Exile</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <th>Artifacts:</th>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Aether Vial</a></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <th>Lands:</th>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Forest</a></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Ghost Quarter</a></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Horizon Canopy</a></td>
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Plains</a></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Razorverge Thicket</a></td>
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Tectonic Edge</a></td>
+                            </tr>
+                            <tr>
+                                <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Temple Garden</a></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- sideboard -->
+            <div  class="col-sm-6">
+                <table class="table table-condensed decklist table-responsive">
+                    <tbody>
+                            <tr>
+                                <th>Sideboard:</th>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Engineered Explosives</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Auriok Champion</a></td>
+                                
+                            </tr>
+                            
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Gaddock Teeg</a></td>
+                               
+                            </tr>                            
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Rest in Peace</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Selfless Spirit</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Stony Silence</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Dismember</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Eidolon of Rhetoric</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Shalai, Voice of Plenty</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Linvala, Keeper of Silence</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Worship</a></td>
+                               
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Noble+Hierarch&type=card" id="deckPreviewImg">
+                    </div>
+              </div>
+        </div>
+        <h3>Card Analysis:</h3>
+        <div class="panel-group" id="accordion8">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectG">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">
+                            <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse1h">
+                            Noble Hierarch</a>
+                          </h3>
+                        </div>
+                        <div id="collapse1h" class="panel-collapse collapse">
+                          <div class="panel-body splashSectG">
+                              <h4>About:</h4>
+                              <p>Noble Hierarch is one of the most powerful one drops in the Modern format. Playing a mana dork in Death and Taxes lets the deck power out three and four drops a turn earlier than normal, which adds a ton of power to the deck. Not only does Noble Hierarch tap for both colors in Green-White Taxes, but she also adds extra damage to attacks with a single creature. Having relevance in the later stages of the game is what separates Noble Hierarch from other mana dorks, such as Birds of Paradise.</p>
+                              <h3>Hierarch Interactions</h3>
+                              <p>Since Noble Hierarch is a 0/1, she can attack through an Ensnaring Bridge even if the opponent is empty-handed. Because of exalted, she will be able to attack for zero and then get +1/+1 for each exalted trigger (so more Noble Hierarchs means more damage). Furthermore, with multiple Noble Hierarch triggers, attacking with one creature becomes more appealing, especially if it is a Thalia, Guardian of Thraben or a flier.</p>
+                          </div>
+                        </div>
+                      </div>
+                <img class="entImg" src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/noble-hierarch-730x280.jpg" alt="Noble Hierarch">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Noble%20Hierarch&type=card" alt="Noble Hierarch">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                     <div class="panel panel-format splashSectG">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse2h">
+                    Scavenging Ooze</a>
+                  </h3>
+                </div>
+                <div id="collapse2h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectG">
+                      <h4>About:</h4>
+                      <p>Scavenging Ooze, while initially a 2/2 bear, will grow larger than any creature on the battlefield, effectively making it an amazing attacker/blocker in the late game. Scavenging Ooze lets us chump block with weaker creatures such as Blade Splicer and Noble Hierarch and then use them as an additional life and +1/+1 counter. Additionally, Scavenging Ooze gives the deck life gain, an important feature necessary against aggressive decks such as Burn. Most importantly, Scavenging Ooze acts as main-deck graveyard hate, giving us efficient answers to a variety of graveyard synergies such as Snapcaster Mage targets, flashback spells, dredge creatures, and Bloodghasts.</p>
+                  </div>
+                </div>
+              </div>
+                <img class="entImg" src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2013/05/scavenging-ooze.jpg" alt="Scavenging Ooze">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Scavenging%20Ooze&type=card" alt="Scavenging Ooze">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectG">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse3h">
+                    Voice of Resurgence</a>
+                  </h3>
+                </div>
+                <div id="collapse3h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectG">
+                      <h4>About</h4>
+                      <p>Voice of Resurgence highly discourages the opponent from casting spells on our turn, as doing so would grant us an extra powerful creature. Since Voice of Resurgence’s token is also produced upon death of the main creature, it is very effective against decks with removal spells that only destroy creatures. Essentially, Voice of Resurgence is weaker against decks with Path to Exile. Since the token grows with each creature on Death and Taxes's battlefield, it is often correct to attack or block in a way to kill the 2/2 parent creature for no value. The main risk to quickly deploying an elemental token is that the opponent can remove it for free with a creature such as Flickerwisp or Eldrazi Displacer. Overall, Voice of Resurgence is actually quite good against the UWx control decks- while they have Path to Exile and Terminus to cleanly answer it, Voice of Resurgence stops the opponent from using counterspells like Cryptic Command effectively.</p>
+                  </div>
+                </div>
+              </div>
+                <img class="entImg" src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2013/04/voice-of-resurgence.png" alt="Voice of Resurgence">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Voice%20of%20Resurgence&type=card" alt="Voice of Resurgence">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectG">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse4h">
+                    Knight of Autumn</a>
+                  </h3>
+                </div>
+                <div id="collapse4h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectG">
+                      <h4>About</h4>
+                      <p>Knight of Autumn is one of the swiss-knife creatures in Green-White Taxes. At worst, the card is a 4/3 for three, which is alright. Any other time, it is either gaining four valuable life points against aggressive decks like Burn, or destroying an artifact/enchantment against the many decks utilizing them. The flexibility of Knight of Autumn allows it to be played in the main-deck compared to creatures such as Reclamation Sage. The creature also, unsurprisingly, works well with Flickerwisp and Restoration Angel as long as Knight of Autumn lacks the two +1/+1 counters.</p>
+                  </div>
+              </div>
+                  </div>
+                <img class="entImg" src="https://media-dominaria.cursecdn.com/attachments/169/498/636724687494964938.jpg" alt="Knight of Autumn">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Knight%20Of%20Autumn&type=card" alt="Knight of Autumn">
+                        </div>
+            </div>
+
+                </div>
+                <hr>
+        <h3>Other Green Main Deck Options</h3>
+            <ul>
+                <li> Qasali Pridemage </li>
+            </ul>
+            <hr>
+        <h3>Sideboarding 101:</h3>
+        <br>
+        <h3>When to bring green cards in:</h3>
+        <br>
+        <h4>Gaddock Teeg:</h4>
+        <p>Gaddock Teeg’s role in the sideboard is to prevent some combo and control decks from casting their strongest spells. Thus, the hate bear is brought in versus blue control decks, such as UWx Control and Blue Moon. Preventing Cryptic Command, Terminus, or even a planeswalker from being cast is very powerful- even if temporary. Gaddock Teeg is also fine against green decks that utilize Collected Company and/or Chord of Calling, as Gaddock Teeg stops both from being cast. As mentioned earlier, Gaddock Teeg is a strong option versus certain combo decks that rely on noncreature spells that cost four or more to cast. Decks such as Gifts Storm, Ad Nauseam, and Titan Shift all contain vital spells at four or more converted mana cost that, without access to them, have trouble winning the game. Unsurprisingly, Gaddock Teeg is worst against heavy creature decks. Humans, Hollow One, Dredge, and Jund all do not get affected by the hate bear.</p>
+        <h3>Other sideboard options:</h3>
+        <ul class="cardList">
+            <li> Knight of Autumn </li>
+            <li> Dromoka’s Command </li>
+        </ul>
+        <h3>Conclusion</h3>
+        <p>Overall, Green-White Taxes is a more creature centric variant of Modern Death and Taxes. Green gives the deck many options to fight a variety of decks while being able to power out strong threats to keep pace with the format. In addition, the many unique options in green lets the deck be customizable. While not featured on the list here, cards like Collected Company, Ramunap Excavator, and Knight of the Reliquary are solid options.</p>
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+                <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script type="text/javascript" src="/loadpublishinfo.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,386 @@
+<?php
+    include("../../scripts/searchscript.php"); //actually works
+    
+?>
+<?php
+    include("../../scripts/cardlistdb.php"); //does work
+?>
+<?php
+    $filename = 'red.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern Splashes- Red</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+            
+          function previewDeck(name) {
+            var img = document.getElementById('deckPreviewImg');
+            img.src = `https://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+            img.alt = name;
+          }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+               <?php
+                    include("../../scripts/navbar.php");
+                ?>
+                <?php
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbo-tron">
+                    <h1>Modern Splashes: Red</h1>
+                </div>
+                <p>Red White Death and Taxes has two distinct features that separate itself from the other splashes- its cheap, efficient creatures that serve as value-beaters, and the addition of the non-basic land hoser Magus of the Moon. The former trait skews RW lists away from a more value, controlling gameplan into one more focused on killing the opponent fast. The latter trait of the archetype gives the deck considerable power against many decks that other builds would normally struggle against- mainly Tron and Titan Shift. In fact, arguably the only reason to splash red is for Magus of the Moon, due to its nature to single-handedly win games and sometimes even matches. In addition to the Magus of the Moon, the deck is also populated with efficient creatures like Dire Fleet Daredevil and Pia Nalaar (sometimes even Pia and Kiran Nalaar) that help generate both value and beaters for the deck. The deck also plays the iconic card Lightning Bolt, which helps portray the deck's aggro-leaning plan, as Lightning Bolt can often finish low-life opponents.</p>
+                <h3>Sample Decklist</h3>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <table class="table decklist table-condensed table-responsive">
+                            <tbody>
+                                <tr>
+                                    <th>Creatures:</th>
+                                </tr>
+                                <tr><!-- Thraben Inspector -->
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Thraben Inspector</a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Dire Fleet Daredevil</a></td>
+                                   
+                                </tr>
+                                <tr><!--Arbiter-->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Leonin Arbiter</a></td>
+                                  
+                                </tr>
+                 <!-- thalia --><tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Thalia, Guardian of Thraben</a></td>
+                                   
+                                </tr> 
+                                <tr>
+                                   <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Blade Splicer</a></td>
+                                    
+                                </tr>
+                                <tr><!-- flickerwisp -->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Flickerwisp</a></td>
+                                   
+                                </tr> 
+                      <!--Pia--><tr>
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Pia Nalaar</a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Pia and Kiran Nalaar</a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Restoration Angel</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Spells:</th>
+                                </tr>
+                                    
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Lightning Bolt</a></td>
+                                    
+                                </tr>
+                               <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Path to Exile</a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <th>Artifacts:</th>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Aether Vial</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Lands:</th>
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Battlefield Forge</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Field of Ruin</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Ghost Quarter</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Inspiring Vantage</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Needle Spires</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Mountain</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Plains</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Sacred Foundry</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Slayers' Stronghold</a></td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+                <!-- sideboard -->
+                <div  class="col-sm-6">
+                <table class="table table-condensed decklist table-responsive">
+                    <tbody>
+                            <tr>
+                                <th>Sideboard:</th>
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Burrenton Forge-Tender</a></td>
+                                
+                            </tr>        
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Stony Silence</a></td>
+                              
+                            </tr>
+                            <tr>
+                                <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Rest in Peace</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Cunning Sparkmage</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Eidolon of Rhetoric</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Magus of the Moon</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Gideon, Ally of Zendikar</a></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Thraben+Inspector&type=card" id="deckPreviewImg">
+                    </div>
+                </div>
+                    
+                </div>
+
+                <h4>Card Analysis:</h4>
+                <div class="panel-group" id="accordion2">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-format splashR">
+                                <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion2" href="#collapse1b">
+                                    Dire Fleet Daredevil</a>
+                                  </h4>
+                                </div>
+                                <div id="collapse1b" class="panel-collapse collapse">
+                                  <div class="panel-body splashR">
+                                      <h4>About</h4>
+                                      <p>Dire Fleet Daredevil, red's Snapcaster Mage, gives the deck value at a low cost. The 2/1 first strike body on its own is very powerful, especially against decks with smaller creatures such as Burn, Humans, and the mirror.</p>
+                                      <h4>The Ability: Tips & Tricks</h4>
+                                      <p>First and foremost, Dire Fleet Daredevil's ability can be responded to, which can lead to blowouts. The main time this interaction pops up is playing against Snapcaster Mage decks or when the opponent has a Relic of Progenitus in play. Inversely, Dire Fleet Daredevil can be flashed in with Aether Vial to negate the opponent's Snapcaster Mage target (so long as the said target is an instant).</p>
+                                  </div>
+                                </div>
+                              </div>
+                        <img class="entImg" src="https://magic.wizards.com/sites/mtg/files/images/hero/MD20180208_icon.jpg" alt="Dire Fleet Daredevil">
+                      </div>
+                      <div class="col-sm-3">
+                        <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Dire%20Fleet%20Daredevil&type=card" alt="Dire Fleet Daredevil">
+                      </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-format splashR">
+                                <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion2" href="#collapse2b">
+                                    Pia Nalaar</a>
+                                  </h4>
+                                </div>
+                                <div id="collapse2b" class="panel-collapse collapse">
+                                  <div class="panel-body splashR">
+                                      <h4>About</h4>
+                                      <p>Pia Nalaar is essentially a two for one like Blade Splicer, as she comes with a thopter in addition to the 2/2 body. The main appeal of Pia Nalaar is with flicker creatures such as Flickerwisp and Restoration Angel. While a 1/1 is worse than a 3/3, flying is not irrelevant especially against certain creature decks. Her activated ability can also be very useful- preventing creatures from blocking can give the deck an edge against creature strategies, and having a mana sink for the late game is a nice upside as well.</p>
+                                  </div>
+                                </div>
+                              </div>
+                        <img class="entImg" src="https://pucatrade-static.s3.amazonaws.com/uploads/Pia-Nalaar-kld-Tyler-Jacobson_crop.jpg" alt="Pia Nalaar">
+                      </div>
+                      <div class="col-sm-3">
+                        <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Pia%20Nalaar&type=card" alt="Pia Nalaar">
+                      </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-format splashR">
+                                <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion2" href="#collapse3b">
+                                    Pia and Kiran Nalaar</a>
+                                  </h4>
+                                </div>
+                                <div id="collapse3b" class="panel-collapse collapse">
+                                  <div class="panel-body splashR">
+                                      <h4>About:</h4>
+                                      <p>While they are a four drop, Pia and Kiran Nalaar provide three bodies for the price of one card, making this card a bomb against creature-based decks. They can also use the thopters (or excess Aether Vials/Clues/Golems) to shoot down planeswalkers, creatures, or get the last few points of burn to close out a close game. Pia and Kiran Nalaar is also an excellent target for Flickerwisp and Restoration Angel, especially when the thopters are converted into Shocks. Sacrificing an artifact to fizzle a Cryptic Command that is trying to bounce a creature or Aether Vial is also a relevant play. While Shocking your own creature seems bad, sometimes it is necessary to stop a Cryptic Command from preventing a win.</p>
+                                  </div>
+                                </div>
+                              </div>
+                        <img class="entImg" src="https://magic.wizards.com/sites/mtg/files/images/hero/DD20150728_icon.jpg" alt="Pia and Kiran Nalaar">
+                      </div>
+                      <div class="col-sm-3">
+                        <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Pia%20And%20Kiran%20Nalaar&type=card" alt="Pia and Kiran Nalaar">
+                      </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-format splashR">
+                            <div class="panel-heading">
+                              <h4 class="panel-title">
+                                <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion2" href="#collapse4b">
+                                Lightning Bolt</a>
+                              </h4>
+                            </div>
+                            <div id="collapse4b" class="panel-collapse collapse">
+                              <div class="panel-body splashR">
+                                  <h4>About:</h4>
+                                  <p>One of Modern's most iconic cards, Lightning Bolt gives the deck a powerful, versatile spell. The ability to not only kill creatures but also finish off planeswalkers or an opponent with less than four life makes this spell an excellent inclusion in the deck. Unlike Path to Exile, Lightning Bolt does not give your opponent a basic land, giving value to removing the opponent’s mana dork on turn one. The primary downside to Lightning Bolt is its ineffectiveness at removing larger creatures that dominate the format such as Tarmogoyf, Gurmag Angler, and Thought-Knot Seer, along with bringing the creature to the graveyard rather than the exile zone, allowing it to be bought back with cards like Kolaghan's Command and Goryo's Vengeance. However, at least in Red-White Taxes, the upsides of Lightning Bolt outweigh the downsides compared to Path to Exile, making it the go-to removal spell for the deck.</p>
+                              </div>
+                          </div>
+                              </div>
+                          <img class="entImg" src="https://pm1.narvii.com/6230/b159dfac5ba1d37a9979f1531a30c57c66fc2ec1_hq.jpg" alt="Lightning Bolt">
+                      </div>
+                      <div class="col-sm-3">
+                        <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Lightning%20Bolt&type=card" alt="Lightning Bolt">
+                      </div> 
+                </div>
+                    </div>
+                    <hr>
+                <h3>Sideboarding 101</h3>
+                <br>
+                <!--<h5>When to bring red cards out:</h5>-->
+                <!--Maybe include above for each red card analysis...-->
+                <!--For below, maybe revise this to instead have it be for each tier 1/main deck OR make that into its own webpage and make this a basic section. Yeah, just include the basics here: for each red card, include when to bring it in and also have a link for where to read more details/better analysis for sideboarding (there will be a future page with DEEP sideboarding for each version/splash-->
+                <h3>When to bring Red Cards in</h3>
+                <br>
+                <h4>Magus of the Moon</h4>
+                <p>Magus of the Moon is a very powerful, game-winning card that punishes decks that rely on nonbasic lands. Magus of the Moon is at its best versus four/five color decks, such as Humans, Suicide Zoo, and other decks minimizing their basic land count. Magus of the Moon is also excellent against decks that require their nonbasic lands to enact their gameplan. Decks like Titan Shift and Tron struggle to beat a Magus of the Moon. Magus of the Moon is, unsurprisingly, bad against decks that are three or fewer colors, such as Blue Control, Jund, and most aggro decks. While there are times that a Magus of the Moon can lock out a Jund player from casting spells, the majority of the time it is only a three-mana 2/2 that eats a Lightning Bolt at best. While Magus of the Moon is generally a hit-or-miss card, there are certainly metas that want him in the main deck.</p>
+                <h4>Cunning Sparkmage</h4>
+                <p>Cunning Sparkmage is best against creature decks with a plethora of one toughness creatures. Humans, Elves, the mirror, and Affinity are all decks where Cunning Sparkmage is boarded in. Collected Company lists are tricky- while Cunning Sparkmage is a great way to deal with the opponent’s mana dorks, at that point in the game the mana dorks had already done their job. However, Cunning Sparkmage is a way to disrupt the Devoted Druid combo, as it kills a Vizier of Remedies or a Devoted Druid with a -1/-1 counter. Therefore, Cunning Sparkmage is only worth bringing in against Devoted Druid combo, but not other Collected Company decks. Mardu Pyromancer is another deck where Cunning Sparkmage is alright against. While it can kill a Young Pyromancer to get value, if the board lacks a Young Pyromancer, it often does not give much value. Killing a fourth of a Lingering Souls is not exciting, especially at three mana. Unsurprisingly, Cunning Sparkmage is not boarded in against decks lacking one-toughness creatures, such as Blue Control, Jund, BR Hollow One, Burn, and the majority of combo decks. While it can finish off a planeswalker or opponent at one, the decks where this is relevant are not ones where Cunning Sparkmage gets boarded in against. </p>
+                <h3>Other Sideboard Options</h3>
+                <ul class="cardList">
+                    <li> Lightning Bolt number 4</li>
+                    <li> Wear // Tear </li>
+                    <li> Chandra, Torch of Defiance </li>
+                    <li> Lightning Helix </li>
+                </ul>
+                <br>
+                <!--<h4>Pros/Cons</h4>-->
+                <h3>Conclusion</h3>
+                <p>Red-White Taxes is best when a large number of decks are slower such as Blue Control, or decks that rely on nonbasic lands such as Tron and Titan Shift. Red-White Taxes is also a fine choice against aggressive decks, as its creatures and removal suite can handle many of the faster strategies in modern. However, RW Taxes is at its worst against combo decks, like Gifts Storm, Ad Nauseam, and Grishoalbrand. Red-White Taxes is best for those who enjoy a more aggressive variant of Death and Taxes or love to lock players out with Magus of the Moon.</p>
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+                <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script type="text/javascript" src="/loadpublishinfo.js"></script>
+    </body>
+</html>
+

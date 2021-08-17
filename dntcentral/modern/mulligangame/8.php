@@ -1,0 +1,444 @@
+<?php
+    include("../../scripts/searchscript.php");
+    include("../../scripts/cardlistdb.php");
+?>
+<?php
+    $filename = '8.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+<?php 
+    $servername = "localhost";
+    $username = "theratzoo";
+    $password = "Talia$1024";
+    $dbname = "mulliganresults";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    $sql = "SELECT choice, keepormull FROM february2019results";
+    $result = $conn->query($sql);
+    $choice1K = 0;
+    $choice2K = 0;
+    $choice3K = 0;
+    $choice4K = 0;
+    $choice5K = 0;
+    $choice6K = 0;
+    $choice7K = 0;
+    $choice8K = 0;
+    $choice9K = 0;
+    $choice10K = 0;
+    $numberOfVoters = 0;
+    while($row = $result->fetch_assoc()) {
+        if($row["keepormull"] == "Keep") {
+            switch ($row["choice"]) {
+                case "1":
+                    $choice1K++;
+                    break;
+                case "2":
+                    $choice2K++;
+                    break;
+                case "3":
+                    $choice3K++;
+                    break;
+                case "4":
+                    $choice4K++;
+                    break;
+                case "5":
+                    $choice5K++;
+                    break;
+                case "6":
+                    $choice6K++;
+                    break;
+                case "7":
+                    $choice7K++;
+                    break;
+                case "8":
+                    $choice8K++;
+                    break;
+                case "9":
+                    $choice9K++;
+                    break;
+                case "10":
+                    $choice10K++;
+                    break;
+            }
+            $numberOfVoters++;
+        } else if($row["keepormull"] == "Mull") {
+            $numberOfVoters++;
+        }
+        /*if($row["comment"] != "") {
+            $numberOfVoters--;
+        } else {
+            echo $row["comment"];
+        }*/
+        
+        //echo "id: " . $row["choice"]. " - Name: " . $row["keepormull"];
+    }
+    //echo "TEST: " . $choice1K;
+    //$numberOfVoters += 2; //missing 4 and 7 cuz comments glitched for some weird reason
+    $numberOfVoters = $numberOfVoters / 10;
+    $conn->close();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern Mulligan Game- February 2019 Results</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+               
+                setUpDate();
+                setUpNumbers();
+            }
+            function setUpDate() {
+                var d = new Date();
+                var month = new Array();
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+                var n = month[d.getMonth()];
+                document.getElementById('mgrec').innerHTML = `${n}'s Mulligan Game (Live now)`;
+            }
+            function setUpNumbers() {
+                var totalCount = <?=json_encode($numberOfVoters)?>;
+                for(var i=1; i<10; i++) {
+                    var keepCount = getKeepCount(i);
+                    var mullCount = totalCount - keepCount;
+                    var keepPercentage = 100 * (keepCount / totalCount);
+                    var mullPercentage = 100 * (mullCount / totalCount);
+                    keepPercentage = Math.round(keepPercentage);
+                    mullPercentage = Math.round(mullPercentage);
+                    document.getElementById(`mmg${i}k`).innerHTML = `${keepCount} voted Keep (${keepPercentage}%)`;
+                    document.getElementById(`mmg${i}m`).innerHTML = `${mullCount} voted Mull (${mullPercentage}%)`;
+                }
+            }
+            function getKeepCount(num) {
+                switch (num) {
+                    case 1:
+                        return <?=json_encode($choice1K)?>;
+                    case 2:
+                        return <?=json_encode($choice2K)?>;
+                    case 3:
+                        return <?=json_encode($choice3K)?>;
+                    case 4:
+                        return <?=json_encode($choice4K)?>;
+                    case 5:
+                        return <?=json_encode($choice5K)?>;
+                    case 6:
+                        return <?=json_encode($choice6K)?>;
+                    case 7:
+                        return <?=json_encode($choice7K)?>;
+                    case 8:
+                        return <?=json_encode($choice8K)?>;
+                    case 9:
+                        return <?=json_encode($choice9K)?>;
+                    case 10:
+                        return <?=json_encode($choice10K)?>;
+                }
+            }
+            
+           
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+                <?php
+                    include("../../scripts/navbar.php");
+                ?>
+                <?php
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbo-tron">
+                    <h1>Modern Mulligan Game: February 2019 Results</h1>
+                </div>
+            
+                <br>
+            <h5><a href="/decklists/2_5">Decklist</a></h5>
+            <br>
+
+                <h2 class="mmg">Hand #1:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+
+            <img src="https://i.imgur.com/DgygZ6J.png" class="mmg" alt="hand 1">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is an excellent seven for Eldrazi and Taxes. A turn one Aether Vial is great, despite being on the draw. Thalia, Guardian of Thraben and Phyrexian Revoker provide disruption, while Blade Splicer and Thought-Knot Seer are strong threats for later turns. While there are certain matchups where this hand is not good enough (like decks where Rest in Peace is necessary), it is correct to keep it in the dark for sure. A balance of lands and creatures of varying costs alongside one Aether Vial is above average for any Death and Taxes build.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg1k"></h4>
+                    <h4 class="mmg" id="mmg1m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #2:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+            <img src="https://i.imgur.com/keKy2wm.png" class="mmg" alt="hand 2">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is quite similar to the prior one. It contains Aether Vial along with a balance of creatures and lands. That being said, this hand does not contain a hate bear. Instead, a Path to Exile acts as interaction. In the current Modern meta, having access to removal is very important, giving this hand an edge. While the curve is rougher than the other hand, being on the draw gives several opportunities to hit a two drop. Just like the last hand, I might not keep it in certain matchups like Burn, but in the dark, it is a very strong seven.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg2k"></h4>
+                    <h4 class="mmg" id="mmg2m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #3:</h2>
+            <h3 class="mmg">On the draw vs. Kiki Chord</h3>
+            <img src="https://i.imgur.com/p1a7u4S.png" class="mmg" alt="hand 3">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand has a lot to look at. On the positive side, one Aether Vial is exactly what you want to see in any Aether Vial deck's opening hand. In addition, Dismember is a valuable tool to have against the creature combo deck. However, this hand has four lands and only one creature. That one creature, Flickerwisp, is not very good on its own. While the land situation looks rough, two Horizon Canopies are among the mana base. Horizon Canopy plus Aether Vial is a nice interaction, as cycling a Horizon Canopy early does not slow you down much with Aether Vial bringing in creatures. The hand is definitely risky, but I would hedge toward keeping it. Turn one Aether Vial and a removal spell feels good enough, and having two of the four lands cycle mitigates the risk of flooding.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg3k"></h4>
+                    <h4 class="mmg" id="mmg3m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #4:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/Cyrseyv.png" class="mmg" alt="hand 4">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is the type of hand that I hate to see. Many powerful creatures are present, plus Leonin Arbiter and Ghost Quarter are together. However, the lack of Aether Vial coupled with only two lands makes the mana count very risky. Since the hand is on the play, the player would have to hit a land within the top two cards. While the odds not bad, the downside of missing a land is huge. Modern is a format where stumbling on mana, especially for a fair deck like Eldrazi and Taxes, is a ticket to failure. Furthermore, even if this hand hits a land, it still is underwhelming. Flickerwisp does not do much at first, and cannot be cast cleanly if the land is a Ghost Quarter. If the land is an Eldrazi Temple, however, the hand will work out fine. Again, the odds of the hand "getting there" is fine, but a third land does not do too much, whereas missing the land makes the hand too slow. Therefore, the risk outweighs the benefit, so I would look for a safer hand at six.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg4k"></h4>
+                    <h4 class="mmg" id="mmg4m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #5:</h2>
+            <h3 class="mmg">On the draw vs. Humans</h3>
+            <img src="https://i.imgur.com/5Qkhy3U.png" class="mmg" alt="hand 5">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is very slow for a fast matchup. The hand does not do anything until turn three, which is generally too slow when on the draw versus Humans. Mulliganing to five is generally not a winning proposition, but that does not mean you should keep hands like this. In order for this hand to "work", you would need to find one or two removal spells within the first two cards, or else they will win too quickly. Worship would almost certainly be too slow, as Humans gets access to Dismember in addition to their Reflector Mages to get rid of the one creature you will have on turn three. Therefore, because of the lack of interaction and early plays, the above hand would be a mulligan for me. I understand the arguments that going to five is bad against Humans and that finding a good number of interaction/meaningful early plays is difficult, but I do not see how this hand can win on the draw.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg5k"></h4>
+                    <h4 class="mmg" id="mmg5m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #6:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+            <img src="https://i.imgur.com/1oB3p9t.png" class="mmg" alt="hand 6">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>Once again, we are presented with a hand that requires a specific card to "get there". In this case, any white source is needed within the first two cards. An Aether Vial as the first card found will also work fine. The main problem with this hand is that it has too many four drops and too few lands. In order to cast the four drops, two lands are needed within the first four cards. One Eldrazi Temple would also help this hand significantly. While these situations make the hand solid, there are several other cases where the hand misses the necessary lands. Even if it hits two Plains, the hand is very slow as it is. As mentioned in a prior hand, the risk of missing lands is game-losing. Therefore, I would mulligan this hand in search of a safer six.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg6k"></h4>
+                    <h4 class="mmg" id="mmg6m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #7:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/4STe6U7.png" class="mmg" alt="hand 7">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is not an ideal six. Four lands, none of which are Horizon Canopy, is not what you want in an Eldrazi and Taxes hand. In addition, as the hand is on the play, the odds of drawing into the right spells are not very high. All that being said, the hand has high potential. Leonin Arbiter plus Ghost Quarter is great versus many decks, and Eldrazi Displacer can help slow down creature decks. Since two of the lands are utility lands, the hand still has relevance after the creatures are deployed. Going to five may yield a better hand, but the odds are not very high. The only five card hand that would be better than this one in the dark is one with three low costed spells and two lands, or one land and an Aether Vial. The risk of going to five is not worth it in this case, as there are many games where Leonin Arbiter plus land destruction will win the game. Therefore, I would keep this six card hand, despite it being heavy on the land count.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg7k"></h4>
+                    <h4 class="mmg" id="mmg7m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #8:</h2>
+            <h3 class="mmg">On the draw vs. Golgari Midrange</h3>
+            <img src="https://i.imgur.com/futNRSs.png" class="mmg" alt="hand 8">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is not amazing in this matchup. Leonin Arbiter is alright in this matchup, but you really want a Ghost Quarter or two to make them worthwhile. Flickerwisp is also not amazing without an Aether Vial or Blade Splicer. Rest in Peace is fine, especially as an answer to Tarmogoyf which this hand otherwise cannot beat. While the hand is weak, Golgari Midrange is a deck that punishes opponents that mulligan. Thoughtseize and Inquisition of Kozilek get much better when played against a six card hand. Both of those spells are already good against the above hand, but not to the point that it is not keepable. I personally would keep the hand because of the discard spells, but I think that it is close enough that mulliganing is a fine option as well.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg8k"></h4>
+                    <h4 class="mmg" id="mmg8m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #9:</h2>
+            <h3 class="mmg">On the play vs. unknown deck</h3>
+            <img src="https://i.imgur.com/lEo6iD0.png" class="mmg" alt="hand 9">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is great against a few Modern decks. Two Path to Exiles is exactly what you want against creature decks such as Humans and Bant Spirits. That being said, the lack of lands or Aether Vials make the hand too risky. Since the hand is on the play, a land would have to be the top card in order to cast one of the creatures in the hand. For the hand to actually "get there", two lands in a row must be hit. The odds of that happening are not great, so I would have to mulligan this hand.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg9k"></h4>
+                    <h4 class="mmg" id="mmg9m"></h4>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <h2 class="mmg">Hand #10:</h2>
+            <h3 class="mmg">On the draw vs. unknown deck</h3>
+            <img src="https://i.imgur.com/gOqBTia.png" class="mmg" alt="hand 10">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3 class="mmg">Analysis:</h3>
+                    <p>The above hand is not great in terms of its curve. No Path to Exile or two drop is awkward, but Aether Vial is a great turn one play. In addition, having access to a scry plus drawing first increases the odds of hitting an earlier play. Keep in mind that, because of the two Eldrazi Temples, a turn two Thought-Knot Seer is a real possibility. Similar to the prior six card hand, there is certainly a five card hand better than this. However, the odds of finding that hand is not worth the risk. I like this hand more than it looks, as the two Eldrazi Temples give the hand lots of outs for hitting a turn two play. Thalia, Guardian of Thraben, Phyrexian Revoker, Leonin Arbiter, Path to Exile, Eldrazi Displacer, and Thought-Knot Seer are all castable on turn two with the above hand. Therefore, I would feel confident in keeping this six card hand, even if it looks rough.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3 class="mmg">Community's Response:</h3>
+                    <br>
+                    <h4 class="mmg" id="mmg10k"></h4>
+                    <h4 class="mmg" id="mmg10m"></h4>
+                </div>
+            </div>
+            <br>
+            <br>
+            <p>While the game is officially over, an archive of February's Mulligan Game is available below:</p>
+            <h2><a href="archive08">February's Mulligan Game (OLD)</a></h2>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2><a href="7">Previous Mulligan Game Analysis</a></h2>
+                </div>
+                <div class="col-sm-6">
+                    <h2><a href="../mulligans#mg" id="mgrec">Current Mulligan Game (Live now)</a></h2>
+                </div>
+            </div>
+
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+                <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script type="text/javascript" src="/loadpublishinfo.js"></script>
+    </body>
+</html>
+
+

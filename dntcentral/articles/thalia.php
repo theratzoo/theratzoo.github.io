@@ -1,0 +1,190 @@
+<?php
+    include("../scripts/searchscript.php"); //actually works
+    
+?>
+<?php
+    include("../scripts/cardlistdb.php"); //does work
+?>
+<?php
+    $filename = 'thalia.php';
+    $lastModDate = date ("F d Y H:i:s.", filemtime($filename));
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Thalia, Guardian of Thraben 101</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+            
+        </script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+                <?php
+                    include("../scripts/navbar.php"); 
+                ?>
+                <?php
+                
+                if(!isset($q)) {
+                    echo '';
+                } else {
+                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
+                    $num_rows = mysqli_num_rows($query);
+
+                    /*
+                    if $num_rows == 1 {
+                        //go directly to page
+                    } else {
+
+                        //go to search page w/ results
+                    }
+                    */
+                    $resultss = 'results';
+                    if($num_rows == 1) {
+                        $resultss = 'result';
+                    }
+                    ?>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    <?php
+                    
+
+                    while($row = mysqli_fetch_array($query)) {
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $text = $row['description'];
+                        $link = $row['link'];
+                        //instead of $id for the link, try doing the title...
+                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
+                    }
+                }
+                
+            ?>
+            <div class="container-fluid body-div" id="content">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="jumbo-tron">
+                    <h1>Thalia, Guardian of Thraben 101</h1>
+                </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="https://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/daily/stf/stf187_tha.jpg" class="vialimg" alt="Thalia">
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/2df9363a-3023-48fa-8cba-35e28ae2dd85/d8rvde6-2479cc0b-a599-4aa0-a6ae-1311565b3486.jpg/v1/fill/w_1046,h_764,q_70,strp/thalia__guardian_of_thraben_by_steveargyle_d8rvde6-pre.jpg" class="vialimg" alt="Thalia">
+                    </div>
+                </div>
+                
+                <br>
+                <h2>General Tips & Tricks</h2>
+                <p>Thalia, Guardian of Thraben is one of Death and Taxes's most iconic cards. For only two mana, she is a 2/1 first striker that makes all noncreature spells cost one more. In Modern, Legacy, and Vintage (where Thalia, Guardian of Thraben is legal), many of the decks in the format rely on noncreature spells. In Modern, combo decks, control decks, and aggressive decks like Burn have a plethora of noncraeture spells that get taxed by Thalia, Guardian of Thraben. All in all, Thalia, Guardian of Thraben is the most powerful hatebear available, seen in Death and Taxes decks in any format she is legal in.</p>
+                <br>
+                <h3>Slight Drawbacks</h3> 
+                <p>While Death and Taxes decks primarily consist of creatures, there are a few noncreature spells present that get taxed by Thalia, Guardian of Thraben's ability. In the maindeck, often only Path to Exile and Aether Vial are taxed by Thalia, Guardian of Thraben, but there are many spells prone to her tax in the sideboard. While it may seem feeble, I've had games where Thalia, Guardian of Thraben's tax prevented me from effeciently casting a Stony Silence, Rest in Peace, or Gideon, Ally of Zendikar before. Therefore, it is important to be conscious of what spells you put in your Death and Taxes sideboard, especially when it comes to three-four mana noncreature spells.</p>
+                <br>
+                <p>Another case where Thalia, Guardian of Thraben's tax can be harmful is in specifically UW Taxes builds with Lavinia, Azorius Renegade. Her taxing ability to prevent spells that were played for free from being cast does not work with noncreature spells when Thalia, Guardian of Thraben is in play. Since the opponent pays Thalia, Guardian of Thraben's tax to cast their, for example, Mox Opal, they did not cast the spell for free- invalidating Lavinia, Azorius Renegade's ability. That being said, both creatures are still very powerful and are found in the same deck.</p>
+
+
+                <br>
+                <h3>When to deploy Thalia, Guardian of Thraben</h3>
+                <p>The majority of the time, it is correct to simply play Thalia, Guardian of Thraben on turn two if possible. Most Modern decks consist of one mana noncreature spells, so taxing them as soon as possible is a good strategy. Against decks that particularly struggle to beat a resolved Thalia, Guardian of Thraben (such as Gifts Storm or Ad Nauseam combo), waiting a turn or two to deploy her in order to leave up a way to protect her, like a Restoration Angel or Eldrazi Displacer activation, is correct. It is also worth noting that, unlike Leonin Arbiter, you cannot really "get" people by Aether Vialing in a Thalia, Guardian of Thraben. More often than not, it is best to Aether Vial in Thalia, Guardian of Thraben on your turn, so the opponent's noncreature spells are taxed before they already cast them.</p>
+                <br>
+                <h3>When to NOT to deploy Thalia, Guardian of Thraben</h3>
+                <p>As mentioned in the earlier section on drawbacks with Thalia, Guardian of Thraben, there are times where she can prevent you from casting a more expensive noncreature spell. Thalia, Guardian of Thraben's tax is typically not an issue preboard, as Death and Taxes builds very rarely have noncreature spells costing more than one mana. However, in the sideboard, most decks have several noncreature spells costing two or more mana. In games where you need to resolve one of these more expensive spells, such as a Gideon, Ally of Zendikar or Worship, holding onto Thalia, Guardian of Thraben is the right play. Essentially, it is important to plan ahead before just casting Thalia, Guardian of Thraben when your deck is populated with more expensive noncreature spells.</p>
+                <br>
+                <hr>
+                <h2>Advanced Strategies</h2>
+                <br>
+                <h3>Thalia's First Strike Ability</h3>
+                <p>One aspect of Thalia, Guardian of Thraben that is often overlooked is the fact that she has first strike. The obvious benefit is that she can favorably block a two or less toughness creature, such as Snapcaster Mage, Goblin Guide, or Bloodghast. However, there is an important synergy that cannot be forgotten- blocking with multiple first strike creatures. Blade Splicer plus Thalia, Guardian of Thraben favorably blocks almost every ground creature in Modern, from Gurmag Angler to a medium sized Thalia's Lieutenant. Therefore, there are times where it is correct to Aether Vial in Thalia, Guardian of Thraben at instant speed, to eat one of the opponent's creatures.</p>
+                <br>
+                <h3>Countering a Spell</h3>
+                <p>This interaction is very rare, but when it happens it is very satisfying. There are two scenarios where Thalia, Guardian of Thraben's tax can essentially counter a noncreature spell. The first case is if the opponent suspends a spell, such as a Rift Bolt, and the Death and Taxes player manages to keep them off of mana the turn that the spell comes off of suspend. If that is done, and there is a Thalia, Guardian of Thraben in play, the spell will fizzle. After a suspended spell has its last time counter removed, it is then cast, so it would cost one mana if it is a noncreature spell and Thalia, Guardian of Thraben is in play. Keeping the opponent off of mana is usually done by either Leonin Arbiter plus Ghost Quarter, Flickerwisping lands, or a combination of both.</p>
+                <p>The second case comes from cascade. If, for example, the opponent casts a Blood Braid Elf without extra mana, they will be unable to cast a noncreature spell found off of the elf if Thalia, Guardian of Thraben is in play. The reason is that, just like with suspend, the spell is being cast, so Thalia, Guardian of Thraben's tax will apply. This play is most common against Living End decks, as their strategy revolves around using cascade spells to find a Living End after cycling several large creatures. With a Thalia, Guardian of Thraben in play, they are forced to accumulate five mana before they can resolve their Living End (assuming they are casting it off of a cascade spell and not off of suspend, as the suspend cost is not affected by Thalia, Guardian of Thraben's tax).</p>
+                <br>
+                <h3>The Sunburst Problem</h3>
+                <p>There is one specific case where Thalia, Guardian of Thraben's tax does not always hinder noncreature spells. Any card with the Sunburst mechanic can actually be improved by a Thalia, Guardian of Thraben tax. The most popular Sunburst spells in Modern as of now are Engineered Explosives and Pentad Prism. The former is unaffacted by Thalia, Guardian of Thraben's tax. For example, if the opponent has a Mountain and Forest in play, and wishes to cast Engineered Explosives for x=2, they would simply declare that x equaled two and spend a red and green mana to cast it. If Thalia, Guardian of Thraben was in play then they would instead declare x to equal one, and still spend a red and green mana to cast it. Since Sunburst cares about the number of unique colors of mana spent to cast a spell, Engineered Explosives would still enter with two counters, as a red mana and green mana were spent to cast it. With Pentad Prism, the opponent would be forced to spend three mana on the artifact. However, they would also be able to use three different colors of mana to achieve three counters on Pentad Prism, typically impossible in Ad Nauseam.</p>
+                <br>
+                <hr>
+                <h2>Sideboarding Thalia, Guardian of Thraben</h2>
+                <br>
+                <h3>When to keep her in</h3>
+                <p>Thalia, Guardian of Thraben is at her best versus decks that revolve around noncreature spells. Combo decks such as Gifts Storm, Grishoalbrand, Infect, Tron, Ad Nauseam, and Titan Shift are all reliant on spells that Thalia, Guardian of Thraben taxes well. Aggressive strategies such as Burn, Izzet Phoenix, and Grixis Death's Shadow also struggle to beat a Thalia, Guardian of Thraben if they lack removal for her. Control decks such as UWx Control and Blue Moon are also filled with noncreature spells. Many of those decks are filled with so many one-two mana spells that they are unable to beat a Thalia, Guardian of Thraben if she stays on board. Gifts Storm and Izzet Phoenix are both decks that need to cast multiple spells a turn to win. Otherwise, Thalia, Guardian of Thraben is a fine card to keep in against decks with a fair amount of noncreature spells. Jund, Hollow One, Dredge, and Hardened Scales Affinity are all decks that are worth leaving Thalia, Guardian of Thraben in for. Sometimes, especially against value decks like Jund and BG Midrange, it is correct to shave a Thalia, Guardian of Thraben or two, as her legendary restriction does come up. Finally, Thalia, Guardian of Thraben is not terrible against some creature-centric decks. Having a 2/1 first striker for two mana is decent against decks such as Naya Zoo, Merfolk, and Elves.</p>
+                <br>
+                <h3>When to take him out</h3>
+                <p>Essentially, any deck with Aether Vial is a bad matchup for Thalia, Guardian of Thraben. Humans, Bant Spirits, and the mirror are all decks where it is correct to shave at least two Thalia, Guardian of Thraben. The biggest issue with her is that, in many of these matchups, Death and Taxes has more noncreature spells than the opponent, so Thalia, Guardian of Thraben's tax is detrimental to our gameplan. Casting a Worship against Humans is much easier if Thalia, Guardian of Thraben is taken out of the picture.</p>
+                <br>
+                <h2>Conclusion</h2>
+                <p>All in all, Thalia, Guardian of Thraben is a very powerful creature in all formats she is legal in. That being said, as shown above, there are times where Thalia, Guardian of Thraben falls short in Death and Taxes.</p>
+                <br>
+                <hr>
+             <h2>Further Readings:</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Previous Card 101</h3>
+                    <h4><a href="leoninarbiter">Leonin Arbiter 101</a></h4>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Recommended</h3>
+                    <h4><a href="/modern/mulligans#mg">This Month's Mulligan Game</a></h4>
+                </div>
+            </div>
+            <div class="extra-space"></div>
+            </div>
+            
+            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+            <script src="/loadcardhoversettings.js"></script>
+            
+            <?php
+                include("../scripts/footer.php");
+            ?>
+            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script src="/loadpublishinfo.js" type="text/javascript"></script>
+    </body>
+</html>
+
+
