@@ -81,50 +81,7 @@
             include("scripts/navbar.php"); 
 
         ?>
-                <?php
-                if(!isset($q)) {
-                    echo '';
-                } else {
-                    $query = mysqli_query($con, "SELECT * FROM sitesearchbar WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
-                    $num_rows = mysqli_num_rows($query);
-
-                    /*
-                    if $num_rows == 1 {
-                        //go directly to page
-                    } else {
-
-                        //go to search page w/ results
-                    }
-                    */
-                    $resultss = 'results';
-                    if($num_rows == 1) {
-                        $resultss = 'result';
-                    }
-                    ?>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-2">
-                        </div>
-                        <div class="col-sm-8">
-                            <p><strong><?php echo $num_rows; ?></strong> <?php echo $resultss; ?> for '<?php echo $q; ?>'</p>
-                        </div>
-                    </div>
-                    
-                    <br>
-                    <?php
-                    
-
-                    while($row = mysqli_fetch_array($query)) {
-                        $id = $row['id'];
-                        $title = $row['title'];
-                        $text = $row['description'];
-                        $link = $row['link'];
-                        //instead of $id for the link, try doing the title...
-                        echo '<div class="searchResult"><h3 class="search"><a href="' . $link . '" class="mua">' . $title . '</a></h3><p class="search"><i>' . $text . '</i></p></div><br />';
-                    }
-                }
                 
-            ?>
                 <div class="container" id="content">
                     <br>
                     <div class="alert alert-danger" id="alertMG">
