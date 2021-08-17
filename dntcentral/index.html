@@ -77,10 +77,65 @@
         <script src="https://deckbox.org/assets/external/tooltip.js"></script>
     </head>
     <body class="homePage" onload="loadScript()">
-        <?php
-            include("scripts/navbar.php"); 
-
-        ?>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="format">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/format">Format Page</a></li>
+                                        <li><a href="/legacy/">Legacy</a></li>
+                                        <li><a href="/modern/">Modern</a></li>
+                                        <li><a href="/vintage">Vintage</a></li>
+                                        <li><a href="/commander">Commander</a></li>                           
+                                        <li><a href="/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/modern/budget">Budget Options</a></li>
+                                    <li><a href="/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
                 
                 <div class="container" id="content">
                     <br>
@@ -175,19 +230,35 @@
 
             
             
-            <script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
-            <script src="/loadcardhoversettings.js"></script>
+            <!--<script>var jArray = <?php echo json_encode($listOfCardNames); ?>;</script>
+            <script src="/loadcardhoversettings.js"></script>-->
 
-            <script>var listOfTitles = <?php echo json_encode($listOfTitles); ?>;</script>
+            <!--<script>var listOfTitles = <?php echo json_encode($listOfTitles); ?>;</script>
             <script>var listOfDescriptions = <?php echo json_encode($listOfDescriptions); ?>;</script>
             <script>var listOfLinks = <?php echo json_encode($listOfLinks); ?>;</script>
-            <script src="/latestarticle.js"></script>
+            <script src="/latestarticle.js"></script>-->
             
-            <?php
-                include("scripts/footer.php");
-            ?>
-            <script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
-            <script src="/loadpublishinfo.js" type="text/javascript"></script>
+            <div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+            <!--<script>var jStr = <?php echo json_encode($lastModDate); ?>;</script>
+            <script src="/loadpublishinfo.js" type="text/javascript"></script>-->
         
     </body>
 </html>
