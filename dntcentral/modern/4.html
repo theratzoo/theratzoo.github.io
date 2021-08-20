@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <title>Affinity</title>
+        <link rel="stylesheet" type="text/css" href="../dntcentral/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+    </head>
+    <body class="homePage">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="format">
+                                Formats
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../format">Format Page</a></li>
+                                <li><a href="../legacy/">Legacy</a></li>
+                                <li><a href="./">Modern</a></li>
+                                <li><a href="../vintage">Vintage</a></li>
+                                <li><a href="../commander">Commander</a></li>                           
+                                <li><a href="../standard/">Standard</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Modern Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="ent">Eldrazi&Taxes Tips/Tricks</a></li>
+                            <li><a href="splashes">Splashes</a></li>
+                            <li><a href="mulligans">Mulligan Guide</a></li>
+                            <li><a href="budget">Budget Options</a></li>
+                            <li><a href="matchupguide.php">Matchup Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Legacy Guides
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a href="../legacy/individualcards">Individual Cards</a></li>
+                            <li><a href="../legacy/othervariants">Other Variants</a></li>
+                            <li><a href="../legacy/sideboard">Sideboarding 101</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../spicespace/">Spice Space</a></li>
+                        <!--<li><a href="../onlinestats">MTGO Stats</a></li>-->
+                        <li><a href="../flickerwisp">Flickerwisp 101</a></li>
+                        <li><a href="../resources">Other Resources</a></li>
+                    </ul>
+                </nav>
+            <div class="jumbotron">
+                <h1>Affinity</h1>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-8">
+                  <h2>Matchup Overview:</h2>
+                  <p>Due to the explosive nature of Affinity, we are always playing as the control deck, trying to keep our life total safe while eliminating their main threats and eventually finishing them off with our creatures. The matchup is not as bad as it may seem: while they can kill us very fast, we do have powerful cards both maindeck and sideboard that give us fighting ground. While our taxing plan is not very powerful versus the low curve aggressive deck, our efficient value creatures play a vital role in the matchup.</p>
+                  <hr>
+                  <h2>Our best cards:</h2>
+                  <div class="muimage">
+                    <img src="http://i.imgur.com/2vxhfCz.jpg" class="muimage">
+                  </div>
+                  <br>
+                  <br>
+                  <p>As mentioned above, our threats are more important than our hate bears. Cards like <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=240096" class="discussionA">Restoration Angel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240096&type=card" alt="discussionA Angel" class="popupImg"></span></a></span>, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span>, and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span> are great in this matchup. The great thing about <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span> is that the 3/3 golem not only has first strike, but is also colorless, making their etched champion useless. In addition, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span> serves as a good clock whenever the opponent has only fliers (we need to finish out the game sooner than later despite being the controlling deck), and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span> serves as a premium target for <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span>/<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=240096" class="discussionA">Restoration Angel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240096&type=card" alt="discussionA Angel" class="popupImg"></span></a></span>. Speaking of the blinkers, both serve important roles in the matchup. <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> can reset counters on creatures or, with <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span> or <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span>, fog an attacker or make a cranial plating useless. However, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span>’s 1 toughness makes it a weak blocker vs their <span class="hover_img"><a href="" class="discussionA">Vault Skirge<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Vault+Skirge&type=card" class="popupImg"></span></a></span>s and creature lands, which is where <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=240096" class="discussionA">Restoration Angel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=240096&type=card" alt="discussionA Angel" class="popupImg"></span></a></span> shines in the matchup; despite its high mana cost, the four toughness makes it hard to kill in combat. <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi+Displacer&type=card" class="popupImg"></span></a></span> is interesting here: while the ability is often too slow without a <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span>, it does block etched champion and makes their attacks worse (eventually). Otherwise, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=270445" class="discussionA">Thalia, Guardian of Thraben<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=270445&type=card" alt="Thalia, Guardian of Thraben" class="popupImg"></span></a></span>’s tax is not irrelevant, especially on the play. Of course, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=179235" class="discussionA">Path to Exile<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=179235&type=card" alt="Path to Exile" class="popupImg"></span></a></span> is amazing.</p>
+                  <hr>
+                  <h2>Our worst cards:</h2>
+                  <div class="muimage">
+                    <img src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/Thraben-Inspector-Shadows-over-Innistrad-Art.jpg" class="muimage" alt="Thraben Inspector">
+                  </div>
+                  <br>
+                  <br>
+                  <p><span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=209287" class="discussionA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=209287&type=card" alt="Leonin Arbiter" class="popupImg"></span></a></span>, to no surprise, is at its worst here. Affinity has 0 ways to search their library, and our <span class="hover_img"><a href="" class="discussionA">Ghost Quarter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Etched+Champion&type=card" class="popupImg"></span></a></span>s are often <span class="hover_img"><a href="" class="discussionA">Strip Mine<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Strip+Mine&type=card" class="popupImg"></span></a></span>s due to their low basic land count (stock lists play only a single mountaion). Attacking their mana base is tricky and ineffective, as <span class="hover_img"><a href="" class="discussionA">Darksteel Citadel<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Darksteel+Citadel&type=card" class="popupImg"></span></a></span> is indestructible, they get mana off of artifacts like <span class="hover_img"><a href="" class="discussionA">Springleaf Drum<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Springleaf+Drum&type=card" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Mox Opal<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Mox+Opal&type=card" class="popupImg"></span></a></span>, and very rarely hit 4 lands to turn on <span class="hover_img"><a href="" class="discussionA">Tectonic Edge<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Tectonic+Edge&type=card" class="popupImg"></span></a></span>. A 2/2 is also not a good blocker, as their ground creatures are usually bigger than that. <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span> suffers the same issues as <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=209287" class="discussionA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=209287&type=card" alt="Leonin Arbiter" class="popupImg"></span></a></span>, but is less bad as it is a slow cantrip that is a mana cheaper. Since Affinity is a fast aggro deck, eliminating too many 1s and 2s is never a great idea. Your worst 3s are either eldrazi like <span class="hover_img"><a href="" class="discussionA">Eldrazi Displacer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Etched+Champion&type=card" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Thought-Knot Seer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Thought-Knot+Seer&type=card" class="popupImg"></span></a></span> or <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233068" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233068&type=card" alt="Blade Splicer" class="popupImg"></span></a></span>, but ultimately they are leagues ahead of the the first 2 cards mentioned here, so only cut a couple when necessary (like on the draw).</p>
+                  <hr>
+                  <h2>Their best cards</h2>
+                  <div class="muimage">
+                    <img src="https://vignette.wikia.nocookie.net/gamelore/images/7/75/Arcbound_Ravager.jpg/revision/latest?cb=20140401131635" class="muimage">
+                  </div>
+                  <br>
+                  <br>
+                  <p>Their strongest cards are very board-state dependent. For example, if we have multiple golems, we don’t care about an <span class="hover_img"><a href="" class="discussionA">Etched Champion<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Etched+Champion&type=card" class="popupImg"></span></a></span>. However, that same card can be game-winning when we lack our colorless creatures. <span class="hover_img"><a href="" class="discussionA">Etched Champion<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Etched+Champion&type=card" class="popupImg"></span></a></span> is generally strongest versus the non Eldrazi splashes of D&T, as they lack the colorless Eldrazi and/or <span class="hover_img"><a href="" class="discussionA">Blade Splicer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Blade+Splicer&type=card" class="popupImg"></span></a></span> golem token to keep it at bay . Same goes with their fliers and land creatures; without our own flier (or land destruction for the man-lands), those creatures will often outrace us. Ultimately, the two most powerful, must-answer threats for us are <span class="hover_img"><a href="" class="discussionA">Arcbound Ravager<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Arcbound+Ravager&type=card" class="popupImg"></span></a></span> and steel overseer. The former transforms the game into a headache, making attacks and blocks awkward, invalidating removal, and threatening blowouts. The latter creature, once the opponent un taps with it, will take over games, making their fliers more threatening to our life total. While <span class="hover_img"><a href="" class="discussionA">Cranial Plating<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Cranial+Plating&type=card" class="popupImg"></span></a></span> is a powerful card, we often have blockers or ways to deal with it by the time it hits the battlefield. Otherwise, look out for <span class="hover_img"><a href="" class="discussionA">Galvanic Blast<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Galvanic+Blast&type=card" class="popupImg"></span></a></span>; stay out of its range life-total wise, and play around it if possible (albeit its not often we have the luxury to play around a 4 damage spell). </p>
+                  <hr>
+                  <h2>Sideboarding:</h2>
+                  <div class="muimage">
+                    <img src="https://227rsi2stdr53e3wto2skssd7xe-wpengine.netdna-ssl.com/wp-content/uploads/2014/03/stony-silence-730x280.png" class="muimage" alt="Stony Silence">
+                  </div>
+                  <br>
+                  <br>
+                  <p>As mentioned in prior sections, the cards that will most often cut are the <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=209287" class="discussionA">Leonin Arbiter<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=209287&type=card" alt="Leonin Arbiter" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span>s, along with a few 3 drops if on the draw (as we cannot overload on 3 mana spells). Of course, all artifact hate comes in. When bringing in <span class="hover_img"><a href="" class="discussionA">Stony Silence<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Stony+Silence&type=card" class="popupImg"></span></a></span>, it is worth noting that it turns off our <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span>s and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=thraben%20inspector" class="discussionA">Thraben Inspector<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=409784&type=card" alt="Thraben Inspector" class="popupImg"></span></a></span>s, so trimming a <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=48146" class="discussionA">Aether Vial<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=48146&type=card" alt="Aether Vial" class="popupImg"></span></a></span> is a viable play depending on your exact configuration. Removal spells can also come in like <span class="hover_img"><a href="" class="discussionA">Dismember<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Dismember&type=card" class="popupImg"></span></a></span> and <span class="hover_img"><a href="" class="discussionA">Sunlance<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Sunlance&type=card" class="popupImg"></span></a></span>. <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=382179" class="discussionA">Burrenton Forge-Tender<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382179&type=card" alt="Burrenton Forge-Tender" class="popupImg"></span></a></span> is an interesting one- while they lack red creatures, it can stop a <span class="hover_img"><a href="" class="discussionA">Galvanic Blast<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Galvanic+Blast&type=card" class="popupImg"></span></a></span> from blasting one of our essential creatures. I am currently unsure and would advise against more than one at the moment. Any other spells that are good vs. aggressive decks can come in like <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=72921" class="discussionA">Auriok Champion<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=72921&type=card" alt="Auriok Champion" class="popupImg"></span></a></span>, <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=83338" class="discussionA">Worship<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=83338&type=card" alt="Worship" class="popupImg"></span></a></span>, and <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=141976" class="discussionA">Kitchen Finks<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=141976&type=card" alt="Kitchen Finks" class="popupImg"></span></a></span>. <span class="hover_img"><a href="" class="discussionA">Phtrexian Revoker<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Phyrexian+Revoker&type=card" class="popupImg"></span></a></span> is an amazing card for this matchup, as it can turn off our worst post-board nightmare: <span class="hover_img"><a href="" class="discussionA">Ghirapur Aether Grid<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ghirapur+Aether+Grid&type=card" class="popupImg"></span></a></span>. This 3 mana enchantment will not only beat us the majority of times it resolves unanswered, but it will also invalidate our best hate card, <span class="hover_img"><a href="" class="discussionA">Stony Silence<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Stony+Silence&type=card" class="popupImg"></span></a></span> On that same note, <span class="hover_img"><a href="" class="discussionA">Pithing Needle<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Pithing+Needle&type=card" class="popupImg"></span></a></span> comes in as well, as it can name their creature lands in addition to <span class="hover_img"><a href="" class="discussionA">Arcbound Ravager<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Arcbound+Ravager&type=card" class="popupImg"></span></a></span>, <span class="hover_img"><a href="" class="discussionA">Steel Overseer<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Steel+Overseer&type=card" class="popupImg"></span></a></span>, <span class="hover_img"><a href="" class="discussionA">Ghirapur Aether Grid<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Ghirapur+Aether+Grid&type=card" class="popupImg"></span></a></span>, and <span class="hover_img"><a href="" class="discussionA">Cranial Plating<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?name=Cranial+Plating&type=card" class="popupImg"></span></a></span>.</p>
+                  <hr>
+                  <h2>Important interactions:</h2>
+                  <div class="muimage">
+                    <img src="https://img00.deviantart.net/afe1/i/2015/262/c/3/my_version_of_etched_champion_playmat____by_metallichell-d9a4rqb.png" class="muimage">
+                  </div>
+                  <br>
+                  <br>
+                  <p>One interaction I cannot stress enough is knowing what cards can beat etched champion. Not only is Eldrazi Displacer colorless, but it also has its ability that can stop the champion from attacking. Displacer/<span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> can be used to force the opponent to make a move on an Arcbond Ravager and therefore let us use our removal. When blinking with either, if planning to stop the signal pests, hit them before attackers to mitigate damage. Keeping them off of metalcraft temporarily with a <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> or a ghost quarter can make a galvanic blast only deal 2 damage or expose their etched champion. Using displacer on <span class="hover_img"><a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=151089" class="discussionA">Flickerwisp<span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=151089&type=card" alt="Flickerwisp" class="popupImg"></span></a></span> on your end step on their overseer keeps it from activating ever again. The opponent can use a welding jar to save a creature land from ghost quarter even if it is not active (so long as they have at least 1 mana available). Don’t forget to attack! The longer the game drags out, the more likely they can find a hoser and win a game that previously seemed unwinnable. While the early game is about staying alive, stabilizing, and then winning with our better late game, that does not mean that they cannot draw out of a board stall, especially when we’re applying no pressure.</p>
+
+<!-- <!—- Can include how I sideboard with my sample list—->-->
+
+              </div>
+              <div class="col-sm-2">
+
+              </div>
+            </div>
+            
+        </div>
+        <div id="footer">
+            <br>
+                <h6 class="footH">Questions or suggestions? Email me at cntrlmtg@dntcentral.com</h6>
+                <br>
+        </div>
+    </body>
+</html>
+

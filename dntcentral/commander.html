@@ -1,0 +1,531 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+<title>Commander</title>
+<meta name="description" content="Death and Taxes strategies, decklists, and discussions pertaining to the Commander/EDH format in Magic the Gathering">
+<meta name="keywords" content="Magic the Gathering, commander, edh, death and taxes, dnt, ent, eldrazi and taxes, taxes, hatebears, stax, prison, thalia">
+<link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+<script>
+$(document).ready(function() {
+
+var docHeight = $(window).height();
+var footerHeight = $('#footer').height();
+var footerTop = $('#footer').position().top + footerHeight;
+
+if (footerTop < docHeight)
+    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+});
+</script>
+<script>
+
+function previewDeckOne(name) {
+var img = document.getElementById('deckPreviewImgOne');
+img.src = `http://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+img.alt = name;
+}
+</script>
+<script src="https://deckbox.org/assets/external/tooltip.js"></script>
+<script src="/searchbarscripts.js" type="text/javascript"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-5296235643990630",
+enable_page_level_ads: true
+});
+</script>
+</head>
+<body class="homePage">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntrcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+
+                    </div>
+                    
+                    <br>
+
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbo-tron">
+                    <h1>Commander</h1>
+                </div>
+                <br>
+
+            <img src="https://vignette.wikia.nocookie.net/gamelore/images/4/40/Derevi%2C_Empyrial_Tactician.jpg/revision/latest?cb=20131030121910">
+
+            <br>
+
+            <h2>So many options: which general to pick?!</h2>
+            <p>Overall, go with what you enjoy most or can build, as Commander is (typically) about having a good time with your friends, so don't stress about playing a less optimal card like Gaddock Teeg over Derevi, Empyrial Tactician. List of a few options:</p>
+            <ul class="cardList">
+                <li> Thalia, Guardian of Thraben </li>
+                <li> Thalia, Heretic Cathar </li>
+                <li> Grand Arbiter Augustin IV </li>
+                <li> Gaddock Teeg </li>
+                <li> Derevi, Empyrial Tactician </li>
+                <li> Alesha, Who Smiles at Death </li>
+                <li> Shalai, Voice of Plenty </li>
+            </ul>
+            <br>
+            <br>
+            <h2>Sample Decklists:</h2>
+            <br>
+            <hr>
+            <h3>Thalia, Guardian of Thraben</h3>
+
+            <div class="row decklist">
+
+                <div class="col-sm-6">
+                    <table class="table decklist table-condensed table-responsive">
+                        <tbody>
+                            <tr>
+                                <th>Commander:</th>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Thalia, Guardian of Thraben</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <th>Creatures:</th>
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Kytheon, Hero of Akros</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Mother of Runes</a></td>
+                                
+                            </tr>
+                            <tr><!-- Thraben Inspector -->
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Thraben Inspector</a></td>
+                                
+                            </tr>
+                            <tr><!-- Thraben Inspector -->
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Weathered Wayfarer</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Anafenza, Kin-Tree Spirit</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Containment Priest</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Ethersworn Canonist</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Grand Abolisher</a></td>
+                              
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Hanweir Militia Captain</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Kataki, War's Wage</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Knight of the White Orchard</a></td>
+                              
+                            </tr>
+                            <tr><!--Arbiter-->
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Leonin Arbiter</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Leonin Relic-Warder</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Samurai of the Pale Curtain</a></td>
+                              
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Selfless Spirit</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Spirit of the Labyrinth</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Stoneforge Mystic</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Aven Mindcensor</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Blade Splicer</a></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Brightling</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Brimaz, King of Oreskos</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Eidolon of Rhetoric</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Eldrazi Displacer</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Fiend Hunter</a></td>
+                                
+                            </tr> 
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Flickerwisp</a></td>
+                                
+                            </tr> 
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Glowrider</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Hushwing Gryff</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Kinjalli's Sunwing Inspector</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Mentor of the Meek</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Militia Bugler</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Mirran Crusader</a></td>
+                                
+                            </tr> 
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Recruiter of the Guard</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Thalia, Heretic Cathar</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Vryn Wingmare</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Angel of Jubilation</a></td>
+                                
+                            </tr> 
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Celestial Crusader</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Hero of Bladehold</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Hokori, Dust Drinker</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Lodestone Golem</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Loxodon Gatekeeper</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Magus of the Moat</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Odric, Lunarch Marshal</a></td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Palace Jailer</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Restoration Angel</a></td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Angel of Invention</a></td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Thalia's Lancers</a></td>
+                                 
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Sun Titan</a></td>
+                                
+                            </tr>        
+                        </tbody>
+            </table>
+            </div>
+            <!-- sideboard -->
+            <div  class="col-sm-6">
+            <table class="table table-condensed decklist table-responsive">
+                <tbody>
+                    
+                        <tr>
+                            <th>Planeswalkers:</th>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Gideon, Ally of Zendikar</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <th>Spells:</th>
+                        </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Path to Exile</a></td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Swords to Plowshares</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Armageddon</a></td>
+                                
+                            </tr>
+                            <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Return to Dust</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <th>Artifacts</th>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Skullclamp</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Sol Ring</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Pearl Medallion</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Smuggler's Copter</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Sword of Feast and Famine</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Sword of Fire and Ice</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <th>Enchantments:</th>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Land Tax</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Honor of the Pure</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Rest in Peace</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Aura of Silence</a></td>
+                            
+                        </tr>
+                        <tr>
+                            <th>Lands:</th>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Ancient Tomb</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Cavern of Souls</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Dust Bowl</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Eiganjo Castle</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Emeria, the Sky Ruin</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Flagstones of Trokair</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Ghost Quarter</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Mishra's Factory</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Mistveil Plains</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Nykthos, Shrine to Nyx</a></td>
+                        </tr>
+                        <tr>
+                            <td>19&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Plains</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Rishadan Port</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Secluded Steppe</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Shefet Dunes</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Strip Mine</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Tectonic Edge</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Wasteland</a></td>
+                        </tr>
+                        <tr>
+                            <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Windbrisk Heights</a></td>
+                        </tr>    
+                </tbody>
+            </table>
+            <div>
+                <img src="" id="deckPreviewImgOne">
+            </div>
+        </div>
+    </div>
+            
+            
+            </div>
+            <br>
+            <br>
+            <div class="extra-space">
+
+            </div>
+
+            
+<div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+
+    </body>
+</html>

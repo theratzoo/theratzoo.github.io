@@ -1,0 +1,220 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Legacy- Sideboard Guide</title>
+        <link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+            function previewDeckOne(name) {
+            var img = document.getElementById('deckPreviewImgOne');
+            img.src = `https://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+            img.alt = name;
+          }
+            
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntrcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+
+                    </div>
+                    
+                    <br>
+
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbotron">
+                    <h1>Legacy- Sideboard Guide</h1>
+                </div>
+                <h3>Sideboard Example:</h3>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <table class="table table-condensed decklist table-responsive">
+                            <tbody>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Path to Exile</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Surgical Extraction</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Containment Priest</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Ethersworn Canonist</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Rest in Peace</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Council's Judgment</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Sword of War and Peace</a></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeckOne(this.text)">Gideon, Ally of Zendikar</a></td>
+                                
+                            </tr>
+                    
+                </tbody>
+            </table>
+            <div>
+                    <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Path+To+Exile&type=card" id="deckPreviewImgOne">
+                </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Analysis of each choice (coming soon!)</h3>
+                        <!-- <h5>Path to exile:</h5>
+                        <p>Path... <br> In vs:</p>
+                        <ul>
+                            <li>Delver</li>
+                            <li>Reanimator</li>
+                            <li>Turbo Depths (sometimes lands too)</li>
+                            <li>Mirror</li>
+                        </ul>
+                        <h5>Surgical Extraction:</h5>
+                        <h5>Containment Priest:</h5> -->
+                    </div>
+                </div>
+            
+                
+                <!-- <h3>Sideboarding for your meta:</h3>
+                <h3>List of all the "reasonable" options</h3> -->
+                <!-- talk about a typical sideboard and look at each choice and say why, then talk about which are more flexible than others to switch, list all reasonable choices and when they are appropriate, which matches to side these cards in, etc. -->
+            
+            <div class="extra-space"></div>
+            </div>
+            
+
+            
+<div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+
+    </body>
+</html>

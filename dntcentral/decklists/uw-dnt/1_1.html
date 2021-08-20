@@ -1,0 +1,202 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>U/W Taxes Decklist- V1.1</title>
+        <link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+         
+          function previewDeck(name) {
+            var img = document.getElementById('deckPreviewImg');
+            img.src = `https://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+            img.alt = name;
+          }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntrcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+
+                    </div>
+                    
+                    <br>
+
+            <div class="container-fluid body-div">
+                <div class="jumbo-tron">
+                    <h1>U/W Taxes Decklist: Version 1.1</h1>
+                </div>
+            <h2>Decklist:</h2>
+            <br>
+            <div id="autolist">
+                <div id="maindeck">
+                    4 Leonin Arbiter
+                    4 Thalia, Guardian of Thraben
+                    2 Blade Splicer
+                    3 Flickerwisp
+                    1 Thalia, Heretic Cathar
+                    4 Path to Exile
+                    4 Aether Vial
+                    1 Remorseful Cleric
+
+                    3 Meddling Mage
+                    4 Deputy of Detention
+                    4 Spell Queller
+                    1 Lavinia, Azorius Renegade
+
+                    4 Thraben Inspector
+
+
+
+                    4 Ghost Quarter
+                    5 Plains
+                    4 Seachrome Coast
+                    4 Hallowed Fountain
+                    1 Island
+                    4 Mutavault
+                </div>
+                <div id="sideboard">
+                    2 Burrenton Forge-Tender
+                    1 Relic of Progenitus
+                    3 Rest in Peace
+                    2 Stony Silence
+                    2 Dismember
+                    1 Dovin's Veto
+                    1 Brimaz, King of Oreskos
+                    1 Settle the Wreckage
+                    1 Mirran Crusader
+                    1 Oblivion Ring
+                </div>
+            </div>
+            
+            <div class="extra-space">
+
+            </div>
+            </div>
+            
+            
+
+<div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+
+    </body>
+</html>
+
