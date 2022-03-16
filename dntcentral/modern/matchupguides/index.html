@@ -1,0 +1,284 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern- Matchup Guides</title>
+        <link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var hash = window.location.hash;
+                switch(hash){
+                    case '#load-bw-ent':
+                        loadBWEnt();
+                        break;
+                }
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+              //checkMulliganGame();
+              disableButton();
+                
+            }
+          function dismissAlert() {
+            //document.getElementById("alertMG").style.visibility = "hidden";
+            document.getElementById("alertMG").style.display = "none";
+          }
+          function stopShowingAlert() {
+            localStorage.setItem('hide10', true);
+            dismissAlert();
+          }
+          function disableButton() {
+            if(document.getElementById('muguidelist').innerHTML.includes("bw-ent")) {
+                document.getElementById('show-bw-ent').style.pointerEvents = "none";
+                document.getElementById('show-mono-w-ent').style.pointerEvents = "auto";
+
+                document.getElementById('show-mono-w-ent').style.color = document.getElementById('acolor').style.color;
+                document.getElementById('show-bw-ent').style.color = "grey";
+                document.getElementById('listTitle').innerHTML = "List of Decks (B/W E&T)";
+              } else {
+                document.getElementById('show-mono-w-ent').style.pointerEvents = "none";
+                document.getElementById('show-bw-ent').style.pointerEvents = "auto";
+
+                document.getElementById('show-bw-ent').style.color = document.getElementById('acolor').style.color;
+                document.getElementById('show-mono-w-ent').style.color = "grey";
+                document.getElementById('listTitle').innerHTML = "List of Decks (Mono-W E&T)";
+              }
+          }
+          function checkMulliganGame() {
+                var completed = localStorage.getItem('completed10');
+                var isDisabled = localStorage.getItem('hide10');
+                if (completed) {
+                    
+                } else if (isDisabled) {
+                    
+                } else {
+                    //document.getElementById("alertMG").style.visibility = "visible";
+                    document.getElementById("alertMG").style.display = "block";
+                }
+            }
+        </script>
+        
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntrcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+
+                    </div>
+                    
+                    <br>
+
+            <div class="container-fluid" id="content">
+              <br>
+                    <div class="alert alert-danger" id="alertMG">
+                        <a href="/modern/mulligans#mg"><strong>April's Mulligan Game is available now!</strong></a>
+                        <input id="dismissAlert" onclick="dismissAlert()">
+                        <br>
+                        <a href="/" onclick="stopShowingAlert()" id="stopShowingAlert">Don't show this again.</a>
+                    </div>
+                    <br>
+                <div class="jumbo-tron">
+                    <h1>Modern- Matchup Guides</h1>
+                </div>
+                <br>
+                <div class="row mudivider">
+                    <div class="col-6" id="w-ent">
+                        <h2><a href="javascript:void(0);" onclick="loadWEnt()" id="show-mono-w-ent">Mono-White E&T</a></h2>
+                    </div>
+                    <div class="col-6" id="bw-ent">
+                        <h2><a href="javascript:void(0);" onclick="loadBWEnt()" id="show-bw-ent">BW E&T</a></h2>
+                    </div>
+                </div>
+            <br>
+            <h3 id="listTitle">List of Decks:</h3>
+            <br>
+            <div id="muguidelist">
+
+            </div>
+            <script>
+            function loadWEnt() {
+                //disable WENT button
+                //mark it so user can identify that it is the one that's selected
+                //present the guides for mono-w ent
+
+                //can get the guides by either 
+                //A (easy method)- change links to direct to monowhite folder
+                //or B (hard method)- based on whether the search table has mono-w or bw ent in the description is how they are ordered. this data will be retrieved by, after initially loading the images and such, saving a local JS copy of ALL the MU guides available so that, in the event that the user clicks on this, the func can access this array of arrays to correctly modify the webpage.
+                //**don't check for mono-w E&T in description, as i cannot nicely fit it into description of older formatted MU guides**... still check for BW E&T
+
+
+                var stuff = "";
+                for(var i=listOfEntries.length-1; i>=0; i--) {
+                    if(!listOfEntries[i][1].includes("B/W Eldrazi and Taxes")) {
+                        stuff = addElement(listOfEntries[i], counter, stuff);
+                        counter++;
+                    }
+                }
+
+                document.getElementById('muguidelist').innerHTML = stuff;
+                disableButton();
+            }
+
+            function addElement(entry, counter, stuff) {
+                var title = entry[0];
+                while(title.includes("(")) {
+                    title = title.slice(0, -1);
+                }
+                var newStuff = stuff;
+                if(counter%3 == 0) {
+                    if(counter != 0) {
+                        newStuff += "</div>";
+                    }
+                    newStuff += "<br><hr><br>";
+                    newStuff += `<div class="row">`;
+                }
+                newStuff += `<div class="col-sm-4"><h2><a href="${entry[2]}" class="mua">${title}</a></h2><a href="${entry[2]}"><img src="${entry[3]}" class="muhome"></a></div>`;
+                return newStuff;
+            }
+
+            function loadBWEnt() {
+
+                console.log(listOfEntries);
+                
+                var counter = 0;
+                var stuff = "";
+                for(var i=listOfEntries.length-1; i>=0; i--) {
+                    if(listOfEntries[i][1].includes("B/W Eldrazi and Taxes")) {
+                        stuff = addElement(listOfEntries[i], counter, stuff);
+                        counter ++;
+                    }
+                }
+
+                document.getElementById('muguidelist').innerHTML = stuff;
+                disableButton();
+
+            }
+        </script>
+            
+            <!-- include image of a namesake card above or below decklist-->
+
+            
+            
+            <a href="" id="acolor" style="visibility:hidden">_</a>
+            <br>
+            
+            </div>
+            
+            
+<div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>            
+
+
+    </body>
+</html>

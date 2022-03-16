@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>Death and Taxes Central</title>
+        <meta name="description" content="Magic the Gathering strategies, guides, and decklists pertaining to the Death and Taxes archetype.">
+        <meta name="keywords" content="Magic the Gathering, modern, death and taxes, dnt, modern dnt, ent, eldrazi and taxes, taxes, hatebears">
+        <link rel="icon" href="/dntcentral/wisp.png">
+        <link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+        
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+                //checkMulliganGame();
+                
+                var eleA = document.getElementById("homeBoxA");
+                var eleB = document.getElementById("homeBoxB");
+                eleB.style.height = eleA.offsetHeight+'px';
+                
+                /*if(eleA.offsetHeight > eleB.style.offsetHeight) {
+                    eleB.style.height = eleA.style.offsetHeight;
+                } else {
+                    eleA.style.height = eleB.style.offsetHeight;
+                }*/
+                
+            }
+            function checkMulliganGame() {
+                var completed = localStorage.getItem('completed10');
+                var isDisabled = localStorage.getItem('hide10');
+                if (completed) {
+                    
+                } else if (isDisabled) {
+                    
+                } else {
+                    //document.getElementById("alertMG").style.visibility = "visible";
+                    document.getElementById("alertMG").style.display = "block";
+                }
+            }
+        </script>
+        <script type="text/javascript">
+          
+          function dismissAlert() {
+            //document.getElementById("alertMG").style.visibility = "hidden";
+            document.getElementById("alertMG").style.display = "none";
+          }
+          function stopShowingAlert() {
+            localStorage.setItem('hide10', true);
+            dismissAlert();
+          }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="container" id="content">
+                    <br>
+                    <div class="alert alert-danger" id="alertMG">
+                        <a href="modern/mulligans#mg"><strong>April's Mulligan Game is available now!</strong></a>
+                        <input id="dismissAlert" onclick="dismissAlert()">
+                        <br>
+                        <a href="/" onclick="stopShowingAlert()" id="stopShowingAlert">Don't show this again.</a>
+                    </div>
+                    <br>
+
+                <h1 class="text-center">Death and Taxes Central</h1>
+            <p class="quote text-center">"There are only two things certain in life. Death and taxes. Oh, and also white heatbears...."</p>
+            <br>
+            <br>
+            <div class="about">
+                <h3 id="aboutHP">About the Strategy</h3>
+                <p>Death and Taxes is an aggro-control prison deck. The deck plays efficient, disruptive white creatures, most notably Thalia, Guardian of Thraben, to tax the opponent while beating down and protecting your "hatebears" with other ones. </p>
+            </div>
+            <br>
+                <!-- Improve layout of this page- images, font, blueprint it, etc. -->
+                <h3>What formats support Death and Taxes?</h3>
+                <p>Despite being the most popular in Modern and Legacy, the overall strategy ports well to other formats including Commander, Vintage, and, to a lesser extent, Standard. Typically modern and Vintage rely on Eldrazi and "sol lands" like Ancient Tomb, thus making their decks Eldrazi and Taxes, which does deviate the deck away from traditional Death and Taxes, but still plays roughly the same nonetheless. </p>
+                <br>
+                <h3>Why play Death and Taxes?</h3>
+                <p>From personal experience, the appeal of the deck comes from the ability to play as both an aggressive and control deck. While there are games won by beating down with two and three power creatures, others involve utilizing the deck's taxing effects to prevent the opponent from enacting their gameplan. Having the deck's lock pieces deny the opponent from casting their vital spells also adds satisfaction to the deck that's hard to find in other archetypes. And Death and Taxes has a pretty good matchup against the boggeyman Tron!</p>
+                <hr>
+                <br>
+                <h3>Newest Pages:</h3>
+                <br>
+                <div class="row" id="fourNewestPages">
+                    
+                    <div class="col-sm-6">
+                        <div id="homeBoxA">
+                            <h3><a href="/dntcentral/modern/deathandchoices/2">Death and Choices #2</a></h3>
+                            <p>The second installment of the Death and Choices series. This time, the choice is situated on a complex board state against the new Vannifar Pod deck.</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="homeBoxC">
+                            <h3><a href="/dntcentral/modern/matchupguides/bw-ent/infect">Infect (B/W E&T)</a></h3>
+                            <p>Matchup guide against an aggressive Blue-Green deck centered around pump spells and infect creatures in Modern. Includes specific strategies, tips, and sideboarding tricks for Black-White Eldrazi and Taxes against Infect.</p>
+                            
+                        </div>
+                        <br>
+                        <br>
+                        <div id="homeBoxE">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id="homeBoxB">
+                            <h3><a href="/dntcentral/articles/entcomparison">Eldrazi and Taxes Comparison</a></h3>
+                            <p>An article breaking down Mono-White and B/W Eldrazi and Taxes. It discusses the advantages and disadvantages of each of the lists, analyzing the surprisingly distinct decklists.</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="homeBoxD">
+                            <h3><a href="/dntcentral/modern/matchupguides/infect">Infect (Mono-W E&T)</a></h3>
+                            <p>Matchup guide against an aggressive Blue-Green deck centered around pump spells and infect creatures in Modern. Includes specific strategies, tips, and sideboarding tricks for Mono-White Eldrazi and Taxes against Infect.</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="homeBoxF">
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <hr>
+                <div class="mgPreview">
+                    <h3 class="mgPreview"><a href="/dntcentral/modern/mulligans#mg">This Month's Mulligan Game (DOWN UNTIL JULY)</a></h3>
+                    <a href="/dntcentral/modern/mulligans#mg">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Plains&type=card" alt="Plains" class="mgPreview mgPA">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Ghost+Quarter&type=card" alt="Ghost Quarter" class="mgPreview mgPB">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" alt="Aether Vial" class="mgPreview mgPC">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Aether+Vial&type=card" alt="Aether Vial" class="mgPreview mgPD">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Leonin+Arbiter&type=card" alt="Leonin Arbiter" class="mgPreview mgPE">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Flickerwisp&type=card" alt="Flickerwisp" class="mgPreview mgPF">
+                        <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Horizon+Canopy&type=card" alt="Horizon Canopy" class="mgPreview mgPG">
+                    </a>
+                </div>
+                
+
+                <br>
+                <br>
+                <div class="extra-space"></div>
+            </div>
+
+            
+            
+
+
+
+
+            
+            <div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+
+        
+    </body>
+</html>
+

@@ -1,0 +1,388 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
+        <title>Modern Variations- Mono White Eldrazi</title>
+        <link rel="stylesheet" type="text/css" href="/dntcentral/style.css">
+        <script>
+            $(document).ready(function() {
+
+                var docHeight = $(window).height();
+                var footerHeight = $('#footer').height();
+                var footerTop = $('#footer').position().top + footerHeight;
+
+                if (footerTop < docHeight)
+                    $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            });
+        </script>
+        <script>
+            function loadScript() {
+
+                
+            }
+            
+          function previewDeck(name) {
+            var img = document.getElementById('deckPreviewImg');
+            img.src = `https://gatherer.wizards.com/Handlers/Image.ashx?name=${name}&type=card`;
+            img.alt = name;
+          }
+        </script>
+        <script src="/searchbarscripts.js" type="text/javascript"></script>
+        <script src="https://deckbox.org/assets/external/tooltip.js"></script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5296235643990630",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+    <body class="homePage" onload="loadScript()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        
+                        <a href="/dntcentral/" class="navbar-brand">D&T Central</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="navbar10">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Formats
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/dntcentral/format">Format Page</a></li>
+                                        <li><a href="/dntcentral/legacy/">Legacy</a></li>
+                                        <li><a href="/dntcentral/modern/">Modern</a></li>
+                                        <li><a href="/dntcentral/vintage">Vintage</a></li>
+                                        <li><a href="/dntcentral/commander">Commander</a></li>                           
+                                        <li><a href="/dntcentral/standard/">Standard</a></li>
+                                    </ul>
+                                    
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                                        Modern Guides
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a href="/dntcentral/modern/variations/">Splashes & Other Variations</a></li>
+                                    <li><a href="/dntcentral/modern/mulligans">Mulligan Guide</a></li>
+                                    <li><a href="/dntcentral/modern/budget">Budget Options</a></li>
+                                    <li><a href="/dntcentral/modern/matchupguides">Matchup Guides</a></li>
+                                    <li><a href="/dntcentral/modern/deathandchoices/">Death and Choices</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntrcentral/articles/">Articles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/videos/">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/spicespace/">Spice Space</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dntcentral/resources">Other Resources</a>
+                                </li>
+                                <li class="nav-item search-nav-item">
+                                    <form action="/dntcentral/searchresults.php" method="GET" class="navSearchForm">
+                                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                                </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-8">
+
+                    </div>
+                    
+                    <br>
+
+            <div class="container-fluid body-div" id="content">
+                <div class="jumbo-tron">
+                    <h1>Modern Variations: Mono White Eldrazi</h1>
+                </div>
+                <p>Mono-White Eldrazi and Taxes utilizes cheap, disruptive Eldrazi alongside Eldrazi Temple to power out potent threats faster than the average non-green Death and Taxes build. While the renowned turn two Thought-Knot Seer is not the norm for the deck, playing Eldrazi Displacer or Thought-Knot Seer a turn earlier than their converted mana cost allows the deck to operate at a faster pace. In addition to the explosiveness the Eldrazi add to the deck, Eldrazi Displacer’s activated ability, paired with creatures with enter the battlefield abilities such as Wall of Omens or Blade Splicer, gives the deck a late-game value engine that can outlast slower decks. While Black-White Eldrazi and Taxes may look strictly better, the consistency of Mono-White’s mana base gives it a significant edge in the punishing format.</p>
+                <h3>Sample Decklist</h3>
+                <div class="row decklist">
+                    <div class="col-sm-6">
+                        <table class="table decklist table-condensed table-responsive">
+                            <tbody>
+                                <tr>
+                                    <th>Creatures:</th>
+                                </tr>
+                                <tr><!--Arbiter-->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Leonin Arbiter</a></td>
+                                    
+                                </tr>
+                                <tr><!-- thalia -->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Thalia, Guardian of Thraben</a></td>
+                                    
+                                </tr>
+                                <tr><!-- thalia -->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Wall of Omens</a></td>
+                                   
+                                </tr> 
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Blade Splicer</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Eldrazi Displacer</a></td>
+                                    
+                                </tr>
+                                <tr><!-- flickerwisp -->
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Flickerwisp</a></td>
+                                   
+                                </tr> 
+                                <tr><!--Resto-->
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Restoration Angel</a></td>
+                                     
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Thought-Knot Seer</a></td>
+                                    
+                                </tr>
+
+                                <tr>
+                                    <th>Spells:</th>
+                                </tr>
+                               <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Path to Exile</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Artifacts:</th>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Aether Vial</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Lands:</th>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Eldrazi Temple</a></td>
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Field of Ruin</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Ghost Quarter</a></td>
+                                </tr>
+                                <tr>
+                                    <td>4&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Horizon Canopy</a></td>
+                                </tr>
+                                <tr>
+                                    <td>7&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Plains</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Shefet Dunes</a></td>
+                                </tr>                         
+                            </tbody>
+                </table>
+                </div>
+                <!-- sideboard -->
+                <div  class="col-sm-6">
+                <table class="table table-condensed decklist table-responsive">
+                    <tbody>
+                        
+                            <tr>
+                                    <th>Sideboard:</th>
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Burrenton Forge-Tender</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Grafdigger's Cage</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Rest in Peace</a></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>3&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Stony Silence</a></td>
+                                    
+                                </tr>
+                                
+                                <tr>
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Dismember</a></td>
+                                    
+                                </tr>
+                                <tr><!-- Gideon -->
+                                    <td>2&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Gideon, Ally of Zendikar</a></td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Shalai, Voice of Plenty</a></td>
+                                    
+                                </tr> 
+                                <tr>
+                                    <td>1&emsp;<a href="" class="cellA" onclick="return false;" onmouseover="previewDeck(this.text)">Worship</a></td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <img src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Leonin+Arbiter&type=card" id="deckPreviewImg">
+                        </div>
+                    </div>
+                </div>
+                <h3>Card Analysis</h3>
+        <div class="panel-group" id="accordion8">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectEW">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">
+                            <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse1h">
+                            Wall of Omens</a>
+                          </h3>
+                        </div>
+                        <div id="collapse1h" class="panel-collapse collapse">
+                          <div class="panel-body splashSectEW">
+                              <h4>About</h4>
+                              <p>While not an Eldrazi, Wall of Omens is a card typically unique to Mono-White Eldrazi and Taxes. There are a few reasons this card is played over the more common cantrip creature, Thraben Inspector. For one, Eldrazi and Taxes tends to have a better late game than builds without Eldrazi. As a result, having a defensive card like Wall of Omens in the deck gives the deck more time to reach the later stages of the game and take over. In addition, Wall of Omens is much better with Eldrazi Displacer than Thraben Inspector. Since Thraben Inspector produces a clue when it enters the battlefield rather than directly drawing a card like Wall of Omens, it costs a total of five mana to draw a card with Eldrazi Displacer. With Wall of Omens, only three mana is required to draw a card when Eldrazi Displacer blinks the creature, allowing more cards to be drawn. Wall of Omens is otherwise a pretty straightforward card in the deck. It is best against aggressive decks, and worst against slower decks. While the card draw engine of Eldrazi Displacer plus Wall of Omens is tempting, a lot of the time it is too slow against control. While Eldrazi and Taxes can out value slower decks, control is often not one of those decks. Wall of Omens is also bad against decks that do not care about creatures, such as Gifts Storm and Ad Nauseam. Again, the way to win those matchups is by pressuring them, not out valuing them.</p>
+                          </div>
+                        </div>
+                      </div>
+                <img class="entImg" src="https://www.channelfireball.com/wp-content/uploads/2014/02/wall-of-omens.png" alt="Wall of Omens">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Wall%20Of%20Omens&type=card" alt="Wall of Omens">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                     <div class="panel panel-format splashSectEW">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse2h">
+                    Eldrazi Displacer</a>
+                  </h3>
+                </div>
+                <div id="collapse2h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectEW">
+                      <h4>About</h4>
+                      <p>Eldrazi Displacer gives the deck more staying power and long game strength, all thanks to its powerful activated ability. Eldrazi Displacer early on is not very threatening, as a 3/3 for three is nothing special, but its activated ability can be utilized in many scenarios, from tapping down opposing blockers to push through damage to giving the deck the engine needed to grind out the win.</p>
+                      <h4>Eldrazi Displacer's Ability</h4>
+                      <p>One part of the cost to activate Eldrazi Displacer that is noteworthy is that one colorless mana is required to activate its ability. Therefore, there are times where using a Ghost Quarter or Tectonic Edge to destroy the opponent’s land is incorrect, especially when lacking any other colorless land. In addition, since Eldrazi Temple can produce two mana for activated abilities of Eldrazi, multiple activations a turn with Eldrazi Displacer is not uncommon for the deck. However, in the scenario that the only lands in play are four lands that do not produce colorless mana and an Eldrazi Temple, Eldrazi Displacer’s ability must be activated in the same phase in order to use it twice. Eldrazi Displacer's activated ability, as mentioned above, gives the deck a solid late game plan. Blinking value creatures such as Wall of Omens or Blade Splicer can generate a card advantage engine that, if unanswered, will take over the game. Eldrazi Displacer can be used to save creatures from targeted removal. However, since Eldrazi Displacer’s ability returns the creature to the battlefield immediately, it does not protect against board wipes (unless a Flickerwisp is in play). The threat of activating Eldrazi Displacer is also noteworthy, as it can cause the opponent to play less optimally to try dodging the blowout. Eldrazi Displacer can also be used in conjunction with Thought-Knot Seer to take a new card from the opponent’s hand. However, since Thought-Knot Seer will draw the opponent a card when it leaves the battlefield, this method does not grant card advantage. Still, against combo decks that require a specific spell to win, blinking Thought-Knot Seer on the draw step is a solid option. The most powerful usage of Eldrazi Displacer’s activated ability is targeting Flickerwisp. Blinking Flickerwisp can help dodge board wipes, temporarily remove lands, artifacts, enchantments, and planeswalkers, along with protecting the Eldrazi Displacer from removal spells. The versatility offered with repeatedly using Flickerwisp’s enter the battlefield effect is huge, as it can lock down troublesome permanents like planeswalkers barring no removal from the opponent. Eldrazi Displacer's ability can also be used on opponent's creatures. Blinking attacking creatures helps alleviate the damage of aggro decks while tapping down blockers can secure a lethal attack. Eldrazi Displacer’s ability can also kill opposing tokens, similar to Flickerwisp. Overall, the versatility and potential offered with this card make it one of the strongest incentives to run Eldrazi in Death and Taxes.</p>
+                  </div>
+                </div>
+              </div>
+                <img class="entImg" src="/dntcentral/images/dnt/eldrazi-displacer-art.jpg" alt="Eldrazi Displacer">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi%20Displacer&type=card" alt="Eldrazi Displacer">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectEW">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse3h">
+                    Thought-Knot Seer</a>
+                  </h3>
+                </div>
+                <div id="collapse3h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectEW">
+                      <h4>About</h4>
+                      <p>Overall, Thought-Knot Seer is a consistently powerful spell in Eldrazi and Taxes. While it does cost four mana, Thought-Knot Seer provides a 4/4 body (dodging Lightning Bolt) that removes a nonland card from the opponent’s hand forever, as upon death it draws them a new card. Thought-Knot Seer can come down as early as turn two thanks to Eldrazi Temple. In conjunction with blink creatures like Restoration Angel and Eldrazi Displacer, Thought-Knot Seer can take additional cards from the opponent’s hand. While the opponent will draw a card for each time Thought-Knot Seer leaves the battlefield, taking the best card in their hand is very powerful, especially against combo decks. Thought-Knot Seer is great against every deck in Modern, and thus will not be boarded out often.</p>
+                  </div>
+                </div>
+              </div>
+                <img class="entImg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ62fVn7S6Rm5P6dLmpzh9ubxLuAw8EbO9Bj0Ztl8HDGFlu8WalaQ" alt="Thought-Knot Seer">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Thought-Knot%20Seer&type=card" alt="Thought-Knot Seer">
+                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="panel panel-format splashSectEW">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <a class="splashCardSect" data-toggle="collapse" data-parent="#accordion8" href="#collapse4h">
+                    Eldrazi Temple</a>
+                  </h3>
+                </div>
+                <div id="collapse4h" class="panel-collapse collapse">
+                  <div class="panel-body splashSectEW">
+                      <h4>About</h4>
+                      <p>Eldrazi Temple allows the deck to power out Eldrazi such as Eldrazi Displacer and Thought-Knot Seer a turn or two earlier than without it. Having the ability to play a turn two Thought-Knot Seer adds raw power to the deck- a large number of modern decks are prone to hand disruption, especially when played early. Eldrazi Temple also lets the deck use Eldrazi Displacer's ability more rigorously. Against certain decks, like Humans, being able to activate Eldrazi Displacer two or even three times in a turn is very important to winning the match. The downside, of course, is that Eldrazi Temple does not tap for white mana or destroy the opponent's lands (which is what Death and Taxes's colorless lands are typically used for), but that downside is easily negated by the synergies with the deck. Without Eldrazi Temple, chances are Eldrazi and Taxes would not even be a deck, as speed is key in Modern.</p>
+                  </div>
+              </div>
+                  </div>
+                <img class="entImg" src="https://cdna.artstation.com/p/assets/images/images/000/982/472/large/james-paick-127482.jpg?1437507210" alt="Eldrazi Temple">
+                        </div>
+                        <div class="col-sm-3">
+                            <img class="entCardImg" src="https://gatherer.wizards.com/Handlers/Image.ashx?name=Eldrazi%20Temple&type=card" alt="Eldrazi Temple">
+                        </div>
+            </div>
+
+                </div>
+                <hr>
+        <h3>Other E&T Exclusive Main Deck Options</h3>
+            <ul>
+                <li> Reality Smasher </li>
+            </ul>
+            <hr>
+            <h3>Conclusion</h3>
+            <p>Mono-White Eldrazi and Taxes is one of the stronger variations of Modern Death and Taxes. Being able to utilize the powerful Eldrazi from Oath of the Gatewatch makes this particular build powerful in Modern’s linear meta. In addition, unlike other Death and Taxes variations, the mana base for Mono-White Eldrazi and Taxes is very consistent- only Thought-Knot Seer requires colorless mana to cast. All in all, these factors contribute to the consistent, powerful deck that Mono-White Eldrazi and Taxes is.</p>
+            <div class="extra-space"></div>
+            </div>
+            
+
+            
+<div id="footer">
+	<p class="footH" id="lastMod">Last updated</p>
+	<br>
+	<h5>Newsletter</h5>
+    <h6>Keep up with the latest articles, Mulligan Games, matchup guides, and other D&T information.</h6>
+    <form method="post" action="/dntcentral/newsletter.php">
+        <input type="text" id="emailBar" placeholder="enter email" name="mail" required onblur="validateEmail(this);">
+        <input type="submit" id="emailBtn" value="Subscribe">
+        <textarea name="pagename" id="email-p" value="" style="display:none"></textarea>
+    </form>
+	<br>
+	<h6 class="footH">Questions or suggestions? Email me at <a href="mailto:theratzoo@dntcentral.com">theratzoo@dntcentral.com</a></h6>
+	
+	<h6 class="footH"><a href="https://mobile.twitter.com/TaxesCentral">Twitter</a></h6>
+	<h6 class="footH"><a href="/dntcentral/privacy-policy">Privacy Policy</a></h6>
+	
+	<h6 class="footH">Dntcentral is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</h6>
+	<br>
+</div>
+
+    </body>
+</html>
+
