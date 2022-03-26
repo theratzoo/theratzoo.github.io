@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>WPI MTG Club Website</title>
+        <link rel="stylesheet" type="text/css" href="/ldstyle.css">
+        <link rel="icon" href="/img/ld.png">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    </head>
+    <body id="home">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">Luke</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar10">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-me">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/resume">Resume</a>
+                </li>
+                <!--<li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                        Resume
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a href="/resume/">Resume</a></li>
+                    <li><a href="/resume/work-experiences">Work Experience</a></li>
+                    <li><a href="/resume/coursework">Coursework</a></li>
+                    <li><a href="/resume/cs-knowledge">Other CS Knowledge</a></li>
+                    <li><a href="/resume/leadership">Leadership</a></li>-->
+                    <!--tutoring, senate, magic vp. incldue this when i can actually tlak about magic VP position!
+                    </ul>
+                </li>-->
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                        Portfolio
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/portfolio/">Project List</a></li>
+                        <li><a href="/portfolio/portable-physicist">Portable Physicist</a></li>
+                        <li><a href="/portfolio/dntcentral">D&T Central</a></li>
+                        <li><a href="/portfolio/game-jam-game">Game-jam Game</a></li>
+                        <li><a href="/portfolio/drag-and-drop">Drag-and-drop Editor</a></li>
+                        <li><a href="/portfolio/substring-research">Substring Research Project</a></li>
+                        <li><a href="/portfolio/mtgfantasy">MTG Fantasy</a></li>
+                        <li><a href="/portfolio/webware-final-project">Webware Final Project</a></li>
+                        <li><a href="/portfolio/software-engineering-project">Software Engineering Project</a></li>
+                        <li><a href="/portfolio/ooad-project">Object Oriented Analysis & Design Project</a></li>
+                        <li><a href="/portfolio/ar-vr-research">AR/VR Research Project</a></li>
+                        <li><a href="/portfolio/mqp-machine-learning">MQP: Machine Learning</a></li>
+                        <li><a href="/portfolio/wpi-mtg-club-website">WPI MTG Club Website</a></li>
+                    <!--<li><a href="/portfolio/future-projects">Future Projects</a></li>-->
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact-info">Contact Info</a>
+                </li>
+                <!--add this later:-->
+                <!--
+                <li class="nav-item search-nav-item">
+                    <form action="/portable-physicist/searchresults.php" method="GET" class="navSearchForm">
+                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                </form>
+                </li>-->
+                <!--search bar can include check-boxes for whether to search just site, or include portable physicist and/or dntcentral sites as well-->
+            </ul>
+        </div>
+    </div>
+</nav>
+        <div id="me">
+        WPI MTG Club Website
+            </div>  
+        <div class="container">
+            <br>
+            <hr class="mainhr"> 
+            <br>
+            <p>My college, WPI, has a club- the Magic: the Gathering club. In it, participants play the trading card game twice a week. The club also hosts events with prizes and sells some old cards that were recently aquired. As the president of the club, I decided to try and handle these needs, especially regarding selling the cards to the club, through development a website. The site, simply called "wpimtgclub", was designed to let club members easily view relevant information regarding the club. The primary focus and goal was to make searching through the club's card collection easier along with getting real-time pricing.</p>
+            <br>
+            <hr class="subhr">
+            <br>
+            <h3>Project Development</h3>
+            <h4>Overview</h4>
+            <p>The website is developed with Next JS for the frontend, and the backend is handled via the hosting service Vercel. I used Bootstrap to deal with the basic styling. To get prices, I accessed TCGPlayer's API and ran Python scripts to get the necessary information to retrieve current prices. I was also using a Raspberry PI to run a daily bash script, where the prices were updated and pushed to production.</p>
+            <p>Currently, the website includes the club's card catalog, with information for each card including name, price, set, and condition. It also includes a search bar, and several filter tools. Outside of the catalog, a simple homepage is present with basic club information.</p>
+            <br>
+            <h4>Problems and Future Plans</h3>
+            <p>When developing, I created some features for automatically sending out an email and updating the spreadsheet for the cards whenever an order was made. All of that functionality worked fine in development but not in production (Vercel). As such, those features have to be reworked (I plan to use something like MongoDB instead of a spreadsheet). Otherwise, I also plan to revamp the styling of the website to make it more modern, add more filters and search tools, and make the calendar event page a reality.</p>
+            <br>
+            <hr class="subhr">
+            <br>
+            <br>
+            <h3>Conclusion</h3>
+            <p>Overall, I am pleased with this project. Despite it not being complete, I was able to make a better system for club members to browse the club's extensive MtG card catalog. This project has been enjoyable to work on, not only for learning the new technologies, but also for creating something to aid a club I am heavily involved in. I hope to flesh it out to a more robust and professional website before I graduate from WPI.</p>
+            <br>
+            <h3><a href="https://github.com/theratzoo/wpimtgclub">Github Link</a></h3>
+            <h3><a href="https://wpimtgclub.vercel.app/">Link To Website Here</a></h3>
+            
+            <br>
+            <br>
+        </div>
+        <footer>
+            <h6>This website is, in fact, created by Luke Deratzou. Any questions or issues, please contact the owner.</h6>
+        </footer>
+        <!--insert professional footer here-->
+        
+
+    </body>
+</html>
