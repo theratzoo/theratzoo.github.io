@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>ECE 2049: Embedded Computing In Engineering Design</title>
+        <link rel="stylesheet" type="text/css" href="/ldstyle.css">
+        <link rel="icon" href="/img/ld.png">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    </head>
+    <body id="home">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">Luke</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar10">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-me">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/resume">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/classes/">Coursework</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/work-experience/">Work Experience</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+                        Portfolio
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    <li><a href="/portfolio/">Project List</a></li>
+                    <li><a href="/portfolio/portable-physicist">Portable Physicist</a></li>
+                    <li><a href="/portfolio/dntcentral">D&T Central</a></li>
+                    <li><a href="/portfolio/game-jam-game">Game-jam Game</a></li>
+                    <li><a href="/portfolio/drag-and-drop">Drag-and-drop Editor</a></li>
+                    <li><a href="/portfolio/substring-research">Substring Research Project</a></li>
+                    <li><a href="/portfolio/mtgfantasy">MTG Fantasy</a></li>
+                    <li><a href="/portfolio/webware-final-project">Webware Final Project</a></li>
+                    <li><a href="/portfolio/software-engineering-project">Software Engineering Project</a></li>
+                    <li><a href="/portfolio/ooad-project">Object Oriented Analysis & Design Project</a></li>
+                    <li><a href="/portfolio/ar-vr-research">AR/VR Research Project</a></li>
+                    <li><a href="/portfolio/mqp-machine-learning">MQP: Machine Learning</a></li>
+                    <li><a href="/portfolio/wpi-mtg-club-website">WPI MTG Club Website</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact-info">Contact Info</a>
+                </li>
+                <!--add this later:-->
+                <!--
+                <li class="nav-item search-nav-item">
+                    <form action="/portable-physicist/searchresults.php" method="GET" class="navSearchForm">
+                    <input type="text" name="q" id="navSearchBar" placeholder="" value="Search..." maxlength="25" autocomplete="off" onmousedown="clearSearchStuff()" onblur="barNotActive()" onkeyup="stoppedTyping()" /><input type="submit" id="navSearchBtn" value="Go!" onclick="verify()" disabled />
+                </form>
+                </li>-->
+                <!--search bar can include check-boxes for whether to search just site, or include portable physicist and/or dntcentral sites as well-->
+            </ul>
+        </div>
+    </div>
+</nav>
+        <div id="me">
+            ECE 2049: Embedded Computing In Engineering Design <br/>
+            <small>D21 (Sophomore Year, Second Semester)</small>
+            </div>  
+        <div class="container">
+            <br />
+            <hr class="main" /> 
+            <br />
+            <h2>Course Description</h2>
+            <p class="italics text-center">“Embedded computers are literally everywhere in modern life. On any given day we interact with and depend on dozens of small computers to make coffee, run cell phones, take pictures, play music play, control elevators, manage the emissions and antilock brakes in our automobile, control a home security system, and so on. Using popular everyday devices as case studies, students in this course are introduced to the unique computing and design challenges posed by embedded systems. Students will then solve real-world design problems using small, resource constrained (time/memory/power) computing platforms. The hardware and software structure of modern embedded devices and basic interactions between embedded computers and the physical world will also be covered in lecture and as part of laboratory experiments. In the laboratory, emphasis is placed on interfacing embedded processors with common sensors and devices (e.g. temperature sensors, keypads, LCD display, SPI ports, pulse width modulated motor controller outputs) while developing the skills needed to use embedded processors in systems design. This course is also appropriate for RBE and other engineering and CS students interested in learning about embedded system theory and design. Topics: Number/data representations, embedded system design using C, microprocessor and microcontroller architecture, program development and debugging tools for a small target processor, hardware/software dependencies, use of memory mapped peripherals, design of event driven software, time and resource management, applications case studies. Lab Exercises: Students will solve commonly encountered embedded processing problems to implement useful systems. Starting with a requirements list students will use the knowledge gained during the lectures to implement solutions to problems which explore topics such as user interfaces and interfacing with the physical world, logic flow, and timing and time constrained programming. Exercises will be performed on microcontroller and/or microprocessor based embedded systems using cross platform development tools appropriate to the target platform. Recommended Background: ECE 2010 or equivalent knowledge in basic circuits, devices and analysis; and C language programming (CS 2301 or equivalent) Suggested Background: ECE 2029 or equivalent knowledge of digital logic, logic signals and logic operations.”</p>
+            <hr class="mainhr" />
+            <br />
+            <h2>Languages/Technologies</h2>
+            <ul>
+                <li>Language: C</li>
+                <li>IDE: Visual Studio Code</li>
+            </ul>
+            <hr class="mainhr" />
+            <br />
+            <h2>Concepts Learned</h2>
+            <ul>
+                <li>Numbers: binary, floating point, endianness</li>
+                <li>MSP 430 architecture (I/O ports)</li>
+                <li>Clocks (UCS) and Timers</li>
+                <li>ADC (ADC12) and Interrupts</li>
+                <li>UART and SPI</li>
+                <li>WDT and LPM</li>
+                <li>DMA</li>
+            </ul>
+            <hr class="mainhr" />
+            <br />
+            <h2>Projects</h2>
+            <ul>
+                <li>Simon Says</li>
+                <li>Music Player</li>
+                <li>Other MSP 430 projects</li>
+            </ul>
+            <hr class="mainhr" />
+            <br />
+            <h2>My Experience</h2>
+            <p>ECE 2049 involved embedded programming on a MSP 430. I did several projects that involved both programming and hardware configurations on the device. The projects included a music player, a simon says game, and other projects. The concepts learned include things such as timers, ADCs, WDT, LPM, and DMA.</p>
+            <hr class="mainhr" />
+            <br />
+             <br />
+             <br />
+        </div>
+        <footer>
+            <h6>This website is, in fact, created by Luke Deratzou. Any questions or issues, please contact the owner.</h6>
+        </footer>
+        <!--insert professional footer here-->
+        
+
+    </body>
+</html>
